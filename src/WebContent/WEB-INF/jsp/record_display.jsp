@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>コーディネート履歴検索結果</title>
 </head>
 <body>
-
+<p>コーディネート履歴検索結果</p>
+<p><a href="/hello/RecordSearchServlet">履歴検索画面に戻る</a></p>
 </body>
 </html>

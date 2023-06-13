@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class RecordSearchServlet
+ * Servlet implementation class RecordSearchDisplayServlet
  */
-@WebServlet("/RecordSearchServlet")
-public class RecordSearchServlet extends HttpServlet {
+@WebServlet("/RecordSearchDisplayServlet")
+public class RecordSearchDisplayServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -21,16 +21,16 @@ public class RecordSearchServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// コーディネート履歴検索ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/record_search.jsp");
-		dispatcher.forward(request, response);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/record_display.jsp");
+				dispatcher.forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//検索結果サーブレットにリダイレクトする
-		response.sendRedirect("/hello/RecordSearchDisplayServlet");
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

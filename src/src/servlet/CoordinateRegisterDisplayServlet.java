@@ -10,19 +10,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ClothesRegisterServlet
+ * Servlet implementation class CoordinateRegisterDisplayServlet
  */
-@WebServlet("/ClothesRegisterServlet")
-public class ClothesRegisterServlet extends HttpServlet {
+@WebServlet("/CoordinateRegisterDisplayServlet")
+public class CoordinateRegisterDisplayServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public CoordinateRegisterDisplayServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 服登録ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/clothes_register.jsp");
+
+		// メインページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/coordinate_register_check.jsp");
 		dispatcher.forward(request, response);
+
+
+
+
 	}
 
 	/**

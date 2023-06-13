@@ -10,19 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ClothesRegisterServlet
+ * Servlet implementation class RecordSearchDisplayServlet
  */
-@WebServlet("/ClothesRegisterServlet")
-public class ClothesRegisterServlet extends HttpServlet {
+@WebServlet("/RecordSearchDisplayServlet")
+public class RecordSearchDisplayServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 服登録ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/clothes_register.jsp");
-		dispatcher.forward(request, response);
+		// コーディネート履歴検索ページにフォワードする
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/record_display.jsp");
+				dispatcher.forward(request, response);
 	}
 
 	/**

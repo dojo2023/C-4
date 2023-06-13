@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>コーディネート登録</title>
 </head>
 <body>
+
+<p>コーディネート登録画面</p>
+<p><a href="/hello/CoordinateRegisterDisplayServlet">コーディネート登録確認画面へ</a></p>
+
+
 
 </body>
 </html>

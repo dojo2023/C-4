@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>コーディネート登録確認</title>
 </head>
 <body>
+
+<p>コーディネート登録確認画面</p>
 
 </body>
 </html>

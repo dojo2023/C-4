@@ -9,5 +9,6 @@
 <body>
 <p>コーディネート履歴検索結果</p>
 <p><a href="/hello/RecordSearchServlet">履歴検索画面に戻る</a></p>
+<p><a href="/hello/MainServlet">メイン画面に戻る</a></p>
 </body>
 </html>

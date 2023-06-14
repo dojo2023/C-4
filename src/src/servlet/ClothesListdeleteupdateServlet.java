@@ -10,20 +10,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ClothesListdeleteupdateSerevlet
+ * Servlet implementation class ClothesListdeleteupdateServlet
  */
-@WebServlet("/ClothesListdeleteupdateSerevlet")
-public class ClothesListdeleteupdateSerevlet extends HttpServlet {
+@WebServlet("/ClothesListdeleteupdateServlet")
+public class ClothesListdeleteupdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//服一覧画面にフォワード
+		//各タグ詳細一覧画面にフォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/detail.jsp");
 		dispatcher.forward(request, response);
 	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

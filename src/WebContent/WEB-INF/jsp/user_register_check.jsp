@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ユーザー登録確認</title>
 </head>
 <body>
+<p>ユーザー登録確認</p>
 
+<p><a href="/hello/UserRegisterServlet">ユーザー登録画面に戻る</a></p>
+<p><a href="/hello/LoginServlet">登録</a></p>
 </body>
 </html>

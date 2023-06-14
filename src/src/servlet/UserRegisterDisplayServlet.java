@@ -10,18 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class UserRegisterServlet
+ * Servlet implementation class UserRegisterDisplayServlet
  */
-@WebServlet("/UserRegisterServlet")
-public class UserRegisterServlet extends HttpServlet {
+@WebServlet("/UserRegisterDisplayServlet")
+public class UserRegisterDisplayServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// ユーザー登録ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_register.jsp");
+		// 服登録ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_register_check.jsp");
 		dispatcher.forward(request, response);
 	}
 

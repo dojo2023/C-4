@@ -1,17 +1,7 @@
-/**
- *
- */
 package model;
 
-/**
- * @author user
- *
- */
-public class Users {
+public class User {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		// TODO 自動生成されたメソッド・スタブ
 

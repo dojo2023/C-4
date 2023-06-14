@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>プロフィール</title>
 </head>
 <body>
+<p>プロフィール画面</p>
+
+<p><a href="/hello/ProfileUpdateServlet">変更</a></p>
+<p><a href="/hello/MainServlet">メイン画面へ戻る</a></p>
+
 
 </body>
 </html>

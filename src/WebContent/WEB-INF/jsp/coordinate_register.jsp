@@ -10,6 +10,7 @@
 
 <p>コーディネート登録画面</p>
 <p><a href="/hello/CoordinateRegisterDisplayServlet">コーディネート登録確認画面へ</a></p>
+<p><a href="/hello/MainServlet">メイン画面へ戻る</a></p>
 
 
 

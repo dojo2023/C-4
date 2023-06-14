@@ -1,0 +1,490 @@
+usersテーブル
+create table users (
+ID int AUTO_INCREMENT PRIMARY KEY,
+user_ID VARCHAR(20) NOT NULL,
+user_PW VARCHAR(20) NOT NULL,
+user_HOMEID int NOT NULL,
+user_GENDERID int NOT NULL,
+user_PTEMPERTUREID int NOT NULL
+)
+
+
+サンプルデータ
+insert into users(user_ID,user_PW,user_HOMEID,user_GENDERID,user_PTEMPERTUREID)
+values('sasahara','plusdojo',12,1,0);
+insert into users(user_ID,user_PW,user_HOMEID,user_GENDERID,user_PTEMPERTUREID)
+values('atugari','plusdojo1',12,3,5);
+insert into users(user_ID,user_PW,user_HOMEID,user_GENDERID,user_PTEMPERTUREID)
+values('samugari','plusdojo2',12,2,-5);
+
+
+
+
+
+dailyテーブル
+create table daily(
+ID int AUTO_INCREMENT PRIMARY KEY,
+day_DAY DATE NOT NULL,
+user_ID VARCHAR NOT NULL,
+day_HTEMPERATURE DOUBLE NOT NULL,
+day_LTEMPERATURE DOUBLE NOT NULL,
+day_TOPSNO int NOT NULL,
+day_OUTERNO int NOT NULL,
+day_BOTTOMNO int NOT NULL
+)
+
+サンプルデータ
+insert into daily(day_DAY,user_ID,day_HTEMPERATURE,day_LTEMPERATURE,day_TOPSNO,day_OUTERNO,day_BOTTOMNO)
+values(CURDATE(),'sasahara',28.7,23.4,1,4,8);
+
+
+
+clothesテーブル
+create table clothes(
+ID int AUTO_INCREMENT PRIMARY KEY ,
+user_ID VARCHAR(20) NOT NULL,
+small_CATEGORYID int NOT NULL,
+clo_IMAGES VARCHAR(100) NOT NULL
+)
+
+サンプルデータ
+insert into clothes(user_ID, small_CATEGORYID, clo_IMAGES)
+values('sasahara', 1,'リンク');
+insert into clothes(user_ID, small_CATEGORYID, clo_IMAGES)
+values('sasahara', 2,'リンク');
+insert into clothes(user_ID, small_CATEGORYID, clo_IMAGES)
+values('sasahara', 4,'リンク');
+insert into clothes(user_ID, small_CATEGORYID, clo_IMAGES)
+values('sasahara', 8,'リンク')
+
+bigcategoryテーブル
+create table bigcategory(
+ID int AUTO_INCREMENT PRIMARY KEY ,
+big_CATEGORY VARCHAR(10) NOT NULL
+)
+
+サンプルデータ
+insert into bigcategory(big_CATEGORY)
+values('トップス');
+insert into bigcategory(big_CATEGORY)
+values('アウター');
+insert into bigcategory(big_CATEGORY)
+values('ボトムス');
+
+
+
+
+
+smallcategoryテーブル
+create table smallcategory(
+ID int AUTO_INCREMENT PRIMARY KEY ,
+small_CATEGORY VARCHAR(10) NOT NULL ,
+bigcategory_ID int NOT NULL
+)
+
+サンプルデータ
+insert into smallcategory(small_CATEGORY, bigcategory_ID)values('半袖', 1);
+insert into smallcategory(small_CATEGORY, bigcategory_ID)values('長袖(薄手)', 1);
+insert into smallcategory(small_CATEGORY, bigcategory_ID)values('長袖', 1);
+insert into smallcategory(small_CATEGORY, bigcategory_ID)values('コート', 2);
+insert into smallcategory(small_CATEGORY, bigcategory_ID)values('ジャケット(薄手)', 2);
+insert into smallcategory(small_CATEGORY, bigcategory_ID)values('ジャケット', 2);
+insert into smallcategory(small_CATEGORY, bigcategory_ID)values('カーディガン', 2);
+insert into smallcategory(small_CATEGORY, bigcategory_ID)values('長ズボン(薄手)', 3);
+insert into smallcategory(small_CATEGORY, bigcategory_ID)values('長ズボン', 3);
+insert into smallcategory(small_CATEGORY, bigcategory_ID)values('スカート', 3);
+
+
+
+
+genderテーブル
+create table gender(
+ID int AUTO_INCREMENT PRIMARY KEY ,
+gender_CATEGORY VARCHAR(10) NOT NULL
+)
+
+サンプルデータ
+insert into gender(gender_CATEGORY)values('男');
+insert into gender(gender_CATEGORY)values('女');
+insert into gender(gender_CATEGORY)values('その他');
+
+
+weatherテーブル
+create table weather(
+ID int AUTO_INCREMENT PRIMARY KEY ,
+day_WEATHERCODE int NOT NULL ,
+weather_IMAGE VARCHAR(100) NOT NULL,
+weather_EXPRESSION VARCHAR(15) NOT NULL
+)
+
+サンプルデータ
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(0,'リンク','快晴');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(1,'リンク','晴れ');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(2,'リンク','晴れ');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(3,'リンク','くもり');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(45,'リンク','くもり');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(48,'リンク','くもり');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(51,'リンク','霧雨');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(53,'リンク','霧雨');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(55,'リンク','霧雨');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(56,'リンク','霧雨');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(57,'リンク','霧雨');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(61,'リンク','雨');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(63,'リンク','雨');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(66,'リンク','雨');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(80,'リンク','雨');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(65,'リンク','大雨');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(67,'リンク','大雨');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(81,'リンク','大雨');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(82,'リンク','大雨');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(71,'リンク','雪');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(73,'リンク','雪');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(77,'リンク','雪');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(85,'リンク','雪');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(75,'リンク','大雪');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(86,'リンク','大雪');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(95,'リンク','雷');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(96,'リンク','雷');
+insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
+values(99,'リンク','雷');
+
+
+
+
+
+
+
+
+ptempertureテーブル
+create table ptemperture( 
+ID int AUTO_INCREMENT PRIMARY KEY ,
+user_PTEMPERTURE int NOT NULL,
+ptem_MAXPTEM int NOT NULL ,
+ptem_MINPTEM int NOT NULL 
+)
+
+insert into ptemperture(user_PTEMPERTURE, ptem_MAXPTEM, ptem_MINPTEM)
+values(5, -5, 5);
+insert into ptemperture(user_PTEMPERTURE, ptem_MAXPTEM, ptem_MINPTEM)
+values(4, -4, 4);
+insert into ptemperture(user_PTEMPERTURE, ptem_MAXPTEM, ptem_MINPTEM)
+values(3, -3, 3);
+insert into ptemperture(user_PTEMPERTURE, ptem_MAXPTEM, ptem_MINPTEM)
+values(2, -2, 2);
+insert into ptemperture(user_PTEMPERTURE, ptem_MAXPTEM, ptem_MINPTEM)
+values(1, -1, 1);
+insert into ptemperture(user_PTEMPERTURE, ptem_MAXPTEM, ptem_MINPTEM)
+values(0, 0, 0);
+insert into ptemperture(user_PTEMPERTURE, ptem_MAXPTEM, ptem_MINPTEM)
+values(-1, 1, -1);
+insert into ptemperture(user_PTEMPERTURE, ptem_MAXPTEM, ptem_MINPTEM)
+values(-2, 2, -2);
+insert into ptemperture(user_PTEMPERTURE, ptem_MAXPTEM, ptem_MINPTEM)
+values(-3, 3, -3);
+insert into ptemperture(user_PTEMPERTURE, ptem_MAXPTEM, ptem_MINPTEM)
+values(-4, 4, -4);
+insert into ptemperture(user_PTEMPERTURE, ptem_MAXPTEM, ptem_MINPTEM)
+values(-5, 5, -5);
+
+
+
+latitude_and_longitudeテーブル
+create table latitude_and_longitede(
+ID int AUTO_INCREMENT PRIMARY KEY ,
+home VARCHAR(4) NOT NULL,
+latitude double NOT NULL,
+longitude double NOT NULL
+)
+
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('北海道',43.42,142.78);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('青森県',40.70,140.73);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('岩手県',39.52,141.40);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('宮城県',38.39,140.95);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('秋田県',39.68,140.40);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('山形県',38.50,140.11);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('福島県',37.42,140.24);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('茨城県',36.31,140.39);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('栃木県',36.69,139.82);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('群馬県',36.49,138.93);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('埼玉県',36.01,139.37);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('千葉県',35.48,140.23);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('東京都',35.69,139.54);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('神奈川県',35.41,139.35);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('新潟県',37.37,138.89);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('富山県',36.61,137.29);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('石川県',36.78,136.78);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('福井県',35.82,136.19);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('山梨県',35.61,138.63);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('長野県',36.15,138.03);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('岐阜県',35.78,137.06);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('静岡県',35.04,138.32);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('愛知県',35.01,137.21);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('三重県',34.49,136.44);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('滋賀県',35.23,136.14);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('京都府',35.23,135.52);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('大阪府',34.60,135.55);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('兵庫県',35.07,134.80);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('奈良県',34.30,135.90);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('和歌山県',33.85,135.42);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('鳥取県',35.40,133.86);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('島根県',34.98,132.43);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('岡山県',34.87,133.84);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('広島県',34.59,132.80);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('山口県',34.23,131.44);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('徳島県',33.92,134.28);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('香川県',34.22,133.98);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('愛媛県',33.67,132.84);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('高知県',33.51,133.37);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('福岡県',33.60,130.69);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('佐賀県',33.28,130.12);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('長崎県',32.96,129.72);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('熊本県',32.59,130.81);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('大分県',33.21,131.42);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('宮崎県',32.21,131.36);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('鹿児島県',31.36,130.42);
+insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+values('沖縄県',26.48,127.93)
+
+
+
+
+day_weathercodeテーブル
+create table day_weathercode(
+ID int AUTO_INCREMENT PRIMARY KEY,
+daily_ID int NOT NULL ,
+weathercode_0 int NOT NULL,
+weathercode_1 int NOT NULL ,
+weathercode_2 int NOT NULL ,
+weathercode_3 int NOT NULL ,
+weathercode_4 int NOT NULL ,
+weathercode_5 int NOT NULL ,
+weathercode_6 int NOT NULL ,
+weathercode_7 int NOT NULL ,
+weathercode_8 int NOT NULL ,
+weathercode_9 int NOT NULL ,
+weathercode_10 int NOT NULL ,
+weathercode_11 int NOT NULL ,
+weathercode_12 int NOT NULL ,
+weathercode_13 int NOT NULL ,
+weathercode_14 int NOT NULL ,
+weathercode_15 int NOT NULL ,
+weathercode_16 int NOT NULL ,
+weathercode_17 int NOT NULL ,
+weathercode_18 int NOT NULL ,
+weathercode_19 int NOT NULL ,
+weathercode_20 int NOT NULL ,
+weathercode_21 int NOT NULL ,
+weathercode_22 int NOT NULL ,
+weathercode_23 int NOT NULL ,
+temperture_0 int NOT NULL ,
+tempertere_1 int NOT NULL ,
+temperture_2 int NOT NULL ,
+temperture_3 int NOT NULL ,
+temperture_4 int NOT NULL ,
+temperture_5 int NOT NULL ,
+temperture_6 int NOT NULL ,
+temperture_7 int NOT NULL ,
+temperture_8 int NOT NULL ,
+temperture_9 int NOT NULL ,
+temperture_10 int NOT NULL ,
+temperture_11 int NOT NULL ,
+temperture_12 int NOT NULL ,
+temperture_13 int NOT NULL ,
+temperture_14 int NOT NULL ,
+temperture_15 int NOT NULL ,
+temperture_16 int NOT NULL ,
+temperture_17 int NOT NULL ,
+temperture_18 int NOT NULL ,
+temperture_19 int NOT NULL ,
+temperture_20 int NOT NULL ,
+temperture_21 int NOT NULL ,
+temperture_22 int NOT NULL ,
+temperture_23 int NOT NULL 
+)
+
+
+サンプルデータ
+insert into day_weathercode(
+daily_ID ,
+weathercode_0 ,
+weathercode_1 ,
+weathercode_2 ,
+weathercode_3 ,
+weathercode_4 ,
+weathercode_5 ,
+weathercode_6 ,
+weathercode_7 ,
+weathercode_8  ,
+weathercode_9 ,
+weathercode_10 ,
+weathercode_11 ,
+weathercode_12 ,
+weathercode_13 ,
+weathercode_14 ,
+weathercode_15 ,
+weathercode_16 ,
+weathercode_17 ,
+weathercode_18 ,
+weathercode_19 ,
+weathercode_20 ,
+weathercode_21 ,
+weathercode_22 ,
+weathercode_23 ,
+temperture_0 ,
+tempertere_1 ,
+temperture_2 ,
+temperture_3 ,
+temperture_4 ,
+temperture_5 ,
+temperture_6 ,
+temperture_7 ,
+temperture_8 ,
+temperture_9 ,
+temperture_10 ,
+temperture_11 ,
+temperture_12 ,
+temperture_13 ,
+temperture_14 ,
+temperture_15 ,
+temperture_16 ,
+temperture_17 ,
+temperture_18 ,
+temperture_19 ,
+temperture_20 ,
+temperture_21 ,
+temperture_22 ,
+temperture_23 )
+values(
+1,
+3,
+3,
+3,
+3,
+3,
+51,
+2,
+2,
+51,
+2,
+53,
+51,
+53,
+3,
+2,
+3,
+3,
+2,
+1,
+1,
+51,
+53,
+51,
+2,
+22.3,
+22.3,
+22.2,
+22,
+21.9,
+21.7,
+21.6,
+21.7,
+22.4,
+23.9,
+24.2,
+24.5,
+24.1,
+24.3,
+24.1,
+23.6,
+23.4,
+23.2,
+22.8,
+22.3,
+22,
+21.6,
+21.3,
+21.1
+);
+
+
+
+
+
+
+
+
+
+

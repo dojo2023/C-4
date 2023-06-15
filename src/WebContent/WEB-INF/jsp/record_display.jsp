@@ -25,6 +25,14 @@
 </header>
 <main>
     <h2>コーディネート履歴検索結果</h2>
+    <div class="table">
+  	<table class="list">
+      <tr>
+        <th>日付</th><th>最高気温[℃]</th><th>最低気温[℃]</th><th>画像(トップス)</th><th>画像(ボトムス)</th><th>画像(アウター)</th>
+      </tr>
+
+    </table>
+    </div>
 
     <p><a href="/hello/RecordSearchServlet">履歴検索画面に戻る</a></p>
     <p><a href="/hello/MainServlet">メイン画面に戻る</a></p>

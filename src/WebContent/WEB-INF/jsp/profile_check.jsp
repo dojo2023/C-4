@@ -47,12 +47,15 @@
 	  	<select name="PTEMPERTUREID">
 		<option value="ptempertureid1"></option>
 		</select>
-</main>
 
-<p><a href="/hello/ProfileServlet">プロフィール画面へ戻る</a></p>
+
 <form method="POST" action="/hello/MainServlet" id="ProfileChange_form">
     <input type="submit" name="ProfileChange_" value="確定">
+    <p><a href="/hello/ProfileServlet">プロフィール画面へ戻る</a></p>
+
  </form>
+
+ </main>
 
  <footer>
         <div>

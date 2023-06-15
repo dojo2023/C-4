@@ -27,14 +27,14 @@ body{
 }
 
 main{
-	align-items: center;
+	text-align: center;
     height: 100vw; /*スクロールしても固定*/
 }
 
 .table {
-  width: 500px;
-  height: 350px;
-  overflow: auto;		/* はみ出した場合は、スクロールバーを表示する */
+    display:flex;
+	justify-content: space-around; /*中央揃え*/
+    overflow: auto;		/* はみ出した場合は、スクロールバーを表示する */
 }
 .list th, .list td {
   border-bottom-width: 1px;	/* 黒色でドットの下線を付ける */
@@ -44,6 +44,16 @@ main{
   text-align: left;
   white-space: nowrap;		/* 折り返さない */
 }
+
+.button{
+	display:flex;
+	justify-content: center; /*左右の空白を揃える*/
+}
+
+.button p{
+	margin: 20px;
+}
+
 
 /* 一覧のデータ行 */
 table#list tr.data_row:hover {

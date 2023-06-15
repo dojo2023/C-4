@@ -34,8 +34,11 @@
     </table>
     </div>
 
+    <div class=button>
     <p><a href="/hello/RecordSearchServlet">履歴検索画面に戻る</a></p>
     <p><a href="/hello/MainServlet">メイン画面に戻る</a></p>
+    </div>
+
 </main>
 <footer>
         <div>

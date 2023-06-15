@@ -23,16 +23,37 @@
 
 body{
     padding-top: 90px;
-
 }
 
 main{
     height: 100vw; /*スクロールしても固定*/
+    text-align: center;
+}
+
+.pbox{
+  display: flex;
+  justify-content: center;    /*中央揃え*/
+  /*border: solid 1px black;*/
+  /*padding: 5px;*/
 }
 
 .box {
+	margin: 20px;
 	border: 2px solid #000000;
-    width: 80px
+    width: 180px
+}
+
+.button{
+	display:flex;
+	justify-content: center; /*中央揃え*/
+}
+
+.button p{
+	margin: 20px; /*スペース開ける*/
+}
+
+.button form{
+	margin: 20px; /*スペース開ける*/
 }
 
 /* class="nav" */

@@ -26,21 +26,26 @@
 <main>
     <h2>コーディネート履歴検索画面</h2>
     <p>日付か気温どちらかを選択し入力して下さい</p>
-	<div class="box">
-	    <label for="date">日付</label>
-	    <input type="date" class="date" name="日付" value="" />
-	</div>
-	<div class="box">
-	    <label for="text">最高気温[℃]</label>
-	    <input class="textbox" type="text" />
-	    <label for="text">最低気温[℃]</label>
-	    <input  class="textbox" type="text" />
+    <div class="pbox">
+		<div class="box">
+		    <label for="date">日付</label>
+		    <input type="date" class="date" name="日付" value="" />
+		</div>
+		<div class="box">
+		    <label for="text">最高気温[℃]</label>
+		    <input class="textbox" type="text" />
+		    <label for="text">最低気温[℃]</label>
+		    <input  class="textbox" type="text" />
+		</div>
 	</div>
 
-    <form method="POST" action="/hello/RecordSearchServlet" id="SEARCH_form">
-        <input type="submit" name="SEARCH" value="検索">
-    </form>
-    <p><a href="/hello/MainServlet">メイン画面に戻る</a></p>
+    <div class=button>
+      <p><a href="/hello/MainServlet">メイン画面に戻る</a></p>
+      <form method="POST" action="/hello/RecordSearchServlet" id="SEARCH_form">
+          <input type="submit" name="SEARCH" value="検索">
+      </form>
+    </div>
+
 </main>
 <footer>
         <div>

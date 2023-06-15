@@ -28,6 +28,15 @@ public class User implements Serializable {
         this.USER_PTEMPERTUREID = USER_PTEMPERTUREID;
         }
 
+	public User(int ID){
+		this.ID = ID;
+		this.USER_ID = "";
+		this.USER_PW = "";
+		this.USER_HOMEID = 0;
+        this.USER_GENDERID = 0;
+        this.USER_PTEMPERTUREID = 0;
+        }
+
 //引数なしのコンストラクタの設定
 	public User(){
 		this.USER_ID = "";

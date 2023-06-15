@@ -38,10 +38,11 @@
   <p>(仮)服タグ3</p>
 
 
-<p><a href="/hello/CoordinateRegisterServlet">コーディネート登録画面へ戻る</a></p>
+
 
 <form method="POST" action="/hello/MainServlet" id="CoordinateRegister_form">
     <input type="submit" name="CoodinateRegister" value="登録">
+    <p><a href="/hello/CoordinateRegisterServlet">コーディネート登録画面へ戻る</a></p>
  </form>
 
 

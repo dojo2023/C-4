@@ -25,17 +25,33 @@
     </header>
 
 <main>
+<p>プロフィール画面</p>
+  <table class= "profiletable">
 
- <p>プロフィール画面</p>
-  <p>ID</p>
-  <p>PW</p>
-  <p>性別</p>
-  <p>居住地</p>
-  <p>暑がり・寒がり</p>
+  <tr>
+	  <th>ID</th>
+	  <td>takai(仮ID)</td>
+  </tr>
+  <tr>
+	  <th>PW</th>
+	  <td>takai(仮PW)</td>
+  </tr>
+  <tr>
+	  <th>性別</th>
+	  <td>女(仮)</td>
+  </tr>
+  <tr>
+	  <th>居住地</th>
+	  <td>神奈川県(仮)</td>
+  </tr>
+  <tr>
+	  <th>暑がり・寒がり</th>
+	  <td>寒がり(仮)</td>
+  </tr>
 
-
- <p><a href="/hello/ProfileUpdateServlet">変更</a></p>
- <p><a href="/hello/MainServlet">メイン画面へ戻る</a></p>
+  </table>
+	 <p><a href="/hello/ProfileUpdateServlet">変更</a></p>
+	 <p><a href="/hello/MainServlet">メイン画面へ戻る</a></p>
 
 
 

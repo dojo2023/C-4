@@ -11,7 +11,7 @@ import java.util.List;
 import model.Gender;
 
 public class GenderDao {
-	// 引数paramで検索項目を指定し、検索結果のリストを返す
+	// 引数paramで検索項目を指定し、検索結果のリストを返す Listselectを作ってる
 			public List<Gender> select(Gender param) {
 				Connection conn = null;
 				List<Gender> cardList = new ArrayList<Gender>();
@@ -24,12 +24,12 @@ public class GenderDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 					// SQL文を準備する
-					String sql = "select ID, GENDER_CATEGORY from GENDER WHERE ID LIKE ? ORDER BY ID";
+					String sql = "select ID, GENDER_CATEGORY from GENDER WHERE ID = ? ORDER BY ID";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
-					// SQL文を完成させる
+					// SQL文を完成させる IDが0でなければ 1は一番初めの？を指す
 					if (param.getID() != 0) {
-						pStmt.setString(1, "%" + param.getID() + "%");
+						pStmt.setInt(1, param.getID() );
 					}
 
 

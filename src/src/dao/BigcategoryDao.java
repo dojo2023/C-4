@@ -1,6 +1,3 @@
-/**
- *
- */
 package dao;
 
 import java.sql.Connection;
@@ -11,17 +8,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Weather;
+import model.Big_category;
 
-/**
- * @author user
- *
- */
-public class WeatherDao {
-	// 引数paramで検索項目を指定し、検索結果のリストを返す
-				public List<Weather> select(Weather param) {
+public class BigcategoryDao {
+	// 引数paramで検索項目を指定し、検索結果のリストを返す Listselectを作ってる
+				public List<Big_category> select(Big_category param) {
 					Connection conn = null;
-					List<Weather> cardList = new ArrayList<Weather>();
+					List<Big_category> cardList = new ArrayList<Big_category>();
 
 					try {
 						// JDBCドライバを読み込む
@@ -31,12 +24,12 @@ public class WeatherDao {
 						conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 						// SQL文を準備する
-						String sql = "select ID, DAY_WEATHERCODE,WEATHER_IMAGE,WEATHER_EXPRESSION from WEATHER WHERE ID =? ORDER BY ID";
+						String sql = "select ID, BIG_CATEGORY from BIGCATEGORY WHERE ID = ? ORDER BY ID";
 						PreparedStatement pStmt = conn.prepareStatement(sql);
 
-						// SQL文を完成させる
+						// SQL文を完成させる IDが0でなければ 1は一番初めの？を指す
 						if (param.getID() != 0) {
-							pStmt.setInt(1, param.getID());
+							pStmt.setInt(1,  param.getID() );
 						}
 
 
@@ -52,11 +45,9 @@ public class WeatherDao {
 
 						// 結果表をコレクションにコピーする
 						while (rs.next()) {
-							Weather card = new Weather(
+							Big_category card = new Big_category(
 							rs.getInt("ID"),
-							rs.getInt("DAY_WEATHERCODE"),
-							rs.getString("WEATHER_IMAGE"),
-							rs.getString("WEATHER_EXPRESSION")
+							rs.getString("BIG_CATEGORY")
 							);
 							cardList.add(card);
 						}
@@ -85,7 +76,4 @@ public class WeatherDao {
 					// 結果を返す
 					return cardList;
 				}
-
-
 }
-

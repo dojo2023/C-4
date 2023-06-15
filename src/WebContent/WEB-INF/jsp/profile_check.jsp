@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/hello/css/profile_check.css">
+<script type="text/javascript" src="/hello/JS/profile_check.js"></script>
 <title>プロフィール変更</title>
 </head>
 <body>
@@ -48,12 +49,18 @@
 		<option value="ptempertureid1"></option>
 		</select>
 
-
-<form method="POST" action="/hello/MainServlet" id="ProfileChange_form">
-    <input type="submit" name="ProfileChange_" value="確定">
-    <p><a href="/hello/ProfileServlet">プロフィール画面へ戻る</a></p>
+<br>
+<div class ="button">
+<form method="POST" action="/hello/MainServlet" id="ProfileChange_form" onsubmit = "return hoge();">
+    <button type="submit" name="ProfileChange_" value="確定" id="profile_check">
+    確定
+    </button>
 
  </form>
+</div>
+
+
+    <p><a href="/hello/ProfileServlet">プロフィール画面へ戻る</a></p>
 
  </main>
 

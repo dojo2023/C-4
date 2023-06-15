@@ -38,3 +38,15 @@ main{
     padding-right: 30px;		/* 区切りを空ける */
     line-height: 0.5;
   }
+
+
+/*class = "button"*/
+.button{
+	display:inline-block;
+	 color: #586473;
+  background-color: #99A6BF;
+  border-bottom: 5px solid #99A6BF;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3); /*影つける*/
+
+}
+

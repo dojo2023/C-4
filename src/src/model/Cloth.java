@@ -15,6 +15,11 @@ public class Cloth implements Serializable {
 		this.CLO_IMAGES = CLO_IMAGES;
 	    this.SMALL_CATEGORYID = SMALL_CATEGORYID;
 		}
+	public Cloth(String USER_ID,int CLO_IMAGES,String SMALL_CATEGORYID){
+		this.USER_ID = USER_ID;
+		this.CLO_IMAGES = CLO_IMAGES;
+	    this.SMALL_CATEGORYID = SMALL_CATEGORYID;
+		}
 
 	public Cloth(int ID){
 		this.ID = ID;

@@ -7,9 +7,16 @@
 <title>ログイン</title>
 </head>
 <body>
-<p>ログイン画面</p>
-
+<h2>ログイン</h2>
+ <div class="container">
+    <div class="clock">
+      <p class="clock-date"></p>
+      <p class="clock-time"></p>
+    </div>
+  </div>
  <form method="POST" action="/hello/LoginServlet" id="login_form">
+    ID<input type="text" name="ID"><br>
+	PW<input type="password" name="PW"><br>
     <input type="submit" name="LOGIN" value="ログイン">
  </form>
 

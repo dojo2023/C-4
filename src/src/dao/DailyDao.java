@@ -157,4 +157,89 @@ public class DailyDao {
 				return result;
 			}
 
+
+
+			public boolean insert(Day day) {
+				Connection conn = null;
+				boolean result = false;
+
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
+		/*?の数*/
+					// SQL文を準備する
+					String sql = "insert into DAILY (ID,DAY_DAY,USER_ID,DAY_HTEMPERTURE,DAY_LTEMPERTURE,DAY_TOPSNO,DAY_OUTERNO,DAY_BOTTOMNO ) values ( ?, ?,?,?,?,?,?,?)";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+
+					// SQL文を完成させる
+				/*	if (card.getNumber() != 0 ) {
+						pStmt.setInt(1, card.getNumber());
+					}
+					else {
+						pStmt.setInt(1, 0);
+					}*/
+					if (day.getID() != 0) {
+						pStmt.setInt(1, day.getID());
+					}
+					else {
+						pStmt.setString(1, null);
+					}
+					if (day.getDAY_DAY() != null && !day.getDAY_DAY().equals("")) {
+						pStmt.setString(2, day.getDAY_DAY());
+					}
+					else {
+						pStmt.setString(2, null);
+					}
+					if (profile.getUSER_HOMEID() != 0 ) {
+						pStmt.setInt(3, profile.getUSER_HOMEID());
+					}
+					else {
+						pStmt.setInt(3, 0);
+					}
+					if (profile.getUSER_GENDERID() != 0 ) {
+						pStmt.setInt(4, profile.getUSER_GENDERID());
+					}
+					else {
+						pStmt.setInt(4, 0);
+					}
+					if (profile.getUSER_PTEMPERTUREID() != 0 ) {
+						pStmt.setInt(5, profile.getUSER_PTEMPERTUREID());
+					}
+					else {
+						pStmt.setInt(5, 0);
+					}
+
+
+					// SQL文を実行する
+					if (pStmt.executeUpdate() == 1) {
+						result = true;
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+
+				// 結果を返す
+				return result;
+			}
+
+
+
 }

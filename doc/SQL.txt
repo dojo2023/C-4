@@ -223,99 +223,99 @@ latitude double NOT NULL,
 longitude double NOT NULL
 )
 
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('北海道',43.42,142.78);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('青森県',40.70,140.73);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('岩手県',39.52,141.40);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('宮城県',38.39,140.95);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('秋田県',39.68,140.40);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('山形県',38.50,140.11);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('福島県',37.42,140.24);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('茨城県',36.31,140.39);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('栃木県',36.69,139.82);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('群馬県',36.49,138.93);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('埼玉県',36.01,139.37);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('千葉県',35.48,140.23);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('東京都',35.69,139.54);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('神奈川県',35.41,139.35);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('新潟県',37.37,138.89);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('富山県',36.61,137.29);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('石川県',36.78,136.78);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('福井県',35.82,136.19);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('山梨県',35.61,138.63);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('長野県',36.15,138.03);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('岐阜県',35.78,137.06);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('静岡県',35.04,138.32);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('愛知県',35.01,137.21);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('三重県',34.49,136.44);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('滋賀県',35.23,136.14);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('京都府',35.23,135.52);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('大阪府',34.60,135.55);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('兵庫県',35.07,134.80);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('奈良県',34.30,135.90);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('和歌山県',33.85,135.42);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('鳥取県',35.40,133.86);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('島根県',34.98,132.43);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('岡山県',34.87,133.84);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('広島県',34.59,132.80);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('山口県',34.23,131.44);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('徳島県',33.92,134.28);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('香川県',34.22,133.98);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('愛媛県',33.67,132.84);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('高知県',33.51,133.37);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('福岡県',33.60,130.69);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('佐賀県',33.28,130.12);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('長崎県',32.96,129.72);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('熊本県',32.59,130.81);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('大分県',33.21,131.42);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('宮崎県',32.21,131.36);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('鹿児島県',31.36,130.42);
-insert into LATITUDE_AND_LONGITEDE (home,latitude,longitude)
+insert into LATITUDE_AND_LONGITUDE (home,latitude,longitude)
 values('沖縄県',26.48,127.93)
 
 

@@ -51,7 +51,15 @@ public class CLOTH_test {
 		}
 	} else {
 			System.out.println("更新失敗！");
-		}
+	}
+
+	// delete()のテスト
+	System.out.println("---------- delete()のテスト ----------");
+	if (dao.delete(2)) {
+		System.out.println("削除成功！");
+	} else {
+		System.out.println("削除失敗！");
+	}
 
 
 }

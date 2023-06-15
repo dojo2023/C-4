@@ -100,14 +100,14 @@ public class ClothesDao {
 					else {
 						pStmt.setString(1, null);
 					}
-					if (profile.getSMALL_CATEGORYID() != null && !profile.getSMALL_CATEGORYID().equals("")) {
-						pStmt.setString(2, profile.getSMALL_CATEGORYID());
+					if (profile.getSMALL_CATEGORYID() != 0 ) {
+						pStmt.setInt(2, profile.getSMALL_CATEGORYID());
 					}
 					else {
-						pStmt.setString(2, null);
+						pStmt.setInt(2, 0);
 					}
-					if (profile.getCLO_IMAGES() != 0 ) {
-						pStmt.setInt(3, profile.getCLO_IMAGES());
+					if (profile.getCLO_IMAGES() != null && !profile.getCLO_IMAGES().equals("")) {
+						pStmt.setString(3, profile.getCLO_IMAGES());
 					}
 					else {
 						pStmt.setString(3, null);
@@ -172,17 +172,17 @@ public class ClothesDao {
 					else {
 						pStmt.setString(1, null);
 					}
-					if (profile.getSMALL_CATEGORYID() != null && !profile.getSMALL_CATEGORYID().equals("")) {
-						pStmt.setString(2, profile.getSMALL_CATEGORYID());
+					if (profile.getSMALL_CATEGORYID() != 0 ) {
+						pStmt.setInt(2, profile.getSMALL_CATEGORYID());
 					}
 					else {
-						pStmt.setString(2, null);
+						pStmt.setInt(2, 0);
 					}
-					if (profile.getCLO_IMAGES() != 0 ) {
-						pStmt.setInt(3, profile.getCLO_IMAGES());
+					if (profile.getCLO_IMAGES() != null && !profile.getCLO_IMAGES().equals("")) {
+						pStmt.setString(3, profile.getCLO_IMAGES());
 					}
 					else {
-						pStmt.setInt(3, 0);
+						pStmt.setString(3, null);
 					}
 
 					// SQL文を実行する
@@ -212,6 +212,53 @@ public class ClothesDao {
 				return result;
 			}
 
+
+
+			// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
+			public boolean delete(int ID) {
+				Connection conn = null;
+				boolean result = false;
+
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4", "sa", "");
+
+					// SQL文を準備する
+					String sql = "delete from CLOTHES  where ID=?";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+
+					// SQL文を完成させる
+					pStmt.setInt(1, ID);
+
+					// SQL文を実行する
+					if (pStmt.executeUpdate() == 1) {
+						result = true;
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+
+				// 結果を返す
+				return result;
+			}
 
 
 

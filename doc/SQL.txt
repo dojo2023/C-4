@@ -35,7 +35,7 @@ day_BOTTOMNO int NOT NULL
 
 サンプルデータ
 insert into daily(day_DAY,user_ID,day_HTEMPERATURE,day_LTEMPERATURE,day_TOPSNO,day_OUTERNO,day_BOTTOMNO)
-values(CURDATE(),'sasahara',28.7,23.4,1,4,5);
+values(CURDATE(),'sasahara',28.7,23.4,1,3,4);
 
 
 
@@ -54,8 +54,6 @@ insert into clothes(user_ID, small_CATEGORYID, clo_IMAGES)
 values('sasahara', 2,'リンク');
 insert into clothes(user_ID, small_CATEGORYID, clo_IMAGES)
 values('sasahara', 4,'リンク');
-insert into clothes(user_ID, small_CATEGORYID, clo_IMAGES)
-values('sasahara', 5,'リンク');
 insert into clothes(user_ID, small_CATEGORYID, clo_IMAGES)
 values('sasahara', 8,'リンク')
 
@@ -121,61 +119,61 @@ weather_EXPRESSION VARCHAR(15) NOT NULL
 
 サンプルデータ
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(0,'リンク','快晴');
+values(0,'/hello/images/weather_images/weather_快晴.png','快晴');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(1,'リンク','晴れ');
+values(1,'/hello/images/weather_images/weather_晴れ.png','晴れ');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(2,'リンク','晴れ');
+values(2,'/hello/images/weather_images/weather_晴れ.png','晴れ');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(3,'リンク','くもり');
+values(3,'/hello/images/weather_images/weather_くもり.png','くもり');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(45,'リンク','くもり');
+values(45,'/hello/images/weather_images/weather_くもり.png','くもり');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(48,'リンク','くもり');
+values(48,'/hello/images/weather_images/weather_くもり.png','くもり');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(51,'リンク','霧雨');
+values(51,'/hello/images/weather_images/weather_霧雨.png','霧雨');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(53,'リンク','霧雨');
+values(53,'/hello/images/weather_images/weather_霧雨.png','霧雨');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(55,'リンク','霧雨');
+values(55,'/hello/images/weather_images/weather_霧雨.png','霧雨');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(56,'リンク','霧雨');
+values(56,'/hello/images/weather_images/weather_霧雨.png','霧雨');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(57,'リンク','霧雨');
+values(57,'/hello/images/weather_images/weather_霧雨.png','霧雨');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(61,'リンク','雨');
+values(61,'/hello/images/weather_images/weather_雨.png','雨');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(63,'リンク','雨');
+values(63,'/hello/images/weather_images/weather_雨.png','雨');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(66,'リンク','雨');
+values(66,'/hello/images/weather_images/weather_雨.png','雨');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(80,'リンク','雨');
+values(80,'/hello/images/weather_images/weather_雨.png','雨');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(65,'リンク','大雨');
+values(65,'/hello/images/weather_images/weather_大雨.png','大雨');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(67,'リンク','大雨');
+values(67,'/hello/images/weather_images/weather_大雨.png','大雨');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(81,'リンク','大雨');
+values(81,'/hello/images/weather_images/weather_大雨.png','大雨');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(82,'リンク','大雨');
+values(82,'/hello/images/weather_images/weather_大雨.png','大雨');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(71,'リンク','雪');
+values(71,'/hello/images/weather_images/weather_雪.png','雪');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(73,'リンク','雪');
+values(73,'/hello/images/weather_images/weather_雪.png','雪');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(77,'リンク','雪');
+values(77,'/hello/images/weather_images/weather_雪.png','雪');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(85,'リンク','雪');
+values(85,'/hello/images/weather_images/weather_雪.png','雪');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(75,'リンク','大雪');
+values(75,'/hello/images/weather_images/weather_大雪.png','大雪');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(86,'リンク','大雪');
+values(86,'/hello/images/weather_images/weather_大雪.png','大雪');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(95,'リンク','雷');
+values(95,'/hello/images/weather_images/weather_雷.png','雷');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(96,'リンク','雷');
+values(96,'/hello/images/weather_images/weather_雷.png','雷');
 insert into WEATHER (day_WEATHERCODE,weather_IMAGE,weather_EXPRESSION)
-values(99,'リンク','雷');
+values(99,'/hello/images/weather_images/weather_雷.png','雷');
 
 
 
@@ -218,7 +216,7 @@ values(-5, 5, -5);
 
 
 latitude_and_longitudeテーブル
-create table latitude_and_longitede(
+create table latitude_and_longitude(
 ID int AUTO_INCREMENT PRIMARY KEY ,
 home VARCHAR(4) NOT NULL,
 latitude double NOT NULL,

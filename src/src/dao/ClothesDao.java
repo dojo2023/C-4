@@ -75,4 +75,147 @@ public class ClothesDao {
 			}
 
 
+
+			// 引数profileで指定されたレコードを更新し、成功したらtrueを返す
+			public boolean update(Cloth profile) {
+				Connection conn = null;
+				boolean result = false;
+
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
+
+					// SQL文を準備する
+					String sql = "update CLOTHES set USER_ID=?,SMALL_CATEGORYID=?,CLO_IMAGES=? where ID=? ";
+	//
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+
+					// SQL文を完成させる
+					if (profile.getUSER_ID() != null && !profile.getUSER_ID().equals("")) {
+						pStmt.setString(1, profile.getUSER_ID());
+					}
+					else {
+						pStmt.setString(1, null);
+					}
+					if (profile.getSMALL_CATEGORYID() != null && !profile.getSMALL_CATEGORYID().equals("")) {
+						pStmt.setString(2, profile.getSMALL_CATEGORYID());
+					}
+					else {
+						pStmt.setString(2, null);
+					}
+					if (profile.getCLO_IMAGES() != 0 ) {
+						pStmt.setInt(3, profile.getCLO_IMAGES());
+					}
+					else {
+						pStmt.setString(3, null);
+					}
+
+					pStmt.setInt(4, profile.getID());
+
+					// SQL文を実行する
+					if (pStmt.executeUpdate() == 1) {
+						result = true;
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+
+				// 結果を返す
+				return result;
+			}
+
+
+
+			public boolean insert(Cloth profile) {
+				Connection conn = null;
+				boolean result = false;
+
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
+		/*?の数*/
+					// SQL文を準備する
+					String sql = "insert into CLOTHES (USER_ID,SMALL_CATEGORYID,CLO_IMAGES) values ( ?,?,?)";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+
+					// SQL文を完成させる
+				/*	if (card.getNumber() != 0 ) {
+						pStmt.setInt(1, card.getNumber());
+					}
+					else {
+						pStmt.setInt(1, 0);
+					}*/
+					if (profile.getUSER_ID() != null && !profile.getUSER_ID().equals("")) {
+						pStmt.setString(1, profile.getUSER_ID());
+					}
+					else {
+						pStmt.setString(1, null);
+					}
+					if (profile.getSMALL_CATEGORYID() != null && !profile.getSMALL_CATEGORYID().equals("")) {
+						pStmt.setString(2, profile.getSMALL_CATEGORYID());
+					}
+					else {
+						pStmt.setString(2, null);
+					}
+					if (profile.getCLO_IMAGES() != 0 ) {
+						pStmt.setInt(3, profile.getCLO_IMAGES());
+					}
+					else {
+						pStmt.setInt(3, 0);
+					}
+
+					// SQL文を実行する
+					if (pStmt.executeUpdate() == 1) {
+						result = true;
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+
+				// 結果を返す
+				return result;
+			}
+
+
+
+
+
+
+
 }

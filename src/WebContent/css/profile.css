@@ -38,3 +38,17 @@ main{
     padding-right: 30px;		/* 区切りを空ける */
     line-height: 0.5;
   }
+
+
+/*プロフィール画面のテーブル*/
+.profiletable{
+	border-collapse:collapse; /*テーブルの間隔を指定する*/
+
+}
+
+
+.profiletable th, .profiletable td{
+	padding: 8px;
+	border: 1px solid #BDBEBF;
+	text-align: left; /*左寄せ*/
+}

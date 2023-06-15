@@ -31,9 +31,9 @@
 	    <input type="date" class="date" name="日付" value="" />
 	</div>
 	<div class="box">
-	    <label for="text">最高気温</label>
+	    <label for="text">最高気温[℃]</label>
 	    <input class="textbox" type="text" />
-	    <label for="text">最低気温</label>
+	    <label for="text">最低気温[℃]</label>
 	    <input  class="textbox" type="text" />
 	</div>
 

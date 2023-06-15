@@ -15,6 +15,14 @@ public class Weather implements Serializable{
 		private String WEATHER_IMAGE;
 		private String WEATHER_EXPRESSION;
 
+		public Weather(int ID,int DAY_WEATHERCODE, String WEATHER_IMAGE, String WEATHER_EXPRESSION){
+			this.ID = ID;
+			this.DAY_WEATHERCODE = DAY_WEATHERCODE;
+			this.WEATHER_IMAGE = WEATHER_IMAGE;
+			this.WEATHER_EXPRESSION = WEATHER_EXPRESSION;
+		}
+
+
 		public Weather(int ID){
 			this.ID = ID;
 			this.DAY_WEATHERCODE = 100;

@@ -27,9 +27,28 @@ body{
 }
 
 main{
+	align-items: center;
     height: 100vw; /*スクロールしても固定*/
 }
 
+.table {
+  width: 500px;
+  height: 350px;
+  overflow: auto;		/* はみ出した場合は、スクロールバーを表示する */
+}
+.list th, .list td {
+  border-bottom-width: 1px;	/* 黒色でドットの下線を付ける */
+  border-bottom-style: dotted;
+  border-bottom-color: black;
+  padding: 4px 20px 4px 0;
+  text-align: left;
+  white-space: nowrap;		/* 折り返さない */
+}
+
+/* 一覧のデータ行 */
+table#list tr.data_row:hover {
+  background-color:black;
+}
 
 /* class="nav" */
 .nav li {

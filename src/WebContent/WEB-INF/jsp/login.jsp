@@ -22,6 +22,8 @@
 
  <p><a href="/hello/UserRegisterServlet">新規登録はこちら</a></p>
 
-
+<!-- 天気画像表示サンプルコード
+<img src="/hello/images/weather_images/weather_快晴.png" width="200" height="200" alt="天気イメージ" >
+-->
 </body>
 </html>

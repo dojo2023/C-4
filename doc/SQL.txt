@@ -1,7 +1,7 @@
 usersテーブル
 create table users (
 ID int AUTO_INCREMENT PRIMARY KEY,
-user_ID VARCHAR(20) NOT NULL,
+user_ID VARCHAR(20) UNIQUE NOT NULL ,
 user_PW VARCHAR(20) NOT NULL,
 user_HOMEID int NOT NULL,
 user_GENDERID int NOT NULL,

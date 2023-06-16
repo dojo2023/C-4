@@ -30,23 +30,23 @@
 <p>プロフィール変更画面</p>
 <form method="POST" action="/hello/MainServlet" id="ProfileChange_form" onsubmit = "return hoge();">
   <p>ID</p>
-  	  <input type="text" name="ID">
+  	  <input type="text" name="ID" value="${e.ID}">
   <p>PW</p>
-	  <input type="password" name="PW">
+	  <input type="password" name="PW" value="${e.PW}">
   <p>性別</p>
-	  <input type="radio" name="gender" value="man" checked>男
-	  <input type="radio" name="gender" value="woman">女
-	  <input type="radio" name="gender" value="others">その他
+	  <input type="radio" name="gender" value="${e.GENDER}" checked>男
+	  <input type="radio" name="gender" value="${e.GENDER}">女
+	  <input type="radio" name="gender" value="${e.GENDER}">その他
 
   <p>居住地</p>
-		<select name="LATITUDE_AND_LONGITEDE">
-		<option value="residence1"></option>
+		<select name="LATITUDE_AND_LONGITUDE">
+		<option value="${e.latitude_and_longitude }"></option>
 		</select>
 
 
   <p>暑がり・寒がり</p>
 	  	<select name="PTEMPERTUREID">
-		<option value="ptempertureid1"></option>
+		<option value="${e.ptemperture}"></option>
 		</select>
 
 <br>

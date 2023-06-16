@@ -30,23 +30,23 @@
 
   <tr>
 	  <th>ID</th>
-	  <td>takai(仮ID)</td>
+	  <td>value="${e.ID}"</td>
   </tr>
   <tr>
 	  <th>PW</th>
-	  <td>takai(仮PW)</td>
-  </tr>
-  <tr>
-	  <th>性別</th>
-	  <td>女(仮)</td>
+	  <td></td>
   </tr>
   <tr>
 	  <th>居住地</th>
-	  <td>神奈川県(仮)</td>
+	  <td></td>
+  </tr>
+  <tr>
+	  <th>性別</th>
+	  <td></td>
   </tr>
   <tr>
 	  <th>暑がり・寒がり</th>
-	  <td>寒がり(仮)</td>
+	  <td></td>
   </tr>
 
   </table>

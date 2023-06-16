@@ -32,7 +32,7 @@ public class UsersDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 				// SQL文を準備する
-				String sql = "select ID, USER_ID,USER_PW,USER_HOMEID,USER_GENDERID,USER_PTEMPERTUREID from USERS WHERE ID LIKE ? ORDER BY ID";
+				String sql = "select ID, USER_ID,USER_PW,USER_HOMEID,USER_GENDERID,USER_PTEMPERTUREID from USERS WHERE ID=? ORDER BY ID";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
@@ -88,6 +88,88 @@ public class UsersDao {
 			// 結果を返す
 			return cardList;
 		}
+
+		//USER_IDで検索項目を指定し、検索結果のリストを返す
+				public List<User> selectUSER_ID(String user_id) {
+					Connection conn = null;
+					List<User> cardList = new ArrayList<User>();
+
+					try {
+						// JDBCドライバを読み込む
+						Class.forName("org.h2.Driver");
+
+						// データベースに接続する
+						conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
+
+						// SQL文を準備する
+						String sql = "select ID, USER_ID,USER_PW,USER_HOMEID,USER_GENDERID,USER_PTEMPERTUREID from USERS WHERE USER_ID=? ORDER BY ID";
+						PreparedStatement pStmt = conn.prepareStatement(sql);
+
+						// SQL文を完成させる
+						if (user_id != "") {
+							pStmt.setString(1, user_id);
+						}
+
+
+
+
+
+
+
+
+
+						// SQL文を実行し、結果表を取得する
+						ResultSet rs = pStmt.executeQuery();
+
+						// 結果表をコレクションにコピーする
+						while (rs.next()) {
+							User card = new User(
+							rs.getInt("ID"),
+							rs.getString("USER_ID"),
+							rs.getString("USER_PW"),
+							rs.getInt("USER_HOMEID"),
+							rs.getInt("USER_GENDERID"),
+							rs.getInt("USER_PTEMPERTUREID")
+							);
+							cardList.add(card);
+						}
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+						cardList = null;
+					}
+					catch (ClassNotFoundException e) {
+						e.printStackTrace();
+						cardList = null;
+					}
+					finally {
+						// データベースを切断
+						if (conn != null) {
+							try {
+								conn.close();
+							}
+							catch (SQLException e) {
+								e.printStackTrace();
+								cardList = null;
+							}
+						}
+					}
+
+					// 結果を返す
+					return cardList;
+				}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 		// 引数profileで指定されたレコードを更新し、成功したらtrueを返す
@@ -255,4 +337,56 @@ public class UsersDao {
 
 
 
+		public boolean isLoginOK(User idpw) {
+			Connection conn = null;
+			boolean loginResult = false;
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
+
+				// SELECT文を準備する
+				String sql = "select count(*) from USERS where USER_ID = ? and USER_PW = ?";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+				pStmt.setString(1, idpw.getUSER_ID());
+				pStmt.setString(2,idpw.getUSER_PW());
+
+				// SELECT文を実行し、結果表を取得する
+				ResultSet rs = pStmt.executeQuery();
+
+				// ユーザーIDとパスワードが一致するユーザーがいたかどうかをチェックする
+				rs.next();
+				if (rs.getInt("count(*)") == 1) {
+					loginResult = true;
+				}
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+				loginResult = false;
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				loginResult = false;
+			}
+			finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+						loginResult = false;
+					}
+				}
+			}
+
+			// 結果を返す
+			return loginResult;
+		}
 	}
+
+

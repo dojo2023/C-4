@@ -193,23 +193,23 @@ public class DailyDao {
 					else {
 						pStmt.setString(2, null);
 					}
-					if (day.getUSER_ID != null && !day.getDAY_DAY().equals("")) {
+					if (day.getUSER_ID() != null && !day.getDAY_DAY().equals("")) {
 						pStmt.setString(3, day.getUSER_ID());
 					}
 					else {
-						pStmt.setInt(3, 0);
+						pStmt.setString(3, null);
 					}
-					if (profile.getUSER_GENDERID() != 0 ) {
-						pStmt.setInt(4, profile.getUSER_GENDERID());
-					}
-					else {
-						pStmt.setInt(4, 0);
-					}
-					if (profile.getUSER_PTEMPERTUREID() != 0 ) {
-						pStmt.setInt(5, profile.getUSER_PTEMPERTUREID());
+					if (day.getDAY_HTEMPERTURE() != 0 ) {
+						pStmt.setDouble(4, day.getDAY_HTEMPERTURE());
 					}
 					else {
-						pStmt.setInt(5, 0);
+						pStmt.setDouble(4, 0);
+					}
+					if (day.getDAY_LTEMPERTURE() != 0 ) {
+						pStmt.setDouble(5, day.getDAY_LTEMPERTURE());
+					}
+					else {
+						pStmt.setDouble(5, 0);
 					}
 
 
@@ -239,6 +239,10 @@ public class DailyDao {
 				// 結果を返す
 				return result;
 			}
+
+
+
+
 
 
 

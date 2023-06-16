@@ -28,14 +28,22 @@ public class DailyDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 					// SQL文を準備する
-					String sql = "select ID,DAY_DAY,USER_ID,DAY_HTEMPERTURE,DAY_LTEMPERTUREDAY_TOPSNO,DAY_OUTERNO, DAY_BOTTOMNO from DAILY WHERE ID=? ORDER BY ID";
+					String sql = "select ID,DAY_DAY,USER_ID,DAY_HTEMPERTURE,DAY_LTEMPERTUREDAY_TOPSNO,DAY_OUTERNO, DAY_BOTTOMNO from DAILY WHERE DAY_DAY=? AND USER_ID=? ORDER BY ID";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
-					if (param.getID() != 0) {
-						pStmt.setInt(1,  param.getID());
+					if (param.getDAY_DAY() != null) {
+						pStmt.setString(1,  param.getDAY_DAY());
 					}
-
+					else {
+						pStmt.setString(1, null);
+					}
+					if (param.getUSER_ID() != null && !param.getUSER_ID().equals("")) {
+						pStmt.setString(2, param.getUSER_ID());
+					}
+					else {
+						pStmt.setString(2, null);
+					}
 
 
 

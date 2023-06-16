@@ -30,7 +30,17 @@ public class ProfileUpdateServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// メインサーブレットにリダイレクトする
-				response.sendRedirect("/hello/MainServlet");
+		//		response.sendRedirect("/hello/MainServlet");
+
+		// リクエストパラメータを取得する
+				request.setCharacterEncoding("UTF-8");
+				String id = request.getParameter("USER_ID");
+				String pw = request.getParameter("USER_PW");
+				String homeid = request.getParameter("USER_HOMEID");
+				String genderid = request.getParameter("USER_GENDERID");
+				String ptempertureid = request.getParameter("USER_PTEMPERTUREID");
+
 	}
+
 
 }

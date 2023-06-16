@@ -28,7 +28,7 @@
 
 <main>
 <p>プロフィール変更画面</p>
-
+<form method="POST" action="/hello/MainServlet" id="ProfileChange_form" onsubmit = "return hoge();">
   <p>ID</p>
   	  <input type="text" name="ID">
   <p>PW</p>
@@ -51,13 +51,14 @@
 
 <br>
 <div class ="button">
-<form method="POST" action="/hello/MainServlet" id="ProfileChange_form" onsubmit = "return hoge();">
+
     <button type="submit" name="ProfileChange_" value="確定" id="profile_check">
     確定
     </button>
 
- </form>
 </div>
+ </form>
+
 
 
     <p><a href="/hello/ProfileServlet">プロフィール画面へ戻る</a></p>

@@ -41,12 +41,27 @@ main{
 
 
 /*class = "button"*/
-.button{
-	display:inline-block;
-	 color: #586473;
-  background-color: #99A6BF;
-  border-bottom: 5px solid #99A6BF;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, .3); /*影つける*/
 
+
+#profile_check{
+	display:inline-block;
+	background:#F2F2F2;
+  	border-bottom: 5px solid;
+  	box-shadow: 0 3px 5px rgba(0, 0, 0, .3); /*影つける*/
+  	border-radius: 100vh;
 }
+
+
+#profile_check hover{
+  margin-top: 3px;
+  border-bottom: 2px solid;
+  background-color:#586473;
+}
+
+#profile_check:active{
+	-webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  border-bottom: none;
+}
+
 

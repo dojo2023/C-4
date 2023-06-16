@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@page import="model.User" %>
 <!DOCTYPE html>
+
+<%User login_user = (User)session.getAttribute("login_user");%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -23,8 +26,10 @@
         </div>
         </div>
     </header>
+
     <main>
         <p>画面が入ります</p>
+            <p>ログイン中のユーザーのIDは<%=login_user.getID() %>
         <p><a href="/hello/RecordSearchServlet">コーディネート履歴検索画面</a></p>
 		<p><a href="/hello/ClothesRegisterServlet">登録画面</a></p>
 		<p><a href="/hello/ClothesListServlet">服一覧画面</a></p>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,5 +26,8 @@
 <!-- 天気画像表示サンプルコード
 <img src="/hello/images/weather_images/weather_快晴.png" width="200" height="200" alt="天気イメージ" >
 -->
+
+
+
 </body>
 </html>

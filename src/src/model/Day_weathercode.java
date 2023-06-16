@@ -8,9 +8,9 @@ public class Day_weathercode {
 	private int weathercode_2 ;
 	private int weathercode_3 ;
 	private int weathercode_4 ;
-	privateweathercode_5
-	weathercode_6 int NOT NULL ,
-	weathercode_7 int NOT NULL ,
+	private int weathercode_5 ;
+	private int weathercode_6 ;
+	/*weathercode_7 int NOT NULL ,
 	weathercode_8 int NOT NULL ,
 	weathercode_9 int NOT NULL ,
 	weathercode_10 int NOT NULL ,
@@ -50,5 +50,5 @@ public class Day_weathercode {
 	temperture_20 int NOT NULL ,
 	temperture_21 int NOT NULL ,
 	temperture_22 int NOT NULL ,
-	temperture_23
+	temperture_23*/
 }

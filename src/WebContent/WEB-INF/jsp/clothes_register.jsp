@@ -88,6 +88,13 @@
 
 		<p><a href="/hello/MainServlet">メイン画面に戻る</a></p>
 		<p><a href="/hello/ClothesRegisterDisplayServlet">確認</a></p>
+		<%--
+		<form onsubmit="return hoge();">
+		<a href="/hello/ClothesRegisterDisplayServlet">
+		  <button type="submit">確認</button>
+		 </a>
+		</form>
+		--%>
 	</main>
 	<footer>
 	    <div>

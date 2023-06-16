@@ -11,7 +11,7 @@
 	<header>
 	</header>
 	<main>
-	<p>ユーザー登録確認</p>
+	<p>登録内容確認</p>
 
 	<p>ID</p><input type="text" name="ID"><br>
 	<p>PW</p><input type="password" name="PW"><br>
@@ -26,6 +26,9 @@
 		<select name="PTEMPERTUREID">
 		  <option value="ptempertureid1"></option>
 		</select><br>
+	<p>暑がりの方は＋、寒がりの方は‐</p>
+
+	<p>※上記の内容にお間違いないですか？</p>
 
 	<p><a href="/hello/UserRegisterServlet">ユーザー登録画面に戻る</a></p>
 	<p><a href="/hello/LoginServlet">登録</a></p>
@@ -35,5 +38,7 @@
 	        <p>&copy;Copyright Atype.Co.Ltd.All rights reserved.</p>
 	    </div>
 	</footer>
+
+	<%-- <script src = "user_register_check.js"></script> --%>
 </body>
 </html>

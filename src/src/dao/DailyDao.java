@@ -193,8 +193,8 @@ public class DailyDao {
 					else {
 						pStmt.setString(2, null);
 					}
-					if (profile.getUSER_HOMEID() != 0 ) {
-						pStmt.setInt(3, profile.getUSER_HOMEID());
+					if (day.getUSER_ID != null && !day.getDAY_DAY().equals("")) {
+						pStmt.setString(3, day.getUSER_ID());
 					}
 					else {
 						pStmt.setInt(3, 0);

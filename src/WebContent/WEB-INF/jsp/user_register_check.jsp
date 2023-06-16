@@ -34,7 +34,7 @@
 	<p><a href="/hello/UserRegisterServlet">ユーザー登録画面に戻る</a></p>
 	<p><a href="/hello/LoginServlet">登録</a></p>
 	<div class ="button">
-		<form method="POST" action="/hello/LoginServlet" id="UserRegister_form" onsubmit = "return hoge();">
+		<form method="POST" action="/hello/UserRegisterCheckServlet" id="UserRegister_form" onsubmit = "return hoge();">
 		    <button type="submit" name="UserRegister" value="登録" id="UserRegister">
 		    	登録
 		    </button>

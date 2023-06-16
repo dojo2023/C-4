@@ -50,9 +50,11 @@ public class RecordSearchServlet extends HttpServlet {
 
 		User search = (User)session.getAttribute("login_user");
         String user_id = search.getUSER_ID();
+
 		//検索処理を行う
 		DailyDao bDao = new DailyDao();
 		List<Day> cardList = bDao.select(new Day(user_id,day_day));
+
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("record_search", cardList);

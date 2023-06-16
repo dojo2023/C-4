@@ -3,4 +3,6 @@
  */
 'use strict';
 
- alert('登録完了しました。');
+ function hoge(){
+ alert("登録完了しました。");
+ }

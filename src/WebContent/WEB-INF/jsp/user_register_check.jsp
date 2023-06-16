@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/hello/css/user_register_check.css">
+<script type="text/javascript" src="/hello/JS/user_register_check.js"></script>
 <title>ユーザー登録確認</title>
 </head>
 <body>
@@ -32,6 +33,14 @@
 
 	<p><a href="/hello/UserRegisterServlet">ユーザー登録画面に戻る</a></p>
 	<p><a href="/hello/LoginServlet">登録</a></p>
+	<div class ="button">
+		<form method="POST" action="/hello/LoginServlet" id="UserRegister_form" onsubmit = "return hoge();">
+		    <button type="submit" name="UserRegister" value="登録" id="UserRegister">
+		    	登録
+		    </button>
+		 </form>
+	</div>
+
 	</main>
 	<footer>
 	    <div>

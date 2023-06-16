@@ -45,7 +45,7 @@ main{
   white-space: nowrap;		/* 折り返さない */
 }
 
-.button{
+.button {
 	display:flex;
 	justify-content: center; /*左右の空白を揃える*/
 }
@@ -56,9 +56,9 @@ main{
 
 
 /* 一覧のデータ行 */
-table#list tr.data_row:hover {
+/*table#list tr.data_row:hover {
   background-color:black;
-}
+}*/
 
 /* class="nav" */
 .nav li {

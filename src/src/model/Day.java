@@ -22,6 +22,17 @@ public class Day implements Serializable {
         this.DAY_BOTTOMNO = DAY_BOTTOMNO;
 	}
 
+	public Day(String USER_ID, String DAY_DAY){
+		this.ID = 0;
+		this.USER_ID = USER_ID;
+		this.DAY_HTEMPERTURE = 0;
+		this.DAY_LTEMPERTURE = 0;
+        this.DAY_TOPSNO =0;
+        this.DAY_OUTERNO = 0;
+        this.DAY_BOTTOMNO = 0;
+        this.DAY_DAY = DAY_DAY;
+	}
+
 	public Day(){
 		this.ID = 0;
 		this.USER_ID = "";

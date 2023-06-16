@@ -47,6 +47,7 @@ public class User implements Serializable {
         this.USER_PTEMPERTUREID = 0;
         }
 
+
 //引数なしのコンストラクタの設定
 	public User(){
 		this.USER_ID = "";

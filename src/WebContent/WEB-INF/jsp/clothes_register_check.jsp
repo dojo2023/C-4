@@ -89,11 +89,19 @@
 
 		<p><a href="/hello/ClothesRegisterServlet">登録画面に戻る</a></p>
 		<p><a href="/hello/ClothesRegisterServlet">登録</a></p>
+
+		<%--
+		<form onsubmit="return hoge();">
+		 <a href="/hello/ClothesRegisterServlet">
+		  <button type="submit">登録</button></a>
+		</form>
+		--%>
 	</main>
 	<footer>
 	    <div>
 	        <p>&copy;Copyright Atype.Co.Ltd.All rights reserved.</p>
 	    </div>
 	</footer>
+		<%-- <script src = "user_register_check.js"></script> --%>
 </body>
 </html>

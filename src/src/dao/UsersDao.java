@@ -90,10 +90,10 @@ public class UsersDao {
 		}
 
 		//USER_IDで検索項目を指定し、検索結果のリストを返す
-				public List<User> selectUSER_ID(String user_id) {
+				public User selectUSER_ID(String user_id) {
 					Connection conn = null;
-					List<User> cardList = new ArrayList<User>();
-
+					//List<User> cardList = new ArrayList<User>();
+					User card = null;
 					try {
 						// JDBCドライバを読み込む
 						Class.forName("org.h2.Driver");
@@ -123,7 +123,7 @@ public class UsersDao {
 
 						// 結果表をコレクションにコピーする
 						while (rs.next()) {
-							User card = new User(
+						    card = new User(
 							rs.getInt("ID"),
 							rs.getString("USER_ID"),
 							rs.getString("USER_PW"),
@@ -131,16 +131,16 @@ public class UsersDao {
 							rs.getInt("USER_GENDERID"),
 							rs.getInt("USER_PTEMPERTUREID")
 							);
-							cardList.add(card);
+							//cardList.add(card);
 						}
 					}
 					catch (SQLException e) {
 						e.printStackTrace();
-						cardList = null;
+						card = null;
 					}
 					catch (ClassNotFoundException e) {
 						e.printStackTrace();
-						cardList = null;
+						card = null;
 					}
 					finally {
 						// データベースを切断
@@ -150,13 +150,13 @@ public class UsersDao {
 							}
 							catch (SQLException e) {
 								e.printStackTrace();
-								cardList = null;
+								card = null;
 							}
 						}
 					}
 
 					// 結果を返す
-					return cardList;
+					return card;
 				}
 
 

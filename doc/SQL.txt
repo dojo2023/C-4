@@ -372,7 +372,8 @@ temperture_19 double NOT NULL ,
 temperture_20 double NOT NULL ,
 temperture_21 double NOT NULL ,
 temperture_22 double NOT NULL ,
-temperture_23 double NOT NULL 
+temperture_23 double NOT NULL ,
+search_weatherinformation double 
 )
 
 

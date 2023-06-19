@@ -28,7 +28,7 @@ public class Day_weathercode {
 	private int weathercode_22 ;
 	private int weathercode_23 ;
 	private double temperture_0 ;
-	private double tempertere_1 ;
+	private double temperture_1 ;
 	private double temperture_2 ;
 	private double temperture_3 ;
 	private double temperture_4 ;
@@ -59,6 +59,65 @@ public class Day_weathercode {
 		this.daily_ID = daily_ID;
 		this.search_weatherinformation=rowname;
         }
+
+
+
+	public Day_weathercode(){
+	    daily_ID =0;
+		weathercode_0 =100;
+	    weathercode_1 =100;
+		weathercode_2 =100;
+		weathercode_3 =100;
+		weathercode_4 =100;
+		weathercode_5 =100;
+		weathercode_6 =100;
+		weathercode_7 =100;
+		weathercode_8 =100;
+		weathercode_9 =100;
+		weathercode_10 =100;
+		weathercode_11 =100;
+		weathercode_12 =100;
+		weathercode_13 =100;
+		weathercode_14 =100;
+		weathercode_15 =100;
+		weathercode_16 =100;
+		weathercode_17 =100;
+		weathercode_18 =100;
+		weathercode_19 =100;
+		weathercode_20 =100;
+		weathercode_21 =100;
+		weathercode_22 =100;
+		weathercode_23 =100;
+		temperture_0 =100;
+		temperture_1 =100;
+		temperture_2 =100;
+		temperture_3 =100;
+		temperture_4 =100;
+		temperture_5 =100;
+		temperture_6 =100;
+		temperture_7 =100;
+		temperture_8 =100;
+		temperture_9 =100;
+		temperture_10 =100;
+		temperture_11 =100;
+		temperture_12 =100;
+		temperture_13 =100;
+		temperture_14 =100;
+		temperture_15 =100;
+		temperture_16 =100;
+		temperture_17 =100;
+		temperture_18 =100;
+		temperture_19 =100;
+		temperture_20 =100;
+		temperture_21 =100;
+		temperture_22 =100;
+		temperture_23 =100;
+		search_weatherinformation=100;
+        }
+
+
+
+
 
 
 	public int getID() {
@@ -223,11 +282,11 @@ public class Day_weathercode {
 	public void setTemperture_0(int temperture_0) {
 		this.temperture_0 = temperture_0;
 	}
-	public double getTempertere_1() {
-		return tempertere_1;
+	public double getTemperture_1() {
+		return temperture_1;
 	}
-	public void setTempertere_1(int tempertere_1) {
-		this.tempertere_1 = tempertere_1;
+	public void setTemperture_1(int tempertere_1) {
+		this.temperture_1 = tempertere_1;
 	}
 	public double getTemperture_2() {
 		return temperture_2;

@@ -28,6 +28,14 @@ public class WeatherInformationGetServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
+
+
+
+
+
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/weather_information_get.jsp");
 		dispatcher.forward(request, response);
 	}

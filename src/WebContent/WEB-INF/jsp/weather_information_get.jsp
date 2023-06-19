@@ -10,21 +10,21 @@
 
 
 
-<div>最高気温<span id ='type'></span></div>
-<div>14時の気温<span id ='type2'></span></div>
+<!--  <div>最高気温<span id ='type'></span></div>
+<div>14時の気温<span id ='type2'></span></div>-->
 <form method="POST" action="/hello/WeatherInformationGetServlet" id="minmax_temperture_form">
-    <input type="text" name="max_temperature"id='maxtemperture'value= >
-    <input type="text" name="min_temperature"id='mintemperture'value= >
+    <input type="hidden" name="max_temperature"id='maxtemperture'>
+    <input type="hidden" name="min_temperature"id='mintemperture' >
+    <input type="hidden" name="day_weather"id='day_weather' >
 
 
 
 
-    <input type="" name="daily=ID"id=''value= >
-    <input type="" name="weathercode_0"id=''value= >
-    <input type="" name="weathercode_1"id=''value= >
-    <input type="" name="weathercode_2"id=''value= >
-    <input type="" name="weathercode_3"id=''value= >
-    <input type="" name="weathercode_4"id=''value= >
+    <!--  <input type="" name="weathercode_0"id='code0'>
+    <input type="" name="weathercode_1"id='code1' >
+    <input type="" name="weathercode_2"id='code2' >
+    <input type="" name="weathercode_3"id='code3' >
+    <input type="" name="weathercode_4"id='code4' >
     <input type="" name="weathercode_5"id=''value= >
     <input type="" name="weathercode_6"id=''value= >
     <input type="" name="weathercode_7"id=''value= >
@@ -44,7 +44,7 @@
     <input type="" name="weathercode_21"id=''value= >
     <input type="" name="weathercode_22"id=''value= >
     <input type="" name="weathercode_23"id=''value= >
-   <input type="" name="temperture_0"id=''value= >
+   <input type="" name="temperture_0"id=''value= >-->
 
 </form>
 

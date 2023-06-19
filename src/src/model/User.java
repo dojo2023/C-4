@@ -60,14 +60,14 @@ public class User implements Serializable {
         }
 
 	public User(int ID,String USER_ID,String USER_PW,int USER_HOMEID,String USER_HOMENAME,int USER_GENDERID,String USER_GENDERNAME,int USER_PTEMPERTUREID) {
-		this.ID = 0;
-		this.USER_ID = "";
-		this.USER_PW = "";
-		this.USER_HOMEID = 0;
-		this.USER_HOMENAME = "";
-		this.USER_GENDERID = 0;
-		this.USER_GENDERNAME = "";
-		this.USER_PTEMPERTUREID = 0;
+		this.ID = ID;
+		this.USER_ID = USER_ID;
+		this.USER_PW = USER_PW;
+		this.USER_HOMEID = USER_HOMEID;
+		this.USER_HOMENAME = USER_HOMENAME;
+		this.USER_GENDERID = USER_GENDERID;
+		this.USER_GENDERNAME = USER_GENDERNAME;
+		this.USER_PTEMPERTUREID = USER_PTEMPERTUREID;
 	}
 
 
@@ -119,7 +119,19 @@ public class User implements Serializable {
 	public void setUSER_PTEMPERTUREID(int USER_PTEMPERTUREID) {
 		this.USER_PTEMPERTUREID = USER_PTEMPERTUREID;
 	}
+	public String getUSER_HOMENAME() {
+		return USER_HOMENAME;
+	}
+	public void setUSER_HOMENAME(String USER_HOMENAME) {
+		this.USER_HOMENAME = USER_HOMENAME;
+	}
 
+	public String getUSER_GENDERNAME() {
+		return USER_GENDERNAME;
+	}
+	public void setUSER_GENDERNAME(String USER_GENDERNAME) {
+		this.USER_GENDERNAME = USER_GENDERNAME;
+	}
 
 
 }

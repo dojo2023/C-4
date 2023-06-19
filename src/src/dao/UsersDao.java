@@ -134,9 +134,9 @@ public class UsersDao {
 						    		rs.getString("USER_ID"),
 						    		rs.getString("USER_PW"),
 						    		rs.getInt("USER_HOMEID"),
-						    		rs.getString("USER_HOMENAME"),
+						    		rs.getString("home"),
 						    		rs.getInt("USER_GENDERID"),
-						    		rs.getString("USER_GENDERNAME"),
+						    		rs.getString("gender_CATEGORY"),
 						    		rs.getInt("USER_PTEMPERTUREID")
 
 							);

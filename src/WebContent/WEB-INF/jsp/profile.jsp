@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,23 +29,23 @@
 
   <tr>
 	  <th>ID</th>
-	  <td>value="${e.ID}"</td>
+	  <td>${login_user.USER_ID}</td> <!-- EL式 ${属性名.プロパティ} -->
   </tr>
   <tr>
 	  <th>PW</th>
-	  <td></td>
+	  <td>${login_user.USER_PW}</td>
   </tr>
   <tr>
 	  <th>居住地</th>
-	  <td></td>
+	  <td>${login_user.USER_HOMENAME}</td>
   </tr>
   <tr>
 	  <th>性別</th>
-	  <td></td>
+	  <td>${login_user.USER_GENDERNAME}</td>
   </tr>
   <tr>
 	  <th>暑がり・寒がり</th>
-	  <td></td>
+	  <td>${login_user.USER_PTEMPERTUREID}</td>
   </tr>
 
   </table>

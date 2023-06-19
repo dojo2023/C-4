@@ -43,7 +43,7 @@ main{
 /*ボタン関連*/
 #profile_check{
 	display:inline-block;
-	background: #99A6BF;
+	background: #818DA6;
   	border-bottom: 5px solid;
   	box-shadow: 0 3px 5px rgba(0, 0, 0, .3); /*影つける*/
   	border-radius: 100vh;

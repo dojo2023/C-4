@@ -10,10 +10,10 @@
 
 
 
-<!--  <div>最高気温<span id ='type'></span></div>
-<div>14時の気温<span id ='type2'></span></div>-->
-<form method="POST" action="/hello/WeatherInformationGetServlet" id="minmax_temperture_form">
-    <input type="hidden" name="max_temperature"id='maxtemperture'>
+ <div>最高気温<span id ='type'></span></div>
+<div>14時の気温<span id ='type2'></span></div>
+<form method="POST" action="/hello/WeatherInformationGetServlet" name="minmax_temperture_form">
+    <input type="text" name="max_temperature"id='maxtemperture'>
     <input type="hidden" name="min_temperature"id='mintemperture' >
     <input type="hidden" name="day_weather"id='day_weather' >
 

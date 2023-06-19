@@ -43,7 +43,7 @@ public class WeatherInformationGetServlet extends HttpServlet {
 		System.out.print(max);
 		System.out.print(min);
 		System.out.print(weather);
-		/*double doublemax = Double.parseDouble(max);
+	/*	double doublemax = Double.parseDouble(max);
 		double doublemin = Double.parseDouble(min);
 		int intweather = Integer.parseInt(weather);
 

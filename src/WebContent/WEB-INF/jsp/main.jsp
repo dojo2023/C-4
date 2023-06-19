@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/hello/css/main3.css">
+<link rel="stylesheet" href="/hello/css/main4.css">
 <title>メイン画面</title>
 </head>
 <body>
@@ -38,7 +38,7 @@
             最低気温:<span id="templow"></span>°C
         </div>
         <div>
-            <img id="weatherimg" src="'/hello/images/weather_images/weather_快晴.png'" alt="">
+            <img id="weatherimg" src="" alt="weatherImage">
         </div>
     </div>
     <div class="title">

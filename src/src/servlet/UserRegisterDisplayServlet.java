@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.UsersDao;
-import model.Result;
 import model.User;
 
 /**
@@ -25,7 +24,7 @@ public class UserRegisterDisplayServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		// 服登録ページにフォワードする
+		// ユーザー登録確認ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_register_check.jsp");
 		dispatcher.forward(request, response);
 	}
@@ -38,25 +37,27 @@ public class UserRegisterDisplayServlet extends HttpServlet {
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("ID");
-		String pw = request.getParameter("PW");
-		String gender = request.getParameter("GENDER");
-		String latitude_and_longitude = request.getParameter("LATITUDE_AND_LONGITEDE");
-		String ptempertureid = request.getParameter("PTEMPERTUREID");
-		int GENDER = Integer.parseInt(gender);
-		int LATITUDE_AND_LONGITUDE = Integer.parseInt(latitude_and_longitude);
-		int PTEMPERTUREID = Integer.parseInt(ptempertureid);
+		String USER_ID= request.getParameter("user_id");
+		String USER_PW = request.getParameter("user_pw");
+		String genderid = request.getParameter("user_genderid");
+		String homeid = request.getParameter("user_homeid");
+		String ptempetureid = request.getParameter("user_ptempertureid");
+		int USER_GENDERID = Integer.parseInt(genderid);
+		int USER_HOMEID = Integer.parseInt(homeid);
+		int USER_PTEMPERTUREID = Integer.parseInt(ptempetureid);
 
 		// 登録処理を行う
 		UsersDao uDao = new UsersDao();
-		if (uDao.insert(new User(id, pw, GENDER, LATITUDE_AND_LONGITUDE, PTEMPERTUREID))) {	// 登録成功
-			request.setAttribute("result",
-			new Result("登録成功！", "レコードを登録しました。", "/simpleBC/MenuServlet"));
+		if (uDao.insert(new User(USER_ID, USER_PW, USER_HOMEID, USER_GENDERID,USER_PTEMPERTUREID))) {	// 登録成功
+//			request.setAttribute("result",
+//			new Result("登録成功！", "レコードを登録しました。", "/hello/LoginServlet"));
+			// ログインページにリダイレクトする
+			response.sendRedirect("/hello/LoginServlet");
 		}
-		else {												// 登録失敗
-			request.setAttribute("result",
-			new Result("登録失敗！", "レコードを登録できませんでした。", "/simpleBC/MenuServlet"));
-		}
+//		else {												// 登録失敗
+//			request.setAttribute("result",
+//			new Result("登録失敗！", "レコードを登録できませんでした。", "/hello/LoginServlet"));
+//		}
 	}
 
 }

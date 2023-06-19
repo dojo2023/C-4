@@ -8,19 +8,24 @@ public class Day implements Serializable {
 	private String USER_ID;
 	private double DAY_HTEMPERTURE;
 	private double DAY_LTEMPERTURE;
+	private int DAY_WEATHERCODE;
 	private int DAY_TOPSNO;
 	private int DAY_OUTERNO;
 	private int DAY_BOTTOMNO;
 
-	public Day(int ID,String DAY_DAY,String USER_ID,double DAY_HTEMPERTURE ,double DAY_LTEMPERTURE,int DAY_TOPSNO,int DAY_OUTERNO,int DAY_BOTTOMNO){
+	public Day(int ID,String DAY_DAY,String USER_ID,double DAY_HTEMPERTURE ,double DAY_LTEMPERTURE,int DAY_WEATHERCODE,int DAY_TOPSNO,int DAY_OUTERNO,int DAY_BOTTOMNO){
 		this.ID = ID;
 		this.USER_ID = USER_ID;
 		this.DAY_HTEMPERTURE = DAY_HTEMPERTURE;
 		this.DAY_LTEMPERTURE = DAY_LTEMPERTURE;
+		this.DAY_WEATHERCODE = DAY_WEATHERCODE;
         this.DAY_TOPSNO = DAY_TOPSNO;
         this.DAY_OUTERNO = DAY_OUTERNO;
         this.DAY_BOTTOMNO = DAY_BOTTOMNO;
 	}
+
+
+
 
 	public Day(String USER_ID, String DAY_DAY){
 		this.ID = 0;
@@ -106,6 +111,20 @@ public class Day implements Serializable {
 
 	public void setDAY_BOTTOMNO(int DAY_BOTTOMNO) {
 		this.DAY_BOTTOMNO = DAY_BOTTOMNO;
+	}
+
+
+
+
+	public int getDAY_WEATHERCODE() {
+		return DAY_WEATHERCODE;
+	}
+
+
+
+
+	public void setDAY_WEATHERCODE(int dAY_WEATHERCODE) {
+		DAY_WEATHERCODE = dAY_WEATHERCODE;
 	}
 
 

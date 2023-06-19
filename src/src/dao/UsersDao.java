@@ -102,7 +102,13 @@ public class UsersDao {
 						conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 						// SQL文を準備する
-						String sql = "select ID, USER_ID,USER_PW,USER_HOMEID,USER_GENDERID,USER_PTEMPERTUREID from USERS WHERE USER_ID=? ORDER BY ID";
+						String sql = "SELECT * "
+								+ "FROM USERS "
+								+ "LEFT OUTER JOIN LATITUDE_AND_LONGITUDE "
+								+ " ON USERS.USER_HOMEID = LATITUDE_AND_LONGITUDE.ID "
+								+ "LEFT OUTER JOIN GENDER "
+								+ " ON USERS.USER_GENDERID = GENDER.ID "
+								+ "WHERE USER_ID= ?";
 						PreparedStatement pStmt = conn.prepareStatement(sql);
 
 						// SQL文を完成させる
@@ -124,13 +130,19 @@ public class UsersDao {
 						// 結果表をコレクションにコピーする
 						while (rs.next()) {
 						    card = new User(
-							rs.getInt("ID"),
-							rs.getString("USER_ID"),
-							rs.getString("USER_PW"),
-							rs.getInt("USER_HOMEID"),
-							rs.getInt("USER_GENDERID"),
-							rs.getInt("USER_PTEMPERTUREID")
+						    		rs.getInt("ID"),
+						    		rs.getString("USER_ID"),
+						    		rs.getString("USER_PW"),
+						    		rs.getInt("USER_HOMEID"),
+						    		rs.getString("USER_HOMENAME"),
+						    		rs.getInt("USER_GENDERID"),
+						    		rs.getString("USER_GENDERNAME"),
+						    		rs.getInt("USER_PTEMPERTUREID")
+
 							);
+
+						    //card.setUSER_HOMENAME(rs.getString("列名"));
+
 							//cardList.add(card);
 						}
 					}

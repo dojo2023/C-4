@@ -14,7 +14,7 @@
 
  <h1>Record Display</h1>
 
-<c:forEach var="e" items="${cardList}" varStatus="loop">
+<c:forEach var="e" items="${record_search}" varStatus="loop">
     <input type="hidden" name="currentIndex" value="${loop.index}"> <!-- Add hidden input field for current index -->
     日付<input type="date" name="DAY_DAY" value="${e.day_day}"><br>
     最高気温<input type="text" name="DAY_HTEMPERTURE" value="${e.day_htemperture}"><br>

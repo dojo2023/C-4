@@ -28,7 +28,7 @@ public class DailyDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 					// SQL文を準備する
-					String sql = "select ID,DAY_DAY,USER_ID,DAY_HTEMPERTURE,DAY_LTEMPERTUREDAY_TOPSNO,DAY_OUTERNO, DAY_BOTTOMNO from DAILY WHERE DAY_DAY=? AND USER_ID=? ORDER BY ID";
+					String sql = "select ID,DAY_DAY,USER_ID,DAY_HTEMPERATURE,DAY_LTEMPERATURE,DAY_WEATHERCODE,DAY_TOPSNO,DAY_OUTERNO, DAY_BOTTOMNO from DAILY WHERE DAY_DAY=? AND USER_ID=? ORDER BY ID";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
@@ -61,8 +61,9 @@ public class DailyDao {
 						rs.getInt("ID"),
 						rs.getString("DAY_DAY"),
 						rs.getString("USER_ID"),
-						rs.getDouble("DAY_HTEMPERTURE"),
-						rs.getDouble("DAY_LTEMPERTURE"),
+						rs.getDouble("DAY_HTEMPERATURE"),
+						rs.getDouble("DAY_LTEMPERATURE"),
+						rs.getInt("DAY_WEATHERCODE"),
 						rs.getInt("DAY_TOPSNO"),
 						rs.getInt("DAY_OUTERNO"),
 						rs.getInt("DAY_BOTTOMNO")
@@ -179,7 +180,7 @@ public class DailyDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 		/*?の数*/
 					// SQL文を準備する
-					String sql = "insert into DAILY (ID,DAY_DAY,USER_ID,DAY_HTEMPERTURE,DAY_LTEMPERTURE,DAY_TOPSNO,DAY_OUTERNO,DAY_BOTTOMNO ) values ( ?, ?,?,?,?,?,?,?)";
+					String sql = "insert into DAILY (DAY_DAY,USER_ID,DAY_HTEMPERATURE,DAY_LTEMPERATURE,DAY_WEATHERCODE ) values ( CURDATE(),?,?,?,?)";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
@@ -189,37 +190,32 @@ public class DailyDao {
 					else {
 						pStmt.setInt(1, 0);
 					}*/
-					if (day.getID() != 0) {
-						pStmt.setInt(1, day.getID());
+
+
+					if (day.getUSER_ID() != null && !day.getDAY_DAY().equals("")) {
+						pStmt.setString(1, day.getUSER_ID());
 					}
 					else {
 						pStmt.setString(1, null);
 					}
-					if (day.getDAY_DAY() != null && !day.getDAY_DAY().equals("")) {
-						pStmt.setString(2, day.getDAY_DAY());
-					}
-					else {
-						pStmt.setString(2, null);
-					}
-					if (day.getUSER_ID() != null && !day.getDAY_DAY().equals("")) {
-						pStmt.setString(3, day.getUSER_ID());
-					}
-					else {
-						pStmt.setString(3, null);
-					}
 					if (day.getDAY_HTEMPERTURE() != 0 ) {
-						pStmt.setDouble(4, day.getDAY_HTEMPERTURE());
+						pStmt.setDouble(2, day.getDAY_HTEMPERTURE());
+					}
+					else {
+						pStmt.setDouble(2, 0);
+					}
+					if (day.getDAY_LTEMPERTURE() != 0 ) {
+						pStmt.setDouble(3, day.getDAY_LTEMPERTURE());
+					}
+					else {
+						pStmt.setDouble(3, 0);
+					}
+					if (day.getDAY_WEATHERCODE() != 0 ) {
+						pStmt.setDouble(4, day.getDAY_WEATHERCODE());
 					}
 					else {
 						pStmt.setDouble(4, 0);
 					}
-					if (day.getDAY_LTEMPERTURE() != 0 ) {
-						pStmt.setDouble(5, day.getDAY_LTEMPERTURE());
-					}
-					else {
-						pStmt.setDouble(5, 0);
-					}
-
 
 					// SQL文を実行する
 					if (pStmt.executeUpdate() == 1) {

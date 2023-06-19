@@ -11,7 +11,15 @@ import java.util.List;
 import model.Small_category;
 
 public class SmallcategoryDao {
-	// 引数paramで検索項目を指定し、検索結果のリストを返す
+	public SmallcategoryDao(String small_category) {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
+
+			public SmallcategoryDao() {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
+
+			// 引数paramで検索項目を指定し、検索結果のリストを返す
 			public List<Small_category> select(Small_category param) {
 				Connection conn = null;
 				List<Small_category> cardList = new ArrayList<Small_category>();
@@ -76,6 +84,11 @@ public class SmallcategoryDao {
 
 				// 結果を返す
 				return cardList;
+			}
+
+			public boolean update(SmallcategoryDao smallcategoryDao) {
+				// TODO 自動生成されたメソッド・スタブ
+				return false;
 			}
 
 

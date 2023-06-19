@@ -35,22 +35,22 @@ public class UserRegisterServlet extends HttpServlet {
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("ID");
-		String pw = request.getParameter("PW");
-		String gender = request.getParameter("GENDER");
-		String latitude_and_longitude = request.getParameter("LATITUDE_AND_LONGITEDE");
-		String ptempertureid = request.getParameter("PTEMPERTUREID");
-		int GENDER = Integer.parseInt(gender);
-		int LATITUDE_AND_LONGITUDE = Integer.parseInt(latitude_and_longitude);
-		int PTEMPERTUREID = Integer.parseInt(ptempertureid);
+		String USER_ID= request.getParameter("user_id");
+		String USER_PW = request.getParameter("user_pw");
+		String genderid = request.getParameter("user_genderid");
+		String homeid = request.getParameter("user_homeid");
+		String ptempetureid = request.getParameter("user_ptempertureid");
+		int USER_GENDERID = Integer.parseInt(genderid);
+		int USER_HOMEID = Integer.parseInt(homeid);
+		int USER_PTEMPERTUREID = Integer.parseInt(ptempetureid);
 
-		User urDao = new User(id, pw, GENDER, LATITUDE_AND_LONGITUDE, PTEMPERTUREID);
+		User urDao = new User(USER_ID, USER_PW, USER_HOMEID, USER_GENDERID,USER_PTEMPERTUREID);
 
-		// セッションスコープにIDを格納する
+		// セッションスコープにurDaoを格納する
 			HttpSession session = request.getSession();
 			session.setAttribute("user_register", urDao);
 
-			// ユーザー登録ページにフォワードする
+			// ユーザー登録確認ページにフォワードする
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_register_check.jsp");
 			dispatcher.forward(request, response);
 	}

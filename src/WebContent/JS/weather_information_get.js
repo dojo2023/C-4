@@ -86,7 +86,7 @@ fetch("https://api.open-meteo.com/v1/forecast?latitude=35.69&longitude=139.69&ho
 	 //document.getElementById('code0').value=code0;
 
 
-
+document.minmax_temperture_form.submit();
 
 //ここにAPIを使った動作の記述
 })
@@ -95,3 +95,6 @@ fetch("https://api.open-meteo.com/v1/forecast?latitude=35.69&longitude=139.69&ho
 
 getDate();
 console.log(aa);
+
+//document.minmax_temperture_form.submit();
+

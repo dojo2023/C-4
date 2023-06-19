@@ -44,8 +44,8 @@ public class RecordSearchServlet extends HttpServlet {
 		//リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		String day_day = request.getParameter("DAY_DAY");
-		String day_htemperture = request.getParameter("DAY_HTEMPERTURE");
-		String day_ltemperture = request.getParameter("DAY_LTEMPERTURE");
+		//String day_htemperture = request.getParameter("DAY_HTEMPERTURE");
+		//String day_ltemperture = request.getParameter("DAY_LTEMPERTURE");
 		HttpSession session = request.getSession();
 
 		User search = (User)session.getAttribute("login_user");

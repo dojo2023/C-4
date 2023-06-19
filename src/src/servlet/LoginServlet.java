@@ -50,7 +50,7 @@ public class LoginServlet extends HttpServlet {
 					session.setAttribute("login_user", Login_user);
 
 					// メインサーブレットにリダイレクトする
-					response.sendRedirect("/hello/MainServlet");
+					response.sendRedirect("/hello/WeatherInformationGetServlet");
 				}
 				else {									// ログイン失敗
 					// リクエストスコープに、タイトル、メッセージ、戻り先を格納する

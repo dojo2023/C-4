@@ -7,12 +7,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/hello/css/main.css">
+<link rel="stylesheet" href="/hello/css/main3.css">
 <title>メイン画面</title>
 </head>
 <body>
-<header>
-        <div class="headwrapper">
+<body>
+    <header>
+    <div class="headwrapper">
         <div class="headermenu">
             <ul class="nav">
                 <li><a href="/hello/MainServlet">ロゴ</a></li>
@@ -24,18 +25,37 @@
 
             </ul>
         </div>
-        </div>
+    </div>
     </header>
 
-    <main>
-        <p>画面が入ります</p>
-            <p>ログイン中のユーザーのIDは<%=login_user.getID() %>
-        <p><a href="/hello/RecordSearchServlet">コーディネート履歴検索画面</a></p>
-		<p><a href="/hello/ClothesRegisterServlet">登録画面</a></p>
-		<p><a href="/hello/ClothesListServlet">服一覧画面</a></p>
-		<p><a href="/hello/CoordinateRegisterServlet">コーディネート登録画面</a></p>
-		<p><a href="/hello/ProfileServlet">プロフィール画面</a></p>
-    </main>
+ <main>
+    <div class="date">
+        <p class="datedate">今日<span id="today"></span></p>
+    </div>
+    <div class="weatherbox">
+        <div class="tempbox">
+            最高気温:<span id="temphigh"></span>°C<br/>
+            最低気温:<span id="templow"></span>°C
+        </div>
+        <div>
+            <img id="weatherimg" src="'/hello/images/weather_images/weather_快晴.png'" alt="">
+        </div>
+    </div>
+    <div class="title">
+        <h1 class="rec">おすすめの組み合わせ</h1>
+    </div>
+    <div class="recomendclothes">
+        <a href="#"><div id="tops"></div></a>
+        <a href="#"><div id="outer"></div></a>
+        <a href="#"><div id="bottoms"></div></a>
+    </div>
+
+    <div class="coordregister">
+        <p><a href="#">コーディネート登録</a></p>
+    </div>
+
+
+ </main>
 
     <footer>
         <div>
@@ -43,8 +63,6 @@
         </div>
     </footer>
 
-
+    <script src = "/hello/JS/main.js"></script>
 </body>
-
-
 </html>

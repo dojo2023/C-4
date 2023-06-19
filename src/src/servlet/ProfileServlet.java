@@ -24,21 +24,38 @@ public class ProfileServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		//セッションスコープに保存されているユーザーIDを使って、登録されているユーザーのプロフィール情報を表示する
 		//①セッションスコープ(login_user)からログインしているユーザーの内容を取り出す
-		//②主キーのID(ユーザーIDではない)を使ってユーザーテーブルの情報編集
-		//③↑の内容をセッションスコープに入れる
+		//②主キーのID(ユーザーIDではない)を使ってユーザーテーブルの情報を取り出す SQL文のSELECTを使う
+		//③ユーザーテーブルの情報をリクエストスコープに入れる
 
 		//セッションスコープの取得
-				HttpSession session = request.getSession();
-		//①
-				String 変数名 = (String) session.getAttribute("Login_user");
+		HttpSession session = request.getSession();
+		//①セッションスコープからインスタンスを取得する
+		User loginusers = (User)session.getAttribute("login_user");
+
+		//②プロフィール情報を取ってくるDAOのメソッドを使う→プロフィール情報が入っているインスタンスが戻り値として戻ってくる
+//				request.setCharacterEncoding("UTF-8");
+//
+//				String ID =request.getParameter("ID"); //なぜintじゃないの？
+//
+//				String USER_ID = request.getParameter("USER_ID");
+//				String USER_PW = request.getParameter("USER_PW");
+//				String USER_HOMEID = request.getParameter("USER_HOMEID");
+//				String USER_GENDERID = request.getParameter("USER_GENDERID");
+//				String USER_PTEMPERTUREID = request.getParameter("USER_PTEMPERTUREID");
 
 
+		//③戻り値で返ってきたインスタンスをリクエストスコープに格納する
+		request.setAttribute("login_user",loginusers);
 
+
+		//①ができているかの確認→OK
+		//System.out.println(loginusers.getID());
 
 		// プロフィールページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profile.jsp");
-				dispatcher.forward(request, response);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profile.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**

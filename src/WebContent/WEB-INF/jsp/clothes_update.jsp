@@ -26,15 +26,106 @@
 
 <main>
 	<p>編集画面</p>
-	<div>写真</div><div>服の種類タグ</div>
-	<div>写真</div><div>服の種類タグ</div>
-	<div>写真</div><div>服の種類タグ</div>
-	<div>写真</div><div>服の種類タグ</div>
-	<div>写真</div><div>服の種類タグ</div>
-	<div>写真</div><div>服の種類タグ</div>
-	<div>写真</div><div>服の種類タグ</div>
-	<div>写真</div><div>服の種類タグ</div>
-	<div>写真</div><div>服の種類タグ</div>
+	<form action="ClothesListUpdateServlet" method="post" enctype="multipart/form-data">
+        <label for="photo">写真:</label>
+        <input type="file" name="photo" id="photo">
+        <br><br>
+        <select name="choice" >
+    	<option value="1">半袖</option>
+		<option value="2">長袖(薄手)</option>
+		<option value="3">長袖</option>
+		<option value="4">コート</option>
+		<option value="5">ジャケット(薄手)</option>
+		<option value="6">ジャケット</option>
+		<option value="7">カーディガン</option>
+		<option value="8">長ズボン(薄手)</option>
+		<option value="9">長ズボン</option>
+		<option value="10">スカート</option>
+		</select>
+
+		<label for="photo">写真:</label>
+        <input type="file" name="photo" id="photo">
+        <br><br>
+        <select name="choice" >
+    	<option value="1">半袖</option>
+		<option value="2">長袖(薄手)</option>
+		<option value="3">長袖</option>
+		<option value="4">コート</option>
+		<option value="5">ジャケット(薄手)</option>
+		<option value="6">ジャケット</option>
+		<option value="7">カーディガン</option>
+		<option value="8">長ズボン(薄手)</option>
+		<option value="9">長ズボン</option>
+		<option value="10">スカート</option>
+		</select>
+
+		<label for="photo">写真:</label>
+        <input type="file" name="photo" id="photo">
+        <br><br>
+        <select name="choice" >
+    	<option value="1">半袖</option>
+		<option value="2">長袖(薄手)</option>
+		<option value="3">長袖</option>
+		<option value="4">コート</option>
+		<option value="5">ジャケット(薄手)</option>
+		<option value="6">ジャケット</option>
+		<option value="7">カーディガン</option>
+		<option value="8">長ズボン(薄手)</option>
+		<option value="9">長ズボン</option>
+		<option value="10">スカート</option>
+		</select>
+
+		<label for="photo">写真:</label>
+        <input type="file" name="photo" id="photo">
+        <br><br>
+        <select name="choice" >
+    	<option value="1">半袖</option>
+		<option value="2">長袖(薄手)</option>
+		<option value="3">長袖</option>
+		<option value="4">コート</option>
+		<option value="5">ジャケット(薄手)</option>
+		<option value="6">ジャケット</option>
+		<option value="7">カーディガン</option>
+		<option value="8">長ズボン(薄手)</option>
+		<option value="9">長ズボン</option>
+		<option value="10">スカート</option>
+		</select>
+
+	    <label for="photo">写真:</label>
+        <input type="file" name="photo" id="photo">
+        <br><br>
+        <select name="choice" >
+    	<option value="1">半袖</option>
+		<option value="2">長袖(薄手)</option>
+		<option value="3">長袖</option>
+		<option value="4">コート</option>
+		<option value="5">ジャケット(薄手)</option>
+		<option value="6">ジャケット</option>
+		<option value="7">カーディガン</option>
+		<option value="8">長ズボン(薄手)</option>
+		<option value="9">長ズボン</option>
+		<option value="10">スカート</option>
+		</select>
+
+		<label for="photo">写真:</label>
+        <input type="file" name="photo" id="photo">
+        <br><br>
+        <select name="choice" >
+    	<option value="1">半袖</option>
+		<option value="2">長袖(薄手)</option>
+		<option value="3">長袖</option>
+		<option value="4">コート</option>
+		<option value="5">ジャケット(薄手)</option>
+		<option value="6">ジャケット</option>
+		<option value="7">カーディガン</option>
+		<option value="8">長ズボン(薄手)</option>
+		<option value="9">長ズボン</option>
+		<option value="10">スカート</option>
+		</select>
+
+	</form>
+
+
 	<p><a href="/hello/ClothesListdeleteupdateServlet">各タグ詳細一覧画面にもどる</a></p>
 	<p><a href="/hello/ClothesListUpdateDisplayServlet">確認ボタン</a></p>
 </main>

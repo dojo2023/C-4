@@ -24,7 +24,7 @@
 </header>
 <main>
 	<p>各タグ詳細一覧画面</p>
-	<div>写真</div>
+	<div>${clothes_img.CLO_IMAGES}</div>
 	<div>写真</div>
 	<div>写真</div>
 	<div>写真</div>

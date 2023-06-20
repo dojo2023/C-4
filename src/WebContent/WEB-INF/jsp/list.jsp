@@ -25,15 +25,39 @@
 
  <main>
 
+
 	<p>服一覧画面</p>
-	<p><a href="/hello/ClothesListdeleteupdateServlet">上に羽織るもの（薄手）</a></p>
-	<p><a href="/hello/ClothesListdeleteupdateServlet">上に羽織るもの</a></p>
-	<p><a href="/hello/ClothesListdeleteupdateServlet">防寒着</a></p>
-	<p><a href="/hello/ClothesListdeleteupdateServlet">半袖</a></p>
-	<p><a href="/hello/ClothesListdeleteupdateServlet">長袖（薄手）</a></p>
-	<p><a href="/hello/ClothesListdeleteupdateServlet">長袖</a></p>
-	<p><a href="/hello/ClothesListdeleteupdateServlet">ボトムス（薄手）</a></p>
-	<p><a href="/hello/ClothesListdeleteupdateServlet">ボトムス</a></p>
+	<form method="POST" action="/hello/ClothesListdeleteupdateServlet" id="">
+		<button type="submit" name="1" value="1">
+			上に羽織るもの（薄手)
+		</button>
+		<button type="submit" name="2" value="2">
+			上に羽織るもの
+		</button>
+
+		<button type="submit" name="3" value="3">
+			防寒着
+		</button>
+
+		<button type="submit" name="4" value="4">
+			半袖
+		</button>
+		<button type="submit" name="5" value="5">
+			長袖（薄手）
+		</button>
+		<button type="submit" name="6" value="6">
+			長袖
+		</button>
+		<button type="submit" name="7" value="7">
+			ボトムス（薄手）
+		</button>
+		<button type="submit" name="8" value="8">
+			ボトムス
+		</button>
+
+	</form>
+
+
 	<p><a href="/hello/MainServlet">メイン画面にもどる</a></p>
 
  </main>

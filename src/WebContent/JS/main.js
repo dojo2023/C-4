@@ -28,8 +28,12 @@ async function fetchData(url) {
     }
   }
 
+const long = document.getElementById('long').innerHTML;
+const lati = document.getElementById('lati').innerHTML;
+console.log(long);
+console.log(lati);
+const url='https://api.open-meteo.com/v1/forecast?latitude='+lati+'&longitude='+long+'&hourly=temperature_2m,weathercode&daily=temperature_2m_max,temperature_2m_min&forecast_days=1&timezone=Asia%2FTokyo';
 
-  const url='https://api.open-meteo.com/v1/forecast?latitude=35.69&longitude=139.54&hourly=temperature_2m,weathercode&daily=temperature_2m_max,temperature_2m_min&forecast_days=1&timezone=Asia%2FTokyo';
 
   // データを取得して表示する関数
   async function displayData() {

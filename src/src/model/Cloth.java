@@ -7,7 +7,7 @@ public class Cloth implements Serializable {
 	private String USER_ID;
 	private int SMALL_CATEGORYID;
 	private String CLO_IMAGES;
-
+	//private String SMALL_CATEGORY;
 	//引数アリのコンストラクタの設定
 	public Cloth(int ID,String USER_ID,int SMALL_CATEGORYID,String CLO_IMAGES){
 		this.ID = ID;
@@ -29,6 +29,15 @@ public class Cloth implements Serializable {
 		this.SMALL_CATEGORYID = 0;
 		this.CLO_IMAGES = "";
         }
+	public Cloth(int ID,String USER_ID,String SMALL_CATEGORY,String CLO_IMAGES){
+		this.ID = ID;
+		this.USER_ID = USER_ID;
+		//this.SMALL_CATEGORY = SMALL_CATEGORY;
+		this.CLO_IMAGES = CLO_IMAGES;
+
+		}
+
+
 	//引数なしのコンストラクタの設定
 	public Cloth(){
 		this.ID = 0;

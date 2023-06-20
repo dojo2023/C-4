@@ -15,7 +15,6 @@ public class ClothesDao {
 			public List<Cloth> select(Cloth param) {
 				Connection conn = null;
 				List<Cloth> cardList = new ArrayList<Cloth>();
-//tryの上まで１２:00
 
 				try {
 					// JDBCドライバを読み込む,
@@ -72,6 +71,66 @@ public class ClothesDao {
 
 				// 結果を返す
 				return cardList;
+			}
+
+
+			//IDで検索項目を指定し、検索結果のリストを返す
+			public Cloth selectSMALL_CATEGORYID(String small_categoryid){
+				Connection conn = null;
+				Cloth cardlist = null;
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
+
+					// SQL文を準備する
+					String sql = "SELECT * FROM CLOTHES "
+							+ "where SMALL_CATEGORYID = ?";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+					// SQL文を完成させる
+					if (small_categoryid != "") {
+						pStmt.setString(1,small_categoryid);
+					}
+
+
+
+					// SQL文を実行し、結果表を取得する
+					ResultSet rs = pStmt.executeQuery();
+
+					// 結果表をコレクションにコピーする
+					while (rs.next()) {
+					    cardlist = new Cloth(
+					    		rs.getInt("ID"),
+								rs.getString("USER_ID"),
+								rs.getInt("SMALL_CATEGORYID"),
+								rs.getString("CLO_IMAGES")
+						);
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					cardlist = null;
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+					cardlist = null;
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+							cardlist = null;
+						}
+					}
+				}
+				// 結果を返す
+				return cardlist;
 			}
 
 
@@ -259,6 +318,8 @@ public class ClothesDao {
 				// 結果を返す
 				return result;
 			}
+
+
 
 
 

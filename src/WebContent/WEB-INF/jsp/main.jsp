@@ -16,8 +16,8 @@
     <div class="headwrapper">
         <div class="headermenu">
          <p>ログイン中のユーザーのIDは<%=login_user.getID() %>
-         <%=login_user.getLONGITUDE() %>
-<%=login_user.getLATITUDE() %>
+         <span id="long"><%=login_user.getLONGITUDE() %></span>
+		 <span id = lati><%=login_user.getLATITUDE() %></span>
             <ul class="nav">
 
                 <li><a href="/hello/MainServlet">ロゴ</a></li>

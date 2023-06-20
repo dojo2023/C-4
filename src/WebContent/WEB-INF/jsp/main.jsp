@@ -16,6 +16,7 @@
     <div class="headwrapper">
         <div class="headermenu">
             <ul class="nav">
+                <p>ログイン中のユーザーのIDは<%=login_user.getID() %>
                 <li><a href="/hello/MainServlet">ロゴ</a></li>
                 <li><a href="/hello/ClothesRegisterServlet">服登録</a></li>
                 <li><a href="/hello/ClothesListServlet">一覧</a></li>

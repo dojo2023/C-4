@@ -15,8 +15,11 @@
     <header>
     <div class="headwrapper">
         <div class="headermenu">
+         <p>ログイン中のユーザーのIDは<%=login_user.getID() %>
+         <%=login_user.getLONGITUDE() %>
+<%=login_user.getLATITUDE() %>
             <ul class="nav">
-                <p>ログイン中のユーザーのIDは<%=login_user.getID() %>
+
                 <li><a href="/hello/MainServlet">ロゴ</a></li>
                 <li><a href="/hello/ClothesRegisterServlet">服登録</a></li>
                 <li><a href="/hello/ClothesListServlet">一覧</a></li>

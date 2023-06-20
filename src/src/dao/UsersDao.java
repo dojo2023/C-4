@@ -135,12 +135,15 @@ public class UsersDao {
 						    		rs.getString("USER_PW"),
 						    		rs.getInt("USER_HOMEID"),
 						    		rs.getString("home"),
+
 						    		rs.getInt("USER_GENDERID"),
 						    		rs.getString("gender_CATEGORY"),
 						    		rs.getInt("USER_PTEMPERTUREID")
 
 							);
 
+						    card.setLATITUDE(rs.getDouble("LATITUDE"));
+						    card.setLONGITUDE(rs.getDouble("LONGITUDE"));
 						    //card.setUSER_HOMENAME(rs.getString("列名"));
 
 							//cardList.add(card);

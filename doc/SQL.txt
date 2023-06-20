@@ -13,7 +13,7 @@ user_PTEMPERTUREID int NOT NULL
 insert into users(user_ID,user_PW,user_HOMEID,user_GENDERID,user_PTEMPERTUREID)
 values('sasahara','plusdojo',12,1,0);
 insert into users(user_ID,user_PW,user_HOMEID,user_GENDERID,user_PTEMPERTUREID)
-values('atugari','plusdojo1',12,3,5);
+values('atugari','plusdojo1',10,3,5);
 insert into users(user_ID,user_PW,user_HOMEID,user_GENDERID,user_PTEMPERTUREID)
 values('samugari','plusdojo2',12,2,-5);
 

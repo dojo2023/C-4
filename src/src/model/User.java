@@ -9,6 +9,8 @@ public class User implements Serializable {
 	private String USER_PW;
 	private int USER_HOMEID;
 	private String USER_HOMENAME;	//〇〇県、○○府
+	private double LATITUDE;
+	private double LONGITUDE;
 	private int USER_GENDERID;
 	private String USER_GENDERNAME;	 //男、女、その他
 	private int USER_PTEMPERTUREID;
@@ -131,6 +133,22 @@ public class User implements Serializable {
 	}
 	public void setUSER_GENDERNAME(String USER_GENDERNAME) {
 		this.USER_GENDERNAME = USER_GENDERNAME;
+	}
+
+	public double getLATITUDE() {
+		return LATITUDE;
+	}
+
+	public void setLATITUDE(double lATITUDE) {
+		LATITUDE = lATITUDE;
+	}
+
+	public double getLONGITUDE() {
+		return LONGITUDE;
+	}
+
+	public void setLONGITUDE(double lONGITUDE) {
+		LONGITUDE = lONGITUDE;
 	}
 
 

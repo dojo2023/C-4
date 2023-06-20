@@ -9,12 +9,16 @@ window.onload = function(){
 document.getElementById("today").innerHTML = `${month}/${day}（${dayOfWeek}）`;
 }
 
+
+
+
+
 // 非同期関数でAPIのデータを取得する
 async function fetchData(url) {
     try {
       const response = await fetch(url);
       if (!response.ok) {
-        throw new Error('APIからのデータ取得に失敗しました。');
+        throw new Error('APIからのデータ取得に失敗しました。')
       }
       const jsonData = await response.json();
       return jsonData;
@@ -37,7 +41,7 @@ async function fetchData(url) {
       const outputTempH = document.getElementById('temphigh');
       const outputTempL = document.getElementById('templow');
       const weatherimg = document.getElementById('weatherimg');
-      const images = ['/hello/images/weather_快晴.png','/hello/images/weather_晴れ.png','/hello/images/weather_くもり.png','/hello/images/weather_霧雨.png','/hello/images/weather_雨.png','/hello/images/weather_大雨.png','/hello/images/weather_雪.png','/hello/images/weather_大雪.png','/hello/images/weather_雷.png']
+      const images = ['/hello/images/weather_images/weather_快晴.png','/hello/images/weather_images/weather_晴れ.png','/hello/images/weather_images/weather_くもり.png','/hello/images/weather_images/weather_霧雨.png','/hello/images/weather_images/weather_雨.png','/hello/images/weather_images/weather_大雨.png','/hello/images/weather_images/weather_雪.png','/hello/images/weather_images/weather_大雪.png','/hello/images/weather_images/weather_雷.png'];
 
       //outputElement.innerHTML = JSON.stringify(parsedData);
       const temphigh = parsedData.daily.temperature_2m_max[0];

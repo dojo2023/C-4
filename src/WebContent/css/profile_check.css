@@ -43,7 +43,7 @@ main{
 /*ボタン関連*/
 #profile_check{
 	display:inline-block;
-	background: #818DA6;
+	background: #F4CFBE;
   	border-bottom: 5px solid;
   	box-shadow: 0 3px 5px rgba(0, 0, 0, .3); /*影つける*/
   	border-radius: 100vh;
@@ -56,11 +56,11 @@ main{
   border-bottom: none;
 }
 
-#profile_check hover{ /*なぜか効いてないっぽい*/
+#profile_check:hover{ /*なぜか効いてないっぽい*/
   transform: translate3d(0, 5px, 0);
   margin-top: 3px;
   border-bottom: 2px solid;
-  background-color:#0000FF;
+  background-color:#F4CFBE;
   transition: .3s;
   top: 9px;
   box-shadow: 0 0;

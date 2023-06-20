@@ -27,14 +27,19 @@
 <main>
 	<p>編集画面</p>
 
-	 <%int clothId = (int) request.getAttribute("clothId");%>
+ 	  <form method="POST" action="/hello/ClothesListServlet" id="clothesChange_form" onsubmit = "return hoge();">
+  	  <p>タグ</p>
+  	  <select name="SMALL_CATEGORY">
+		<option value="${e.small_category}"></option>
+		</select>
+
 
 		<!--<form action="ClothesListUpdateServlet" method="post" enctype="multipart/form-data">
         <label for="photo">写真:</label>
         <input type="file" name="photo" id="photo">
-        <br><br>-->
+        <br>
         <form action="/hello/ClothesListUpdateDisplayServlet" method="post">
-        <input type="hidden" name="clothId" value="<%= clothId %>">
+        <input type="hidden" name="clothId" value="<%--= clothId --%>">
         <select name="selectedValue" id="dropdown">
     	<option value="1">半袖</option>
 		<option value="2">長袖(薄手)</option>
@@ -46,7 +51,7 @@
 		<option value="8">長ズボン(薄手)</option>
 		<option value="9">長ズボン</option>
 		<option value="10">スカート</option>
-		</select>
+		</select>-->
 
 		<!--<label for="photo">写真:</label>
         <input type="file" name="photo" id="photo">
@@ -132,7 +137,7 @@
 
 
 	<p><a href="/hello/ClothesListdeleteupdateServlet">各タグ詳細一覧画面にもどる</a></p>
-	<button type="submit">確認ボタン</button>
+	<p><a href="/hello/ClothesListUpdateDisplayServlet">変更</a></p>
 	</form>
 </main>
 

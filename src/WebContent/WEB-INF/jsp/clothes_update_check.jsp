@@ -27,9 +27,15 @@
 
 <main>
 
-	  <p>編集確認画面</p>
-	  <p>編集された値: <%= request.getAttribute("selectedValue") %></p>
-	  <p>編集された衣類ID: <%= request.getParameter("clothId") %></p>
+	  <p>編集確認</p>
+
+	  <table class= "clothestable">
+  	  <tr>
+	  <th>タグ</th>
+	  <td>${small_category.SMALL_CATEGORY}</td>
+      </tr>
+  	  </table>
+
 
       <form action="/hello/ClothesListServlet" method="POST">
 

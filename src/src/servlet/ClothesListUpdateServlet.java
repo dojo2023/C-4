@@ -19,13 +19,29 @@ public class ClothesListUpdateServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@SuppressWarnings("unused")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		//前画面からPOSTされるidを受け取る
+		 //int clothId = Integer.parseInt(request.getParameter("CLOTH_ID"));
+
+		//服のキーとなる項目を前画面から受け取る
+		int CLOTH_ID = 10;
+
+
+		//服の情報をデータベースから取得する
+
+
+
+		//取得した値をjspに渡す
+		request.setAttribute("clothId", CLOTH_ID);
 
 
 		//編集画面にフォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/clothes_update.jsp");
 		dispatcher.forward(request, response);
 	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

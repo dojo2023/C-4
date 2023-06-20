@@ -10,16 +10,14 @@
 </head>
 <body>
 
-<%=login_user.getLONGITUDE() %>
-<%=login_user.getLATITUDE() %>
-<div>最高気温<span id ='type'></span></div>
-<div>14時の気温<span id ='type2'></span></div>
+<!--  <div>最高気温<span id ='type'></span></div>
+<div>14時の気温<span id ='type2'></span></div>-->
 <form method="POST" action="/hello/WeatherInformationGetServlet" name="minmax_temperture_form">
     <input type="hidden" name="max_temperature"id='maxtemperture'>
     <input type="hidden" name="min_temperature"id='mintemperture' >
     <input type="hidden" name="day_weather"id='day_weather' >
     <input type="hidden" name="latitude"id='latitude' value="<%=login_user.getLATITUDE() %>">
-    <input type="hidden" name="longitude"id='longitude' value="<%=login_user.getLONGITUDE() %>">
+    <input type="hidden" name="longitude"id='longitude' value="<%=login_user.getLONGITUDE()%>">
 
 
     <!--  <input type="" name="weathercode_0"id='code0'>

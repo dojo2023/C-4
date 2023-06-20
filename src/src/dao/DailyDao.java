@@ -246,6 +246,74 @@ public class DailyDao {
 
 
 
+			public int count(Day param) {
+				Connection conn = null;
+				int inforezult = 0;
+
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
+
+					// SQL文を準備する
+					String sql = "select count (DAY_DAY=CURDATE() AND USER_ID = ? OR NULL)as info FROM DAILY";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+
+					// SQL文を完成させる
+					if (param.getUSER_ID()!= null) {
+						pStmt.setString(1,  param.getUSER_ID());
+					}
+					else {
+						pStmt.setString(1, null);
+					}
+
+
+
+
+
+
+
+
+					// SQL文を実行し、結果表を取得する
+					ResultSet rs = pStmt.executeQuery();
+
+					// 結果表をコレクションにコピーする
+					rs.next();
+					if (rs.getInt("INFO") == 1) {
+						inforezult = 1;
+					}
+				}
+
+
+
+
+				catch (SQLException e) {
+					e.printStackTrace();
+					inforezult = 2;
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+					inforezult = 2;
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+							inforezult = 2;
+						}
+					}
+				}
+
+				// 結果を返す
+				return inforezult;
+			}
+
 
 
 

@@ -51,9 +51,9 @@ public class WeatherInformationGetServlet extends HttpServlet {
 		double doublemax = Double.parseDouble(max);
 		double doublemin = Double.parseDouble(min);
 		int intweather = Integer.parseInt(weather);
-		System.out.println(doublemax);
-		System.out.println(doublemin);
-		System.out.println(intweather);
+		//System.out.println(doublemax);
+		//System.out.println(doublemin);
+		//System.out.println(intweather);
 		HttpSession session = request.getSession();
 		User login_user = (User)session.getAttribute("login_user");
         String user_id = login_user.getUSER_ID();
@@ -64,8 +64,13 @@ public class WeatherInformationGetServlet extends HttpServlet {
             todayinformation.setDAY_LTEMPERTURE(doublemin);
             todayinformation.setDAY_WEATHERCODE(intweather);
 
+
+
         DailyDao DDao = new DailyDao();
+        int redistcheck = DDao.count(todayinformation);
+        if(redistcheck ==0) {
         DDao.insert(todayinformation);
+        }
 
 		response.sendRedirect("/hello/MainServlet");
 

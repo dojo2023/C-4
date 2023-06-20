@@ -15,20 +15,21 @@ var  array1 = new Array();
 const getDate=function(){
 let latitude = document.getElementById('latitude').value;
 let longitude = document.getElementById('longitude').value;
-
+console.log(latitude);
+console.log(longitude);
 
 fetch("https://api.open-meteo.com/v1/forecast?latitude="+latitude+"&longitude="+longitude+"&daily=weathercode,temperature_2m_max,temperature_2m_min&forecast_days=1&timezone=Asia%2FTokyo")
 .then((res)=>res.json())
 //.then((apiData)=>console.log(apiData));
 .then(function(apiData) {
-	console.log(apiData);
+	//console.log(apiData);
 	//document.getElementById('type').innerHTML = apiData['daily']['temperature_2m_max'];
 	//console.log(apiData['hourly']['temperature_2m']);
 	//console.log(apiData['hourly']['temperature_2m'][10]);
     //aa = apiData['hourly']['temperature_2m'][10];
     max = apiData['daily']['temperature_2m_max'];
     //array1 = apiData['hourly']['temperature_2m'];
-    console.log(max);
+    //console.log(max);
     //document.getElementById('type2').innerHTML=aa;
 
 //フォーム用の値を取得
@@ -90,8 +91,8 @@ fetch("https://api.open-meteo.com/v1/forecast?latitude="+latitude+"&longitude="+
 	 //document.getElementById('code0').value=code0;
 
 
-document.minmax_temperture_form.submit();
 
+document.minmax_temperture_form.submit();
 //ここにAPIを使った動作の記述
 })
 

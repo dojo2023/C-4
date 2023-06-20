@@ -79,4 +79,74 @@ public class PtempertureDao {
 				return cardList;
 			}
 
+
+
+
+			public Ptemperture select(int ID) {
+				Connection conn = null;
+				Ptemperture card = new Ptemperture();
+
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
+
+					// SQL文を準備する
+					String sql = "select ID, USER_PTEMPERTURE, PTEM_MAXPTEM, PTEM_MINPTEM from PTEMPERTURE WHERE ID=? ORDER BY ID";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+
+					// SQL文を完成させる
+					if (ID != 0) {
+						pStmt.setInt(1,  ID );
+					}
+
+
+
+
+
+
+
+
+
+					// SQL文を実行し、結果表を取得する
+					ResultSet rs = pStmt.executeQuery();
+
+					// 結果表をコレクションにコピーする
+					while (rs.next()) {
+						 card = new Ptemperture(
+						rs.getInt("ID"),
+						rs.getInt("USER_PTEMPERTURE"),
+						rs.getInt("PTEM_MAXPTEM"),
+						rs.getInt("PTEM_MINPTEM")
+						);
+
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					card = null;
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+					card = null;
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+							card = null;
+						}
+					}
+				}
+
+				// 結果を返す
+				return card;
+			}
+
 }

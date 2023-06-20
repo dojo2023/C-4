@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -35,11 +37,17 @@
 	<p>ID</p><input type="text" name="user_id" value="${user_register.USER_ID}" readonly style="background-color:white"><br>
 	<p>PW</p><input type="text" name="user_pw" value="${user_register.USER_PW}" readonly style="background-color:white"><br>
 	<p>性別</p>
-	<input type="text" name="user_genderid" value="${user_register.USER_GENDERID}" readonly style="background-color:white"><br>
+	<input type="text" name="user_genderid" value="${user_register.USER_GENDERNAME}" readonly style="background-color:white"><br>
 	<p>居住地</p>
-	<input type="text" name="user_homeid" value="${user_register.USER_HOMEID}" readonly style="background-color:white">
+	<input type="text" name="user_homeid" value="${user_register.USER_HOMENAME}" readonly style="background-color:white">
 	<p>暑がり寒がり</p>
-	<input type="text" name="user_ptempertureid" value="${user_register.USER_PTEMPERTUREID}" readonly style="background-color:white">
+	<input type="text" name="user_ptempertureid" value="${user_register.USER_PTEMPERTURENAME}" readonly style="background-color:white">
+
+
+
+
+
+
 
 	<p>暑がりの方は＋、寒がりの方は‐</p>
 

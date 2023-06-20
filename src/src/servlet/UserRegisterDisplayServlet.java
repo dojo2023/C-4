@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.UsersDao;
 import model.User;
@@ -36,19 +37,23 @@ public class UserRegisterDisplayServlet extends HttpServlet {
 
 
 		// リクエストパラメータを取得する
-		request.setCharacterEncoding("UTF-8");
-		String USER_ID= request.getParameter("user_id");
-		String USER_PW = request.getParameter("user_pw");
-		String genderid = request.getParameter("user_genderid");
-		String homeid = request.getParameter("user_homeid");
-		String ptempetureid = request.getParameter("user_ptempertureid");
-		int USER_GENDERID = Integer.parseInt(genderid);
-		int USER_HOMEID = Integer.parseInt(homeid);
-		int USER_PTEMPERTUREID = Integer.parseInt(ptempetureid);
+//		request.setCharacterEncoding("UTF-8");
+//		String USER_ID= request.getParameter("user_id");
+//		String USER_PW = request.getParameter("user_pw");
+//		String genderid = request.getParameter("user_genderid");
+//		String homeid = request.getParameter("user_homeid");
+//		String ptempetureid = request.getParameter("user_ptempertureid");
+//		int USER_GENDERID = Integer.parseInt(genderid);
+//		int USER_HOMEID = Integer.parseInt(homeid);
+//		int USER_PTEMPERTUREID = Integer.parseInt(ptempetureid);
+
+		HttpSession session = request.getSession();
+		User loginuser = (User)session.getAttribute("user_register");
+
 
 		// 登録処理を行う
 		UsersDao uDao = new UsersDao();
-		if (uDao.insert(new User(USER_ID, USER_PW, USER_HOMEID, USER_GENDERID,USER_PTEMPERTUREID))) {	// 登録成功
+		if (uDao.insert(loginuser)) {	// 登録成功
 //			request.setAttribute("result",
 //			new Result("登録成功！", "レコードを登録しました。", "/hello/LoginServlet"));
 			// ログインページにリダイレクトする

@@ -5,16 +5,14 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import model.Gender;
 
 public class GenderDao {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す Listselectを作ってる
-			public List<Gender> select(Gender param) {
+			public Gender select(int ID) {
 				Connection conn = null;
-				List<Gender> cardList = new ArrayList<Gender>();
+				Gender GENDER = new Gender();
 
 				try {
 					// JDBCドライバを読み込む
@@ -24,12 +22,12 @@ public class GenderDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 					// SQL文を準備する
-					String sql = "select ID, GENDER_CATEGORY from GENDER WHERE ID = ? ORDER BY ID";
+					String sql = "select ID, GENDER_CATEGORY from GENDER WHERE ID = ? ";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる IDが0でなければ 1は一番初めの？を指す
-					if (param.getID() != 0) {
-						pStmt.setInt(1, param.getID() );
+					if (ID != 0) {
+						pStmt.setInt(1, ID );
 					}
 
 
@@ -49,16 +47,16 @@ public class GenderDao {
 						rs.getInt("ID"),
 						rs.getString("GENDER_CATEGORY")
 						);
-						cardList.add(card);
+						GENDER = card;
 					}
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-					cardList = null;
+					GENDER = null;
 				}
 				catch (ClassNotFoundException e) {
 					e.printStackTrace();
-					cardList = null;
+				    GENDER = null;
 				}
 				finally {
 					// データベースを切断
@@ -68,13 +66,13 @@ public class GenderDao {
 						}
 						catch (SQLException e) {
 							e.printStackTrace();
-							cardList = null;
+							GENDER = null;
 						}
 					}
 				}
 
 				// 結果を返す
-				return cardList;
+				return GENDER;
 			}
 
 }

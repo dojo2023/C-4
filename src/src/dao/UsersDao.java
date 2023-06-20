@@ -142,6 +142,7 @@ public class UsersDao {
 
 							);
 
+						    card.setUSER_GENDERNAME(rs.getString("GENDER_CATEGORY"));
 						    card.setLATITUDE(rs.getDouble("LATITUDE"));
 						    card.setLONGITUDE(rs.getDouble("LONGITUDE"));
 						    //card.setUSER_HOMENAME(rs.getString("列名"));

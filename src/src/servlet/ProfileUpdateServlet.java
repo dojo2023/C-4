@@ -16,7 +16,6 @@ import dao.PtempertureDao;
 import dao.UsersDao;
 import model.Latitudes_and_longitudes;
 import model.Ptemperture;
-import model.Result;
 import model.User;
 
 /**
@@ -65,17 +64,17 @@ public class ProfileUpdateServlet extends HttpServlet {
 
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
-				String ID = request.getParameter("ID");
-				String PW = request.getParameter("PW");
-				String LATITUDE_AND_LONGITUDE = request.getParameter("LATITUDE_AND_LONGITUDE");
-				String gender= request.getParameter("gender");
-				String PTEMPERTUREID = request.getParameter("PTEMPERTUREID");
-				int latitude_and_longitude = Integer.parseInt(LATITUDE_AND_LONGITUDE);
-				int GENDER = Integer.parseInt(gender);
-				int ptemperture = Integer.parseInt(PTEMPERTUREID);
+				String USER_ID= request.getParameter("user_id");
+				String USER_PW = request.getParameter("user_pw");
+				String genderid = request.getParameter("user_genderid");
+				String homeid = request.getParameter("user_homeid");
+				String ptempetureid = request.getParameter("user_ptempertureid");
+				int USER_GENDERID = Integer.parseInt(genderid);
+				int USER_HOMEID = Integer.parseInt(homeid);
+				int USER_PTEMPERTUREID = Integer.parseInt(ptempetureid);
 
 		//puDaoに一つのまとまりとして入れる
-				User puDao = new User(ID,PW,latitude_and_longitude,GENDER,ptemperture);
+				User puDao = new User(USER_ID, USER_PW, USER_HOMEID, USER_GENDERID,USER_PTEMPERTUREID);
 
 		//セッションスコープにIDを格納する
 				HttpSession session = request.getSession();
@@ -84,19 +83,19 @@ public class ProfileUpdateServlet extends HttpServlet {
 		// 更新または削除を行う
 				UsersDao uDao = new UsersDao();
 				if (request.getParameter("SUBMIT").equals("確定")) {
-					if (uDao.update(new User(ID,PW,latitude_and_longitude,GENDER,ptemperture))) {	// 更新成功
-						request.setAttribute("result",
-						new Result("更新成功！", "レコードを更新しました。", "/hello/MainServlet"));
-					}
-					else {												// 更新失敗
-						request.setAttribute("result",
-						new Result("更新失敗！", "レコードを更新できませんでした。", "/hello/MainServlet"));
+					if (uDao.update(new User(USER_ID, USER_PW, USER_HOMEID, USER_GENDERID,USER_PTEMPERTUREID))) {	// 更新成功
+//						request.setAttribute("result",
+//						new Result("更新成功！", "レコードを更新しました。", "/hello/MainServlet"));
+//					}
+//					else {												// 更新失敗
+//						request.setAttribute("result",
+//						new Result("更新失敗！", "レコードを更新できませんでした。", "/hello/MainServlet"));
 					}
 				}
 
-				//プロフィール確認ページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profile_check.jsp");
-				dispatcher.forward(request, response);
+//				//プロフィール確認ページにフォワードする
+//				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profile_check.jsp");
+//				dispatcher.forward(request, response);
 	}
 
 

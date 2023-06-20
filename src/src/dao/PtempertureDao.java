@@ -24,13 +24,13 @@ public class PtempertureDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 					// SQL文を準備する
-					String sql = "select ID, USER_PTEMPERTURE, PTEM_MAXPTEM, PTEM_MINPTEM from PTEMPERTURE WHERE ID LIKE ? ORDER BY ID";
+					String sql = "select ID, USER_PTEMPERTURE, PTEM_MAXPTEM, PTEM_MINPTEM from PTEMPERTURE ORDER BY ID";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
-					if (param.getID() != 0) {
-						pStmt.setString(1, "%" + param.getID() + "%");
-					}
+//					if (param.getID() != 0) {
+//						pStmt.setString(1, "%" + param.getID() + "%");
+//					}
 
 
 

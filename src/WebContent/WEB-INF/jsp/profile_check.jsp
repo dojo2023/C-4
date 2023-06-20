@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,23 +31,29 @@
 <p>プロフィール変更画面</p>
 <form method="POST" action="/hello/MainServlet" id="ProfileChange_form" onsubmit = "return hoge();">
   <p>ID</p>
-  	  <input type="text" name="ID" value="${e.ID}">
+  	  <input type="text" name="ID" value="${login_user.USER_ID}">
   <p>PW</p>
-	  <input type="password" name="PW" value="${e.PW}">
+	  <input type="password" name="PW" value="${login_user.USER_PW}">
   <p>性別</p>
-	  <input type="radio" name="gender" value="${e.GENDER}" checked>男
-	  <input type="radio" name="gender" value="${e.GENDER}">女
-	  <input type="radio" name="gender" value="${e.GENDER}">その他
+	  <input type="radio" name="gender" value="1" <c:if test="${login_user.USER_GENDERID == 1}">checked</c:if>>男
+	  <input type="radio" name="gender" value="2" <c:if test="${login_user.USER_GENDERID == 2}">checked</c:if>>女
+	  <input type="radio" name="gender" value="3" <c:if test="${login_user.USER_GENDERID == 3}">checked</c:if>>その他
+
 
   <p>居住地</p>
-		<select name="LATITUDE_AND_LONGITUDE">
-		<option value="${e.latitude_and_longitude }"></option>
+		<select name="USER_HOMED">
+<c:forEach var="e" items="${list}" >
+			<option value="${e.ID}">${e.HOME}</option>
+
+</c:forEach>
 		</select>
 
 
   <p>暑がり・寒がり</p>
 	  	<select name="PTEMPERTUREID">
-		<option value="${e.ptemperture}"></option>
+	  	<c:forEach var="f" items="${list2}" >
+		<option value="${f.ID}">${f.USER_PTEMPERTURE}</option>
+		</c:forEach>
 		</select>
 
 <br>

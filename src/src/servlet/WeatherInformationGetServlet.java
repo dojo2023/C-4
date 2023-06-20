@@ -7,6 +7,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import dao.DailyDao;
+import model.Day;
+import model.User;
 /**
  * Servlet implementation class WeatherInformationGetServlet
  */
@@ -43,10 +48,12 @@ public class WeatherInformationGetServlet extends HttpServlet {
 		System.out.print(max);
 		System.out.print(min);
 		System.out.print(weather);
-	/*	double doublemax = Double.parseDouble(max);
+		double doublemax = Double.parseDouble(max);
 		double doublemin = Double.parseDouble(min);
 		int intweather = Integer.parseInt(weather);
-
+		System.out.println(doublemax);
+		System.out.println(doublemin);
+		System.out.println(intweather);
 		HttpSession session = request.getSession();
 		User login_user = (User)session.getAttribute("login_user");
         String user_id = login_user.getUSER_ID();
@@ -58,7 +65,7 @@ public class WeatherInformationGetServlet extends HttpServlet {
             todayinformation.setDAY_WEATHERCODE(intweather);
 
         DailyDao DDao = new DailyDao();
-        DDao.insert(todayinformation);*/
+        DDao.insert(todayinformation);
 
 		response.sendRedirect("/hello/MainServlet");
 

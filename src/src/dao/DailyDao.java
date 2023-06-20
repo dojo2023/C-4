@@ -192,7 +192,7 @@ public class DailyDao {
 					}*/
 
 
-					if (day.getUSER_ID() != null && !day.getDAY_DAY().equals("")) {
+					if (day.getUSER_ID() != null && !day.getUSER_ID().equals("")) {
 						pStmt.setString(1, day.getUSER_ID());
 					}
 					else {

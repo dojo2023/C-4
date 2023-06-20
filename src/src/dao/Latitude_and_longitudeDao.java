@@ -28,9 +28,9 @@ public class Latitude_and_longitudeDao {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (param.getID() != 0) {
-				pStmt.setString(1, "%" + param.getID() + "%");
-			}
+//			if (param.getID() != 0) {
+//				pStmt.setString(1, "%" + param.getID() + "%");
+//			}
 
 
 

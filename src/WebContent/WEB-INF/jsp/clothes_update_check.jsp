@@ -27,12 +27,17 @@
 
 <main>
 
-	<p>編集確認画面</p>
+	  <p>編集確認画面</p>
+	  <p>編集された値: <%= request.getAttribute("selectedValue") %></p>
+	  <p>編集された衣類ID: <%= request.getParameter("clothId") %></p>
 
+      <form action="/hello/ClothesListServlet" method="POST">
 
-
-	<p><a href="/hello/ClothesListdeleteupdateServlet">編集画面にもどる</a></p>
-	<p><a href="${result.redirectUrl}">更新ボタン</a></p><!-- このボタンを押すと更新確認のダイアログ出る -->
+	  <p><a href="/hello/ClothesListdeleteupdateServlet">編集画面にもどる</a></p>
+	  <input type="hidden" name="clothId" value="<%= request.getParameter("clothId") %>">
+      <input type="hidden" name="selectedValue" value="<%= request.getAttribute("selectedValue") %>">
+	  <input type="submit" value="更新"><!-- このボタンを押すと更新確認のダイアログ出る -->
+	  </form>
 
 </main>
 

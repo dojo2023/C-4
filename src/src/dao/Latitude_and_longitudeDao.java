@@ -24,13 +24,13 @@ public class Latitude_and_longitudeDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 			// SQL文を準備する
-			String sql = "select ID, HOME, LATITUDE, LONGITUDE from LATITUDE_AND_LONGITUDE WHERE ID LIKE ? ORDER BY ID";
+			String sql = "select ID, HOME, LATITUDE, LONGITUDE from LATITUDE_AND_LONGITUDE ORDER BY ID";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (param.getID() != 0) {
-				pStmt.setString(1, "%" + param.getID() + "%");
-			}
+//			if (param.getID() != 0) {
+//				pStmt.setString(1, "%" + param.getID() + "%");
+//			}
 
 
 

@@ -62,28 +62,31 @@ public class ProfileUpdateServlet extends HttpServlet {
 		// メインサーブレットにリダイレクトする
 		//		response.sendRedirect("/hello/MainServlet");
 
+
 		// リクエストパラメータを取得する
-				request.setCharacterEncoding("UTF-8");
-				String USER_ID= request.getParameter("user_id");
-				String USER_PW = request.getParameter("user_pw");
-				String genderid = request.getParameter("user_genderid");
-				String homeid = request.getParameter("user_homeid");
-				String ptempetureid = request.getParameter("user_ptempertureid");
+				request.setCharacterEncoding("UTF-8"); //文字化けしないようにしている
+				String USER_ID= request.getParameter("ID");//()の中にはjspのnameを入れる
+				String USER_PW = request.getParameter("PW");
+				String genderid = request.getParameter("gender");
+				String homeid = request.getParameter("USER_HOMEID");
+				String ptempetureid = request.getParameter("PTEMPERTUREID");
 				int USER_GENDERID = Integer.parseInt(genderid);
 				int USER_HOMEID = Integer.parseInt(homeid);
 				int USER_PTEMPERTUREID = Integer.parseInt(ptempetureid);
 
-		//puDaoに一つのまとまりとして入れる
-				User puDao = new User(USER_ID, USER_PW, USER_HOMEID, USER_GENDERID,USER_PTEMPERTUREID);
 
-		//セッションスコープにIDを格納する
+
+		//セッションの中身をとりだす
 				HttpSession session = request.getSession();
-				session.setAttribute("profile_update", puDao);
+				User LOGINUSER = (User)session.getAttribute("login_user");
+
+	            User NEWUSER = new User(LOGINUSER.getID(),USER_ID,USER_PW,USER_GENDERID,USER_HOMEID,USER_PTEMPERTUREID);
+
 
 		// 更新または削除を行う
 				UsersDao uDao = new UsersDao();
-				if (request.getParameter("SUBMIT").equals("確定")) {
-					if (uDao.update(new User(USER_ID, USER_PW, USER_HOMEID, USER_GENDERID,USER_PTEMPERTUREID))) {	// 更新成功
+				if (request.getParameter("ProfileChange_").equals("確定")) {
+					if (uDao.update(NEWUSER)) {	// 更新成功
 //						request.setAttribute("result",
 //						new Result("更新成功！", "レコードを更新しました。", "/hello/MainServlet"));
 //					}
@@ -93,9 +96,18 @@ public class ProfileUpdateServlet extends HttpServlet {
 					}
 				}
 
-//				//プロフィール確認ページにフォワードする
-//				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profile_check.jsp");
-//				dispatcher.forward(request, response);
+//				User pu = new User(USER_ID, USER_PW,USER_GENDERID,USER_HOMEID,USER_PTEMPERTUREID);
+				UsersDao puDao = new UsersDao();
+				User abc = puDao.selectUSER_ID(NEWUSER.getUSER_ID());
+				//セッションスコープにIDを格納する
+				HttpSession session2 = request.getSession();
+				session2.setAttribute("login_user", abc);
+
+
+
+				//メインページにフォワードする
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+				dispatcher.forward(request, response);
 	}
 
 

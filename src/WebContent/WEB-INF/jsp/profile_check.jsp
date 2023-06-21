@@ -55,6 +55,7 @@
 		</c:forEach>
 	</select>
 	<br>
+	<br>
 	<div class ="button">
     	<button type="submit" name="ProfileChange_" value="確定" id="profile_check">
 	    確定
@@ -63,9 +64,9 @@
 </form>
 
 
-
+ <div class = "ProfileCheckLink">
     <p><a href="/hello/ProfileServlet">プロフィール画面へ戻る</a></p>
-
+ </div>
  </main>
 
  <footer>

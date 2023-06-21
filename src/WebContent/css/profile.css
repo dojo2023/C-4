@@ -1,4 +1,6 @@
 @charset "UTF-8";
+
+/*メニューバー*/
 .headermenu{
    /* background-color:brown; */
     position: fixed;
@@ -50,5 +52,18 @@ main{
 .profiletable th, .profiletable td{
 	padding: 8px;
 	border: 1px solid #BDBEBF;
-	text-align: left; /*左寄せ*/
+	text-align:center; /*表の中の文字を左寄せ*/
+
+}
+
+
+
+
+/*ボディー全体*/
+body {
+  background-color: #F3F5F2;
+  color:#32586D;
+  text-align:center;
+  margin: 0 auto 0 auto; /*表を中央に表示*/
+  max-width: 215px;
 }

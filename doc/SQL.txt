@@ -11,7 +11,7 @@ user_PTEMPERTUREID int NOT NULL
 
 サンプルデータ
 insert into users(user_ID,user_PW,user_HOMEID,user_GENDERID,user_PTEMPERTUREID)
-values('sasahara','plusdojo',12,1,0);
+values('sasahara','plusdojo',12,1,5);
 insert into users(user_ID,user_PW,user_HOMEID,user_GENDERID,user_PTEMPERTUREID)
 values('atugari','plusdojo1',10,3,5);
 insert into users(user_ID,user_PW,user_HOMEID,user_GENDERID,user_PTEMPERTUREID)

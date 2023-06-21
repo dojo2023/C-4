@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.PtempertureDao;
+import model.Ptemperture;
 import model.User;
 
 /**
@@ -33,6 +35,11 @@ public class ProfileServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		//①セッションスコープからインスタンスを取得する
 		User loginusers = (User)session.getAttribute("login_user");
+
+		PtempertureDao pdao;
+		pdao = new PtempertureDao();
+		Ptemperture p = pdao.select(loginusers.getUSER_PTEMPERTUREID());
+        loginusers.setUSER_PTEMPERTURENAME(p.getUSER_PTEMPERTURE());
 
 		//②プロフィール情報を取ってくるDAOのメソッドを使う→プロフィール情報が入っているインスタンスが戻り値として戻ってくる
 //				request.setCharacterEncoding("UTF-8");

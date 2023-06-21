@@ -80,7 +80,7 @@ public class ProfileUpdateServlet extends HttpServlet {
 				HttpSession session = request.getSession();
 				User LOGINUSER = (User)session.getAttribute("login_user");
 
-	            User NEWUSER = new User(LOGINUSER.getID(),USER_ID,USER_PW,USER_GENDERID,USER_HOMEID,USER_PTEMPERTUREID);
+	            User NEWUSER = new User(LOGINUSER.getID(),USER_ID,USER_PW,USER_HOMEID,USER_GENDERID,USER_PTEMPERTUREID);
 
 
 		// 更新または削除を行う
@@ -106,7 +106,7 @@ public class ProfileUpdateServlet extends HttpServlet {
 
 
 				//メインページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/weather_information_get.jsp");
 				dispatcher.forward(request, response);
 	}
 

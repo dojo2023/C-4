@@ -45,7 +45,7 @@
   </tr>
   <tr>
 	  <th>暑がり・寒がり</th>
-	  <td>${login_user.USER_PTEMPERTUREID}</td>
+	  <td>${login_user.USER_PTEMPERTURENAME}</td>
   </tr>
 
   </table>

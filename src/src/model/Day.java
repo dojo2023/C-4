@@ -38,7 +38,7 @@ public class Day implements Serializable {
         this.DAY_DAY = DAY_DAY;
 	}
 
-	public Day(){
+	public Day(String day_day2, String user_id2, String day_htemperture2, String day_ltemperture2){
 		this.ID = 0;
 		this.USER_ID = "";
 		this.DAY_HTEMPERTURE = 0;
@@ -48,6 +48,20 @@ public class Day implements Serializable {
         this.DAY_BOTTOMNO = 0;
 
 	}
+
+	public Day(String day_day2, String day_htemperture2, String day_ltemperture2) {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
+
+
+
+
+	public Day() {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
+
+
+
 
 	public int getID() {
 		return ID;

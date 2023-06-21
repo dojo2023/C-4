@@ -45,6 +45,9 @@ public class Cloth implements Serializable {
 		this.SMALL_CATEGORYID = 0;
 	    this.CLO_IMAGES = "";
 		}
+	public Cloth(String iD2, int sMALL_CATEGORYID2, String sMALL_CATEGORY, String cLO_IMAGES2) {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
 	public int getID() {
 		return ID;
 	}

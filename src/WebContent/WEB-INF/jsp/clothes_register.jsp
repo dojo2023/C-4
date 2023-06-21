@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,68 +28,69 @@
 	<main>
 		<p>登録</p>
 
+		<form method="POST" action="/hello/ClothesRegisterServlet" id="ClothesRegister_form"  enctype="multipart/form-data"
+			 onsubmit = "return hoge();">
+
+			<p>服の画像</p>
+    	  	<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);">
+			<canvas id="preview" style="max-width:200px;"></canvas><br>
+
+			<p>服の種類</p>
+			<select name="clothes_kind">
+				<c:forEach var="e" items="${smallcategory_list}" >
+				  <option value="${e.ID}">${e.SMALL_CATEGORY}</option>
+				</c:forEach>
+			</select><br>
+
+<!--
 		<p>服の画像</p>
-		<%-- form actionタグは未実装 --%>
-		<%-- <form action="clothes_register_check.jsp" method="post" enctype="multipart/form-data" ></form> --%>
-      	<input type="file" name="clothes_img1">
+      	<input type="file" name="clothes_img">
 
 		<p>服の種類</p>
 			<select name="clothes_kind">
-			  <option value="clothes_kind1"></option>
+			  <option value="clothes_kind"></option>
 			</select><br>
 
 		<p>服の画像</p>
-		<%-- form actionタグは未実装 --%>
-		<%-- <form action="clothes_register_check.jsp" method="post" enctype="multipart/form-data" ></form> --%>
-      	<input type="file" name="clothes_img2">
+      	<input type="file" name="clothes_img">
 
 		<p>服の種類</p>
 			<select name="clothes_kind">
-			  <option value="clothes_kind1"></option>
+			  <option value="clothes_kind"></option>
 			</select><br>
 
 		<p>服の画像</p>
-		<%-- form actionタグは未実装 --%>
-		<%-- <form action="clothes_register_check.jsp" method="post" enctype="multipart/form-data" ></form> --%>
-      	<input type="file" name="clothes_img3">
+      	<input type="file" name="clothes_img">
 
 		<p>服の種類</p>
 			<select name="clothes_kind">
-			  <option value="clothes_kind1"></option>
+			  <option value="clothes_kind"></option>
 			</select><br>
 
 		<p>服の画像</p>
-		<%-- form actionタグは未実装 --%>
-		<%-- <form action="clothes_register_check.jsp" method="post" enctype="multipart/form-data" ></form> --%>
-      	<input type="file" name="clothes_img4">
+      	<input type="file" name="clothes_img">
 
 		<p>服の種類</p>
 			<select name="clothes_kind">
-			  <option value="clothes_kind1"></option>
+			  <option value="clothes_kind"></option>
 			</select><br>
 
 		<p>服の画像</p>
-		<%-- form actionタグは未実装 --%>
-		<%-- <form action="clothes_register_check.jsp" method="post" enctype="multipart/form-data" ></form> --%>
-      	<input type="file" name="clothes_img5">
+      	<input type="file" name="clothes_img">
 
 		<p>服の種類</p>
 			<select name="clothes_kind">
-			  <option value="clothes_kind1"></option>
+			  <option value="clothes_kind"></option>
 			</select><br>
-
-		<p>服の画像</p>
-		<%-- form actionタグは未実装 --%>
-		<%-- <form action="clothes_register_check.jsp" method="post" enctype="multipart/form-data" ></form> --%>
-      	<input type="file" name="clothes_img6">
-
-		<p>服の種類</p>
-			<select name="clothes_kind">
-			  <option value="clothes_kind1"></option>
-			</select><br>
+			-->
 
 		<p><a href="/hello/MainServlet">メイン画面に戻る</a></p>
-		<p><a href="/hello/ClothesRegisterDisplayServlet">確認</a></p>
+		<!--  <p><a href="/hello/ClothesRegisterDisplayServlet">確認</a></p> -->
+			<div class ="button">
+		    <button type="submit" name="ClothesRegister" value="登録" id="ClothesRegister">
+		    	確認
+		    </button>
+			</div>
 		<%--
 		<form onsubmit="return hoge();">
 		<a href="/hello/ClothesRegisterDisplayServlet">
@@ -95,6 +98,8 @@
 		 </a>
 		</form>
 		--%>
+		</form>
+
 	</main>
 	<footer>
 	    <div>
@@ -103,4 +108,32 @@
 	</footer>
 
 </body>
+
+<script>
+	function previewImage(obj){
+
+		var fileReader = new FileReader();
+
+		// 読み込み後に実行する処理
+		fileReader.onload = (function() {
+
+			// canvas にプレビュー画像を表示
+			var canvas = document.getElementById('preview');
+			var ctx = canvas.getContext('2d');
+			var image = new Image();
+			image.src = fileReader.result;
+			console.log(fileReader.result) // ← (確認用)
+
+			image.onload = (function () {
+				canvas.width = image.width;
+				canvas.height = image.height;
+				ctx.drawImage(image, 0, 0);
+			});
+		});
+		// 画像読み込み
+		fileReader.readAsDataURL(obj.files[0]);
+		console.log(fileReader.result) // ← (確認用)null
+	}
+</script>
+
 </html>

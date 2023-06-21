@@ -28,9 +28,8 @@
 
 	<p>服一覧画面</p>
 	<form method="POST" action="/hello/ClothesListdeleteupdateServlet" id="">
-		<button type="submit" name="1" value="1">
-			上に羽織るもの（薄手)
-		</button>
+		<input type="submit" name="btn" value="上に羽織るもの（薄手)"><!-- btn = value属性の値がサーバに送られる -->
+
 		<button type="submit" name="2" value="2">
 			上に羽織るもの
 		</button>

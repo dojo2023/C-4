@@ -14,7 +14,7 @@ public class User implements Serializable {
 	private int USER_GENDERID;
 	private String USER_GENDERNAME;	 //男、女、その他
 	private int USER_PTEMPERTUREID;
-
+	private int USER_PTEMPERTURENAME;
 
 	//User user = new User("sasahara", "password", "県名");
 
@@ -149,6 +149,14 @@ public class User implements Serializable {
 
 	public void setLONGITUDE(double lONGITUDE) {
 		LONGITUDE = lONGITUDE;
+	}
+
+	public int getUSER_PTEMPERTURENAME() {
+		return USER_PTEMPERTURENAME;
+	}
+
+	public void setUSER_PTEMPERTURENAME(int uSER_PTEMPERTURENAME) {
+		USER_PTEMPERTURENAME = uSER_PTEMPERTURENAME;
 	}
 
 

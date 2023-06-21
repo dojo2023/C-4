@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,9 +23,12 @@
 	<input type="radio" name="user_genderid" value="3">その他<br>
 	<p>居住地</p>
 		<select name="user_homeid">
-		  <option value="1">北海道</option>
-		  <option value="2">青森</option>
-		</select><br>
+		<c:forEach var="e" items="${list}" >
+		  <option value="${e.ID}">${e.HOME}</option>
+		 </c:forEach>
+		</select>
+
+	<br>
 	<p>暑がり寒がり</p>
 		<select name="user_ptempertureid">
 		  <option value="1">5</option>

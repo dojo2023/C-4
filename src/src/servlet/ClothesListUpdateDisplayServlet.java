@@ -8,6 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import model.Cloth;
 
 /**
  * Servlet implementation class ClothesListUpdateDisplayServlet
@@ -15,6 +18,9 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/ClothesListUpdateDisplayServlet")
 public class ClothesListUpdateDisplayServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final String SMALL_CATEGORY = null;
+	private static final int SMALL_CATEGORYID = 0;
+	private static final String ID = null;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -22,27 +28,40 @@ public class ClothesListUpdateDisplayServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		// 送信された値を取得する
-        String selectedValue = request.getParameter("selectedValue");
-        int clothId = Integer.parseInt(request.getParameter("clothId"));
+        /*String selectedValue = request.getParameter("selectedValue");
+        int clothId = Integer.parseInt(request.getParameter("clothId"));*/
 
         // 取得した値をjspに渡す
-        request.setAttribute("selectedValue", selectedValue);
-        request.setAttribute("clothId", clothId);
-
-
+       /* request.setAttribute("selectedValue", selectedValue);
+        request.setAttribute("clothId", clothId);*/
 
 		//編集確認画面にフォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/clothes_update_check.jsp");
 		dispatcher.forward(request, response);
+
+		Cloth cDao = new Cloth(ID,SMALL_CATEGORYID,SMALL_CATEGORY);
+
 	}
+
 
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		// リクエストパラメータを取得する
+				request.setCharacterEncoding("UTF-8");
+				String ID = request.getParameter("ID");
+				String SMALL_CATEGORY = request.getParameter("SMALL_CATEGORY");
+				int SMALL_CATEGORYID = Integer.parseInt("SMALL_CATEGORYID");
+
+				Cloth cDao = new Cloth(ID,SMALL_CATEGORYID,SMALL_CATEGORY);
+
+				//セッションスコープにIDを格納する
+				HttpSession session = request.getSession();
+				session.setAttribute("clothes_update", cDao);
+
+
 	}
 
 }

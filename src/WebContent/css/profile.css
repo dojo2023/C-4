@@ -56,6 +56,32 @@ main{
 
 }
 
+/*メニューバーの色*/
+.headermenu{ /* 通常時のカラー */
+  color: #2B295F;
+}
+
+.headermenu a:link {/* 訪れたことのない時のカラー */
+  color: #32586D;
+  text-decoration: none;
+}
+
+.headermenu a:visited {
+  color: #32586D; /* 訪れたことがある時のカラー*/
+  text-decoration: none;
+}
+
+.headermenu a:hover {
+  color: #815935; /* マウスポインタを置いた時のカラー*/
+  text-decoration: none;
+}
+
+.headermenu a:active {
+  color: #32586D; /* クリックした時のカラー*/
+  text-decoration: none;
+}
+
+
 
 
 

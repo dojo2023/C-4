@@ -58,10 +58,11 @@ public class ClothesListUpdateServlet extends HttpServlet {
 				request.setCharacterEncoding("UTF-8");
 				String ID = request.getParameter("ID");
 				String SMALL_CATEGORY = request.getParameter("SMALL_CATEGORY");
+				String CLO_IMAGES = request.getParameter("CLO_IMAGES");
 				int SMALL_CATEGORYID = Integer.parseInt("SMALL_CATEGORYID");
 
 
-				Cloth cDao = new Cloth(ID,SMALL_CATEGORYID,SMALL_CATEGORY);
+				Cloth cDao = new Cloth(ID,SMALL_CATEGORYID,SMALL_CATEGORY,CLO_IMAGES);
 
 
 	        //セッションスコープにIDを格納する

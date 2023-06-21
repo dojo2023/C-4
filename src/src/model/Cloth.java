@@ -7,6 +7,8 @@ public class Cloth implements Serializable {
 	private String USER_ID;
 	private int SMALL_CATEGORYID;
 	private String CLO_IMAGES;
+	private String CLO_NAME;
+	private String SMALL_NAME;
 	//private String SMALL_CATEGORY;
 	//引数アリのコンストラクタの設定
 	public Cloth(int ID,String USER_ID,int SMALL_CATEGORYID,String CLO_IMAGES){
@@ -44,7 +46,12 @@ public class Cloth implements Serializable {
 		this.USER_ID = "";
 		this.SMALL_CATEGORYID = 0;
 	    this.CLO_IMAGES = "";
+	    this.CLO_NAME ="";
+	    this.SMALL_NAME="";
 		}
+	public Cloth(String iD2, int sMALL_CATEGORYID2, String sMALL_CATEGORY, String cLO_IMAGES2) {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
 	public int getID() {
 		return ID;
 	}
@@ -68,6 +75,18 @@ public class Cloth implements Serializable {
 	}
 	public void setSMALL_CATEGORYID(int SMALL_CATEGORYID) {
 		this.SMALL_CATEGORYID = SMALL_CATEGORYID;
+	}
+	public String getCLO_NAME() {
+		return CLO_NAME;
+	}
+	public void setCLO_NAME(String cLO_NAME) {
+		CLO_NAME = cLO_NAME;
+	}
+	public String getSMALL_NAME() {
+		return SMALL_NAME;
+	}
+	public void setSMALL_NAME(String sMALL_NAME) {
+		SMALL_NAME = sMALL_NAME;
 	}
 
 

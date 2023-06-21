@@ -31,10 +31,17 @@ public class UserRegisterServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		//都道府県のDaoと結び付け
 		Latitude_and_longitudeDao dao;
 		dao = new Latitude_and_longitudeDao();
 		List<Latitudes_and_longitudes> list = dao.select(null);
 		request.setAttribute("list", list);
+
+		//暑がり寒がりのDaoと結び付け
+		PtempertureDao dao2;
+		dao2 = new PtempertureDao();
+		List<Ptemperture> list2 = dao2.select(null);
+		request.setAttribute("list2", list2);
 
 		// ユーザー登録ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_register.jsp");

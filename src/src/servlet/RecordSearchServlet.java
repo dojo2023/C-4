@@ -9,11 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import dao.DailyDao;
 import model.Day;
-import model.User;
 
 /**
  * Servlet implementation class RecordSearchServlet
@@ -29,38 +27,30 @@ public class RecordSearchServlet extends HttpServlet {
 		// コーディネート履歴検索ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/record_search.jsp");
 		dispatcher.forward(request, response);
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//検索結果サーブレットにリダイレクトする
-		response.sendRedirect("/hello/RecordSearchDisplayServlet");
+    }
 
 
+     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+ 		// リクエストパラメータを取得する
+ 			request.setCharacterEncoding("UTF-8");
+ 			String user_id = request.getParameter("USER_ID");
+ 			String day_day = request.getParameter("DAY_DAY");
+ 			String day_htemperture = request.getParameter("DAY_HTEMPERTURE");
+ 			String day_ltemperture = request.getParameter("DAY_LTEMPERTURE");
 
 
-		//リクエストパラメータを取得する
-		request.setCharacterEncoding("UTF-8");
-		String day_day = request.getParameter("DAY_DAY");
-		//String day_htemperture = request.getParameter("DAY_HTEMPERTURE");
-		//String day_ltemperture = request.getParameter("DAY_LTEMPERTURE");
-		HttpSession session = request.getSession();
+ 		// 検索処理を行う
+ 			DailyDao dDao = new DailyDao();
+ 			List<Day> record_search = dDao.select(new Day(day_day,user_id,day_htemperture,day_ltemperture));
 
-		User search = (User)session.getAttribute("login_user");
-        String user_id = search.getUSER_ID();
+ 			// 検索結果をリクエストスコープに格納する
+ 			request.setAttribute("record_search", record_search);
 
-		//検索処理を行う
-		DailyDao bDao = new DailyDao();
-		List<Day> cardList = bDao.select(new Day(user_id,day_day));
+ 			// 結果ページにフォワードする
+ 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/record_display.jsp");
+ 			dispatcher.forward(request, response);
 
 
-		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("record_search", cardList);
-
-				// 結果ページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/record_display.jsp");
-				dispatcher.forward(request, response);
-	}
+     }
 }

@@ -29,3 +29,12 @@ main{
     padding-right: 30px;		/* 区切りを空ける */
     line-height: 0.5;
 }
+
+/*ボディー全体*/
+body {
+  background-color: #F3F5F2;
+  color:#32586D;
+  text-align:center;
+  margin: 0 auto 0 auto; /*表を中央に表示*/
+  max-width: 215px;
+}

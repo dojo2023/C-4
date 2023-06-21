@@ -31,8 +31,9 @@
 	<br>
 	<p>暑がり寒がり</p>
 		<select name="user_ptempertureid">
-		  <option value="1">5</option>
-		  <option value="2">4</option>
+		<c:forEach var="f" items="${list2}" >
+		  <option value="${f.ID}">${f.USER_PTEMPERTURE}</option>
+		 </c:forEach>
 		</select><br>
 
 	<p>暑がりの方は＋、寒がりの方は‐</p>

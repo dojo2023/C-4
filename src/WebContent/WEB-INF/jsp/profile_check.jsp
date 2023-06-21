@@ -29,47 +29,44 @@
 
 <main>
 <p>プロフィール変更画面</p>
-<form method="POST" action="/hello/MainServlet" id="ProfileChange_form" onsubmit = "return hoge();">
-  <p>ID</p>
-  	  <input type="text" name="ID" value="${login_user.USER_ID}">
-  <p>PW</p>
-	  <input type="password" name="PW" value="${login_user.USER_PW}">
-  <p>性別</p>
-	  <input type="radio" name="gender" value="1" <c:if test="${login_user.USER_GENDERID == 1}">checked</c:if>>男
-	  <input type="radio" name="gender" value="2" <c:if test="${login_user.USER_GENDERID == 2}">checked</c:if>>女
-	  <input type="radio" name="gender" value="3" <c:if test="${login_user.USER_GENDERID == 3}">checked</c:if>>その他
+<form method="POST" action="/hello/ProfileUpdateServlet" id="ProfileChange_form" onsubmit = "return hoge();">
+	<p>ID</p>
+	<input type="text" name="ID" value="${login_user.USER_ID}">
 
+	<p>PW</p>
+	<input type="password" name="PW" value="${login_user.USER_PW}">
 
-  <p>居住地</p>
-		<select name="USER_HOMED">
-<c:forEach var="e" items="${list}" >
+	<p>性別</p>
+	<input type="radio" name="gender" value="1" <c:if test="${login_user.USER_GENDERID == 1}">checked</c:if>>男
+	<input type="radio" name="gender" value="2" <c:if test="${login_user.USER_GENDERID == 2}">checked</c:if>>女
+	<input type="radio" name="gender" value="3" <c:if test="${login_user.USER_GENDERID == 3}">checked</c:if>>その他
+
+	<p>居住地</p>
+	<select name="USER_HOMEID">
+		<c:forEach var="e" items="${list}" >
 			<option value="${e.ID}">${e.HOME}</option>
-
-</c:forEach>
-		</select>
-
-
-  <p>暑がり・寒がり</p>
-	  	<select name="PTEMPERTUREID">
-	  	<c:forEach var="f" items="${list2}" >
-		<option value="${f.ID}">${f.USER_PTEMPERTURE}</option>
 		</c:forEach>
-		</select>
+	</select>
 
-<br>
-<div class ="button">
+	<p>暑がり・寒がり</p>
+	<select name="PTEMPERTUREID">
+		<c:forEach var="f" items="${list2}" >
+			<option value="${f.ID}">${f.USER_PTEMPERTURE}</option>
+		</c:forEach>
+	</select>
+	<br>
+	<br>
+	<div class ="button">
+    	<button type="submit" name="ProfileChange_" value="確定" id="profile_check">
+	    確定
+    	</button>
+	</div>
+</form>
 
-    <button type="submit" name="ProfileChange_" value="確定" id="profile_check">
-    確定
-    </button>
 
-</div>
- </form>
-
-
-
+ <div class = "ProfileCheckLink">
     <p><a href="/hello/ProfileServlet">プロフィール画面へ戻る</a></p>
-
+ </div>
  </main>
 
  <footer>

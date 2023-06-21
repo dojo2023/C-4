@@ -28,6 +28,10 @@
 	<p>編集画面</p>
 
  	  <form method="POST" action="/hello/ClothesListServlet" id="clothesChange_form" onsubmit = "return hoge();">
+  	  <p>写真</p>
+  	  <input type="file" name="CLO_IMAGES" accept="image/*" required/>
+        <input type="hidden" name="photoInfo" value="${e.clo_imags}"/>
+
   	  <p>タグ</p>
   	  <select name="SMALL_CATEGORY">
 		<option value="${e.small_category}"></option>

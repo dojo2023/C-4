@@ -18,9 +18,6 @@ import model.Cloth;
 @WebServlet("/ClothesListUpdateDisplayServlet")
 public class ClothesListUpdateDisplayServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String SMALL_CATEGORY = null;
-	private static final int SMALL_CATEGORYID = 0;
-	private static final String ID = null;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -39,8 +36,6 @@ public class ClothesListUpdateDisplayServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/clothes_update_check.jsp");
 		dispatcher.forward(request, response);
 
-		Cloth cDao = new Cloth(ID,SMALL_CATEGORYID,SMALL_CATEGORY);
-
 	}
 
 
@@ -53,9 +48,10 @@ public class ClothesListUpdateDisplayServlet extends HttpServlet {
 				request.setCharacterEncoding("UTF-8");
 				String ID = request.getParameter("ID");
 				String SMALL_CATEGORY = request.getParameter("SMALL_CATEGORY");
+				String CLO_IMAGES = request.getParameter("CLO_IMAGES");
 				int SMALL_CATEGORYID = Integer.parseInt("SMALL_CATEGORYID");
 
-				Cloth cDao = new Cloth(ID,SMALL_CATEGORYID,SMALL_CATEGORY);
+				Cloth cDao = new Cloth(ID,SMALL_CATEGORYID,SMALL_CATEGORY,CLO_IMAGES);
 
 				//セッションスコープにIDを格納する
 				HttpSession session = request.getSession();

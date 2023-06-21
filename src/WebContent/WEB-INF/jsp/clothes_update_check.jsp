@@ -30,6 +30,10 @@
 	  <p>編集確認</p>
 
 	  <table class= "clothestable">
+	  <tr>
+	  <th>写真</th>
+	  <td>${clo_imags.CLO_IMAGES}</td>
+      </tr>
   	  <tr>
 	  <th>タグ</th>
 	  <td>${small_category.SMALL_CATEGORY}</td>

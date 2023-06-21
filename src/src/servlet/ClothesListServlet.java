@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ClothesListServlet
  */
-@WebServlet("/ClothesListServlet")
-public class ClothesListServlet extends HttpServlet {
+@WebServlet("/ClothesListServlet")//アノテーションでマッピングを指定
+public class ClothesListServlet extends HttpServlet {//HttpServletクラスを継承することでwebブラウザからのリクエストを受け取れるようになる
 	private static final long serialVersionUID = 1L;
 
 	/**

@@ -27,32 +27,16 @@
 
 
 	<p>服一覧画面</p>
-	<form method="POST" action="/hello/ClothesListdeleteupdateServlet" id="">
-		<input type="submit" name="btn" value="上に羽織るもの（薄手)"><!-- btn = value属性の値がサーバに送られる -->
-
-		<button type="submit" name="2" value="2">
-			上に羽織るもの
-		</button>
-
-		<button type="submit" name="3" value="3">
-			防寒着
-		</button>
-
-		<button type="submit" name="4" value="4">
-			半袖
-		</button>
-		<button type="submit" name="5" value="5">
-			長袖（薄手）
-		</button>
-		<button type="submit" name="6" value="6">
-			長袖
-		</button>
-		<button type="submit" name="7" value="7">
-			ボトムス（薄手）
-		</button>
-		<button type="submit" name="8" value="8">
-			ボトムス
-		</button>
+	<form method="GET" action="/hello/ClothesListdeleteupdateServlet" >
+		<input type="submit" name="btn" value="上に羽織るもの（薄手)">
+		<input type="submit" name="btn" value="上に羽織るもの">
+		<input type="submit" name="btn" value="防寒着">
+		<input type="submit" name="btn" value="半袖">
+		<input type="submit" name="btn" value="長袖（薄手)">
+		<input type="submit" name="btn" value="長袖">
+		<input type="submit" name="btn" value="ボトムス（薄手）">
+		<input type="submit" name="btn" value="ボトムス">
+		<input type="submit" name="btn" value="スカート">
 
 	</form>
 

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@page import="model.Cloth" %>
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -24,7 +26,7 @@
 </header>
 <main>
 	<p>各タグ詳細一覧画面</p>
-	<div>${clothes_img.CLO_IMAGES}</div>
+	<p>${tagName}です</p>
 	<div>写真</div>
 	<div>写真</div>
 	<div>写真</div>

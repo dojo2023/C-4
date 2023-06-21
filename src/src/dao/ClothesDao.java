@@ -75,11 +75,13 @@ public class ClothesDao {
 			}
 
 
+
+
 			//IDで検索項目を指定し、検索結果のリストを返す
-			public Cloth selectSMALL_CATEGORYID(String small_categoryid){
+			public ArrayList<Cloth> selectSMALL_CATEGORYID(Cloth small_category){
 				Connection conn = null;
-				Cloth clotheslist = null;
-				try {
+				ArrayList<Cloth> clothesList = new ArrayList<Cloth>();
+ 				try {
 					// JDBCドライバを読み込む
 					Class.forName("org.h2.Driver");
 
@@ -94,11 +96,9 @@ public class ClothesDao {
 
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 					// SQL文を完成させる
-					if (small_categoryid != null) {
-						pStmt.setString(1,small_categoryid);//一番目の？に対して引数で指定したsmall_categoryidを入れる
-					}
-					else {
-						pStmt.setString(1, "%");
+
+					if (small_category.getSMALL_CATEGORYID() != 0) {//？の個数分やる、入れたいデータをsetする
+						pStmt.setString(1, "%" + small_category.getSMALL_CATEGORYID() + "%");
 					}
 
 
@@ -108,21 +108,22 @@ public class ClothesDao {
 
 					// 結果表をコレクションにコピーする
 					while (rs.next()) {
-					    clotheslist = new Cloth(
+					     Cloth clotheslist = new Cloth(
 					    		rs.getInt("ID"),
 								rs.getString("USER_ID"),
 								rs.getInt("SMALL_CATEGORYID"),
-								rs.getString("CLO_IMAGES")
-						);
+								rs.getString("CLO_IMAGES"));
+
+								clothesList.add(clotheslist);
 					}
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-					clotheslist = null;
+					clothesList = null;
 				}
 				catch (ClassNotFoundException e) {
 					e.printStackTrace();
-					clotheslist = null;
+					clothesList = null;
 				}
 				finally {
 					// データベースを切断
@@ -132,12 +133,12 @@ public class ClothesDao {
 						}
 						catch (SQLException e) {
 							e.printStackTrace();
-							clotheslist = null;
+							clothesList = null;
 						}
 					}
 				}
 				// 結果を返す
-				return clotheslist;
+				return clothesList;
 			}
 
 

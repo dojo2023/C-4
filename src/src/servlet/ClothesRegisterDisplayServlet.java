@@ -48,14 +48,69 @@ public class ClothesRegisterDisplayServlet extends HttpServlet {
 
 		clothes.setUSER_ID(user.getUSER_ID());
 
+
+		HttpSession session2 = request.getSession();
+		Cloth clothes2 = (Cloth)session2.getAttribute("clo_img_name2");
+
+		HttpSession sessionuser2 = request.getSession();
+		User user2 = (User)sessionuser2.getAttribute("login_user");
+
+		clothes2.setUSER_ID(user2.getUSER_ID());
+
+
+		HttpSession session3 = request.getSession();
+		Cloth clothes3 = (Cloth)session3.getAttribute("clo_img_name3");
+
+		HttpSession sessionuser3 = request.getSession();
+		User user3 = (User)sessionuser3.getAttribute("login_user");
+
+		clothes3.setUSER_ID(user3.getUSER_ID());
+
+
+		HttpSession session4 = request.getSession();
+		Cloth clothes4 = (Cloth)session4.getAttribute("clo_img_name4");
+
+		HttpSession sessionuser4 = request.getSession();
+		User user4 = (User)sessionuser4.getAttribute("login_user");
+
+		clothes4.setUSER_ID(user4.getUSER_ID());
+
+
 		// 登録処理を行う
 		ClothesDao cDao = new ClothesDao();
-		if (cDao.insert(clothes)) {	// 登録成功
-//			request.setAttribute("result",
-//			new Result("登録成功！", "レコードを登録しました。", "/hello/LoginServlet"));
-			// ログインページにリダイレクトする
-			response.sendRedirect("/hello/ClothesRegisterServlet");
+		if (cDao.insert(clothes)) {
+			String cl = clothes2.getCLO_IMAGES();
+			if(cl=="") {
+				// ログインページにリダイレクトする
+				response.sendRedirect("/hello/ClothesRegisterServlet");
+			}
 		}
+
+		if (cDao.insert(clothes2)) {
+			String cl2 = clothes3.getCLO_IMAGES();
+			if(cl2=="") {
+			// ログインページにリダイレクトする
+				response.sendRedirect("/hello/ClothesRegisterServlet");
+			}
+		}
+
+		if (cDao.insert(clothes3)) {
+			String cl3 = clothes4.getCLO_IMAGES();
+			if(cl3=="") {
+			// ログインページにリダイレクトする
+				response.sendRedirect("/hello/ClothesRegisterServlet");
+			}
+		}
+
+
+		if (cDao.insert(clothes4)) {
+//			String cl4 = clothes5.getCLO_IMAGES();
+//			if(cl4=="") {
+			// ログインページにリダイレクトする
+				response.sendRedirect("/hello/ClothesRegisterServlet");
+			}
+//		}
+
 //		else {												// 登録失敗
 //			request.setAttribute("result",
 //			new Result("登録失敗！", "レコードを登録できませんでした。", "/hello/LoginServlet"));

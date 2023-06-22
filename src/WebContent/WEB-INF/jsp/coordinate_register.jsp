@@ -46,9 +46,10 @@
   <input type="radio" name="third" value="clothes2">
   <input type="radio" name="third" value="clothes3">
 
-<p><a href="/hello/CoordinateRegisterDisplayServlet">コーディネート登録確認画面へ</a></p>
-<p><a href="/hello/MainServlet">メイン画面へ戻る</a></p>
-
+<div class = "clo_register">
+ <p><a href="/hello/CoordinateRegisterDisplayServlet">コーディネート登録確認画面へ</a></p>
+ <p><a href="/hello/MainServlet">メイン画面へ戻る</a></p>
+</div>
 
 </main>
  <footer>

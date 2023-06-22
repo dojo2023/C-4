@@ -1,2 +1,60 @@
 @charset "UTF-8";
 
+
+/*ボタン関連*/
+.Coordinateinput{
+	display:inline-block;
+	background: #F4CFBE;
+  	border-bottom: 5px solid;
+  	box-shadow: 0 3px 5px rgba(0, 0, 0, .3); /*影つける*/
+  	border-radius: 100vh;
+}
+
+
+/*ボタン関連*/
+.Coordinateinput:active{
+	display:inline-block;
+	background: #F4CFBE;
+  	border-bottom: 5px solid;
+  	box-shadow: 0 3px 5px rgba(0, 0, 0, .3); /*影つける*/
+  	border-radius: 100vh;
+}
+
+
+
+.Coordinateinput:hover{
+  transform: translate3d(0, 5px, 0);
+  margin-top: 3px;
+  border-bottom: 2px solid;
+  background-color:#F4CFBE;
+  transition: .3s;
+  top: 9px;
+  box-shadow: 0 0;
+}
+
+
+/*変更・メインへ戻る リンクの色*/
+
+.CoordinateRegisterBack{ /* 通常時のカラー */
+  color: #2B295F;
+}
+
+.CoordinateRegisterBack a:link {/* 訪れたことのない時のカラー */
+  color: #32586D;
+  text-decoration: none;
+}
+
+.CoordinateRegisterBack a:visited {
+  color: #32586D; /* 訪れたことがある時のカラー*/
+  text-decoration: none;
+}
+
+.CoordinateRegisterBack a:hover {
+  color: #CA3032; /* マウスポインタを置いた時のカラー*/
+  text-decoration: none;
+}
+
+.CoordinateRegisterBack a:active {
+  color: #32586D; /* クリックした時のカラー*/
+  text-decoration: none;
+}

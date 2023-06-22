@@ -42,9 +42,13 @@
 
 
 <form method="POST" action="/hello/MainServlet" id="CoordinateRegister_form">
+   <div class = "Coordinateinput">
     <input type="submit" name="CoodinateRegister" value="登録">
-    <p><a href="/hello/CoordinateRegisterServlet">コーディネート登録画面へ戻る</a></p>
+   </div>
  </form>
+    <div class = "CoordinateRegisterBack">
+    <p><a href="/hello/CoordinateRegisterServlet">コーディネート登録画面へ戻る </a></p>
+    </div>
 
 
 

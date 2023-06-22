@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/*メニューバーの編集ここから*/
 .headermenu{
    /* background-color:brown; */
     position: fixed;
@@ -28,6 +29,8 @@ body{
 
 main{
     height: 100vw; /*スクロールしても固定*/
+    padding: 0 auto 0 auto; /*何かを中央に表示*/
+    width:215px;
 }
 
 
@@ -37,7 +40,43 @@ main{
     list-style-type: none;	/* 先頭の記号をなくす */
     padding-right: 30px;		/* 区切りを空ける */
     line-height: 0.5;
+     margin: 0 auto 0 auto;
+     padding: 15px 30px 15px 30px;
+     display: table-cell;
   }
+
+.nav{
+	 margin: 0 auto 0 auto; /*メニューバーを中央揃え！重要！*/
+}
+
+
+
+/*メニューバーの色*/
+.headermenu{ /* 通常時のカラー */
+  color: #2B295F;
+}
+
+.headermenu a:link {/* 訪れたことのない時のカラー */
+  color: #32586D;
+  text-decoration: none;
+}
+
+.headermenu a:visited {
+  color: #32586D; /* 訪れたことがある時のカラー*/
+  text-decoration: none;
+}
+
+.headermenu a:hover {
+  color: #815935; /* マウスポインタを置いた時のカラー*/
+  text-decoration: none;
+}
+
+.headermenu a:active {
+  color: #32586D; /* クリックした時のカラー*/
+  text-decoration: none;
+}
+
+/*メニューバーの編集ここまで*/
 
 
 

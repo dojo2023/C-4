@@ -80,7 +80,7 @@ values('ボトムス');
 smallcategoryテーブル
 create table smallcategory(
 ID int AUTO_INCREMENT PRIMARY KEY ,
-small_CATEGORY VARCHAR(10) NOT NULL ,
+small_CATEGORY VARCHAR(15) NOT NULL ,
 bigcategory_ID int NOT NULL
 )
 
@@ -88,10 +88,10 @@ bigcategory_ID int NOT NULL
 insert into smallcategory(small_CATEGORY, bigcategory_ID)values('半袖', 1);
 insert into smallcategory(small_CATEGORY, bigcategory_ID)values('長袖(薄手)', 1);
 insert into smallcategory(small_CATEGORY, bigcategory_ID)values('長袖', 1);
-insert into smallcategory(small_CATEGORY, bigcategory_ID)values('コート', 2);
-insert into smallcategory(small_CATEGORY, bigcategory_ID)values('ジャケット(薄手)', 2);
-insert into smallcategory(small_CATEGORY, bigcategory_ID)values('ジャケット', 2);
-insert into smallcategory(small_CATEGORY, bigcategory_ID)values('カーディガン', 2);
+insert into smallcategory(small_CATEGORY, bigcategory_ID)values('上に羽織るもの(薄手)', 2);
+insert into smallcategory(small_CATEGORY, bigcategory_ID)values('上に羽織るもの', 2);
+insert into smallcategory(small_CATEGORY, bigcategory_ID)values('防寒着', 2);
+
 insert into smallcategory(small_CATEGORY, bigcategory_ID)values('長ズボン(薄手)', 3);
 insert into smallcategory(small_CATEGORY, bigcategory_ID)values('長ズボン', 3);
 insert into smallcategory(small_CATEGORY, bigcategory_ID)values('スカート', 3);

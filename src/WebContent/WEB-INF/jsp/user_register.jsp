@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/hello/css/user_register.css">
 <title>ユーザー登録</title>
+<img src="/hello/images/logo_images/clo_logo6.png" id="logoimg">
 </head>
 <body>
 	<header>
@@ -37,7 +38,9 @@
 		</select><br>
 
 	<p>暑がりの方は＋、寒がりの方は‐</p>
-	<p><a href="/hello/LoginServlet">ログイン画面に戻る</a></p>
+	<div class="MainBackLink">
+			<p><a href="/hello/LoginServlet">ログイン画面に戻る</a></p>
+	</div>
 	<div class ="button">
 		    <button type="submit" name="UserRegister" value="登録" id="UserRegister">
 		    	確認

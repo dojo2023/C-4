@@ -51,6 +51,9 @@ public class ClothesRegisterServlet extends HttpServlet {
 		List<Small_category> list5 = sdao.selectall(null);
 		request.setAttribute("smallcategory_list5", list5);
 
+		List<Small_category> list6 = sdao.selectall(null);
+		request.setAttribute("smallcategory_list6", list6);
+
 		// 服登録ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/clothes_register.jsp");
 		dispatcher.forward(request, response);
@@ -252,6 +255,44 @@ public class ClothesRegisterServlet extends HttpServlet {
 		        // セッションスコープにcloをclo_img_nameという名前を付けて格納する
 				HttpSession session5 = request.getSession();
 				session5.setAttribute("clo_img_name5", clo5);
+
+
+				//画像六枚目、服の種類プルダウン六つ目
+				Part part6 = request.getPart("IMAGE6"); // getPartで取得
+
+				String image6 = this.getFileName(part6);
+				request.setAttribute("image6", image6);
+				// サーバの指定のファイルパスへファイルを保存
+		        //場所はクラス名↑の上に指定してある
+				part6.write(image6);
+
+				//ここから上で画像の保存
+
+				// リクエストパラメータを取得する
+				request.setCharacterEncoding("UTF-8");
+				String small_category6= request.getParameter("clothes_kind6");
+				int SMALL_CATEGORY6=Integer.parseInt(small_category6);
+				//String img = "'/hello/images/clothes_images/'+=image";
+				String img6 = "/hello/images/clothes_images/"+image6;
+
+				//cloを定義し、上で取得したSMALL_CATEGORYをSMALL_CATEGORYID、imgをCLO_IMAGESとし、cloにセットする
+				Cloth clo6;
+				clo6 = new Cloth();
+				clo6.setSMALL_CATEGORYID(SMALL_CATEGORY6);
+				clo6.setCLO_IMAGES(img6);
+//				clo.setCLO_NAME(image);
+
+				//服の小カテゴリーのDaoと結び付け
+				SmallcategoryDao smallDao6 = new SmallcategoryDao();
+				//selectIDを使ってIDで検索できるようにする
+		        Small_category SC6=smallDao6.selectID(clo6.getSMALL_CATEGORYID());
+
+		        //cloに上の検索結果（SMALL_CATEGORY）をSMALL_NAMEとしてセットする
+		        clo6.setSMALL_NAME(SC6.getSMALL_CATEGORY());
+
+		        // セッションスコープにcloをclo_img_nameという名前を付けて格納する
+				HttpSession session6 = request.getSession();
+				session6.setAttribute("clo_img_name6", clo6);
 
 		// 服確認ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/clothes_register_check.jsp");

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!--  <link rel="stylesheet" href="/hello/css/clothes_register.css"> -->
+<link rel="stylesheet" href="/hello/css/clothes_register.css">
 <link rel="stylesheet" href="/hello/css/common.css"><!-- 共通CSS使用 -->
 <title>服登録</title>
 </head>
@@ -35,7 +35,6 @@
 			<p>服の画像</p>
     	  	<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);">
 			<canvas id="preview" style="max-width:200px;"></canvas><br>
-
 			<p>服の種類</p>
 			<select name="clothes_kind">
 				<c:forEach var="e" items="${smallcategory_list}" >
@@ -43,10 +42,10 @@
 				</c:forEach>
 			</select><br>
 
+
 			<p>服の画像</p>
     	  	<input type="file" name="IMAGE2" accept="image/*" onchange="preview2Image(this);">
 			<canvas id="preview2" style="max-width:200px;"></canvas><br>
-
 			<p>服の種類</p>
 			<select name="clothes_kind2">
 				<c:forEach var="e" items="${smallcategory_list2}" >
@@ -54,10 +53,10 @@
 				</c:forEach>
 			</select><br>
 
+
 			<p>服の画像</p>
     	  	<input type="file" name="IMAGE3" accept="image/*" onchange="preview3Image(this);">
 			<canvas id="preview3" style="max-width:200px;"></canvas><br>
-
 			<p>服の種類</p>
 			<select name="clothes_kind3">
 				<c:forEach var="e" items="${smallcategory_list3}" >
@@ -65,10 +64,10 @@
 				</c:forEach>
 			</select><br>
 
+
 			<p>服の画像</p>
     	  	<input type="file" name="IMAGE4" accept="image/*" onchange="preview4Image(this);">
 			<canvas id="preview4" style="max-width:200px;"></canvas><br>
-
 			<p>服の種類</p>
 			<select name="clothes_kind4">
 				<c:forEach var="e" items="${smallcategory_list4}" >
@@ -76,16 +75,28 @@
 				</c:forEach>
 			</select><br>
 
-			<p>服の画像</p>
-    	  	<input type="file" name="IMAGE4" accept="image/*" onchange="preview4Image(this);">
-			<canvas id="preview4" style="max-width:200px;"></canvas><br>
 
+			<p>服の画像</p>
+    	  	<input type="file" name="IMAGE5" accept="image/*" onchange="preview5Image(this);">
+			<canvas id="preview5" style="max-width:200px;"></canvas><br>
 			<p>服の種類</p>
-			<select name="clothes_kind4">
-				<c:forEach var="e" items="${smallcategory_list4}" >
+			<select name="clothes_kind5">
+				<c:forEach var="e" items="${smallcategory_list5}" >
 				  <option value="${e.ID}">${e.SMALL_CATEGORY}</option>
 				</c:forEach>
 			</select><br>
+
+
+			<p>服の画像</p>
+    	  	<input type="file" name="IMAGE6" accept="image/*" onchange="preview6Image(this);">
+			<canvas id="preview6" style="max-width:200px;"></canvas><br>
+			<p>服の種類</p>
+			<select name="clothes_kind6">
+				<c:forEach var="e" items="${smallcategory_list6}" >
+				  <option value="${e.ID}">${e.SMALL_CATEGORY}</option>
+				</c:forEach>
+			</select><br>
+
 
 		<p><a href="/hello/MainServlet">メイン画面に戻る</a></p>
 		<!--  <p><a href="/hello/ClothesRegisterDisplayServlet">確認</a></p> -->
@@ -226,7 +237,7 @@
 
 			// canvas にプレビュー画像を表示
 			var canvas5 = document.getElementById('preview5');
-			var ctx5 = canvas4.getContext('2d');
+			var ctx5 = canvas5.getContext('2d');
 			var image5 = new Image();
 			image5.src = fileReader5.result;
 			console.log(fileReader5.result) // ← (確認用)
@@ -240,6 +251,32 @@
 		// 画像読み込み
 		fileReader5.readAsDataURL(obj.files[0]);
 		console.log(fileReader5.result) // ← (確認用)null
+	}
+
+
+	function preview6Image(obj){
+
+		var fileReader6 = new FileReader();
+
+		// 読み込み後に実行する処理
+		fileReader6.onload = (function() {
+
+			// canvas にプレビュー画像を表示
+			var canvas6 = document.getElementById('preview6');
+			var ctx6 = canvas6.getContext('2d');
+			var image6 = new Image();
+			image6.src = fileReader6.result;
+			console.log(fileReader6.result) // ← (確認用)
+
+			image6.onload = (function () {
+				canvas6.width = image6.width;
+				canvas6.height = image6.height;
+				ctx6.drawImage(image6, 0, 0);
+			});
+		});
+		// 画像読み込み
+		fileReader6.readAsDataURL(obj.files[0]);
+		console.log(fileReader6.result) // ← (確認用)null
 	}
 </script>
 

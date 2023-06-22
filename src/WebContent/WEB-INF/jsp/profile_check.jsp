@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/hello/css/profile_check.css">
+<link rel="stylesheet" href="/hello/css/common.css"><!-- 共通CSS使用 -->
 <script type="text/javascript" src="/hello/JS/profile_check.js"></script>
 <title>プロフィール変更</title>
 </head>

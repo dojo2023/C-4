@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/hello/css/profile.css">
-<link rel="stylesheet" href="/hello/css/common.css">
+<link rel="stylesheet" href="/hello/css/common.css"><!-- 共通CSS使用 -->
 <title>プロフィール</title>
 </head>
 <body>

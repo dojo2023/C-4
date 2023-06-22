@@ -38,12 +38,18 @@
   <br>
   <p>(仮)服タグ3</p>
 
+  <br>
+  <p>(仮)服タグ4</p>
+
 
 
 
 <form method="POST" action="/hello/MainServlet" id="CoordinateRegister_form">
    <div class = "Coordinateinput">
-    <input type="submit" name="CoodinateRegister" value="登録">
+   <button type="submit" name="CoodinateRegister" value="登録" id="Coordinateinput">
+   登録
+   </button>
+<!--    <input type="submit" name="CoodinateRegister" value="登録"> -->
    </div>
  </form>
     <div class = "CoordinateRegisterBack">

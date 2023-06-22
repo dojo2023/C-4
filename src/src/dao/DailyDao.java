@@ -100,6 +100,94 @@ public class DailyDao {
 
 
 
+			// 引数param(日付)で検索項目を指定し、検索結果のリストを返す
+			public List<Day> selectsearch(Day param) {
+				Connection conn = null;
+				List<Day> cardList = new ArrayList<Day>();
+
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
+
+					// SQL文を準備する
+					String sql = "select ID,DAY_DAY,USER_ID,DAY_HTEMPERATURE,DAY_LTEMPERATURE,DAY_WEATHERCODE,DAY_TOPSNO,DAY_OUTERNO1, DAY_OUTERNO2,DAY_BOTTOMNO from DAILY WHERE DAY_DAY=? AND USER_ID=? ORDER BY ID";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+
+					// SQL文を完成させる
+					if (param.getDAY_DAY() != null) {
+						pStmt.setString(1,  param.getDAY_DAY());
+					}
+					else {
+						pStmt.setString(1, null);
+					}
+					if (param.getUSER_ID() != null && !param.getUSER_ID().equals("")) {
+						pStmt.setString(2, param.getUSER_ID());
+					}
+					else {
+						pStmt.setString(2, null);
+					}
+
+
+
+
+
+
+
+
+					// SQL文を実行し、結果表を取得する
+					ResultSet rs = pStmt.executeQuery();
+
+					// 結果表をコレクションにコピーする
+					while (rs.next()) {
+						Day card = new Day(
+						rs.getInt("ID"),
+						rs.getString("DAY_DAY"),
+						rs.getString("USER_ID"),
+						rs.getDouble("DAY_HTEMPERATURE"),
+						rs.getDouble("DAY_LTEMPERATURE"),
+						rs.getInt("DAY_WEATHERCODE"),
+						rs.getInt("DAY_TOPSNO"),
+						rs.getInt("DAY_OUTERNO1"),
+						rs.getInt("DAY_OUTERNO2"),
+						rs.getInt("DAY_BOTTOMNO")
+						);
+						cardList.add(card);
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					cardList = null;
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+					cardList = null;
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+							cardList = null;
+						}
+					}
+				}
+
+				// 結果を返す
+				return cardList;
+			}
+
+
+
+
+
+
+
 			// 引数profileで指定されたレコードを更新し、成功したらtrueを返す
 			public boolean update(Day day) {
 				Connection conn = null;

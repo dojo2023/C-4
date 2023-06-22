@@ -8,20 +8,22 @@
     <title>コーディネート履歴検索結果</title>
 </head>
 <body>
-	<c:if test="${empty cardList}">
-  <p>一致するデータはありません。</p>
-</c:if>
+<h1>コーディネート履歴検索結果</h1>
 
- <h1>コーディネート履歴検索結果</h1>
+	<!--<c:if test="${empty cardList}">
+      <p>一致するデータはありません。</p>
+    </c:if>-->
 
-<c:forEach var="e" items="${record_search}" varStatus="loop">
-    <input type="hidden" name="currentIndex" value="${loop.index}"> <!-- Add hidden input field for current index -->
-    日付<input type="date" name="DAY_DAY" value="${e.day_day}"><br>
-    最高気温<input type="text" name="DAY_HTEMPERTURE" value="${e.day_htemperture}"><br>
-    最低気温<input type="text" name="DAY_LTEMPERTURE" value="${e.day_ltemperture}"><br>
-    トップス<input type="file" name="DAY_TOPSNO" value="${e.outfits}"><br>
-    ボトムス<input type="file" name="DAY_BOTTOMNO" value="${e.bottpms}"><br>
-    アウター<input type="file" name="DAY_OUTERNO" value="${e.outerwear}"><br>
+<c:forEach var="e" items="${record_search}">
+   <!-- <input type="hidden" name="currentIndex" value="${loop.index}"> -->
+    日付<input type="date" name="DAY_DAY" value="${e.DAY_DAY}"><br>
+    最高気温<input type="text" name="DAY_HTEMPERTURE" value="${e.DAY_HTEMPERTURE}"><br>
+    最低気温<input type="text" name="DAY_LTEMPERTURE" value="${e.DAY_LTEMPERTURE}"><br>
+    トップス<input type="text" name="DAY_TOPSNO" value="${e.DAY_TOPSNO}"><br>
+    アウター①<input type="text" name="DAY_OUTERNO1" value="${e.DAY_OUTERNO1}"><br>
+    アウター②<input type="text" name="DAY_OUTERNO2" value="${e.DAY_OUTERNO2}"><br>
+    ボトムス<input type="text" name="DAY_BOTTOMNO" value="${e.DAY_BOTTOMNO}"><br>
+
   <hr>
 </c:forEach>
 </body>

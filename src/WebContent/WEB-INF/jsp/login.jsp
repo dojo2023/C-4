@@ -5,7 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="/hello/css/login.css"><!-- ログインCSS使用 -->
 <title>ログイン</title>
+<img src="/hello/images/logo_images/clo_logo6.png" id="logoimg">
 </head>
 <body>
 <h2>ログイン</h2>
@@ -14,8 +16,9 @@
 	PW<input type="password" name="PW"><br>
     <input type="submit" name="LOGIN" value="ログイン">
  </form>
-
+<div class="NewRegisterLink">
  <p><a href="/hello/UserRegisterServlet">新規登録はこちら</a></p>
+</div>
 
 <!-- 天気画像表示サンプルコード
 <img src="/hello/images/weather_images/weather_快晴.png" width="200" height="200" alt="天気イメージ" >

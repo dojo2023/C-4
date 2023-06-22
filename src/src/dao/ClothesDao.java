@@ -11,7 +11,10 @@ import java.util.List;
 import model.Cloth;
 
 public class ClothesDao {
-	// 引数paramで検索項目を指定し、検索結果のリストを返す
+
+
+
+			// 引数paramで検索項目を指定し、検索結果のリストを返す
 			public List<Cloth> select(Cloth param) {
 				Connection conn = null;
 				List<Cloth> cardList = new ArrayList<Cloth>();
@@ -78,7 +81,7 @@ public class ClothesDao {
 
 
 			//IDで検索項目を指定し、検索結果のリストを返す
-			public ArrayList<Cloth> selectSMALL_CATEGORYID(Cloth small_category){
+			public ArrayList<Cloth> selectSMALL_CATEGORY(int small_category){
 				Connection conn = null;
 				ArrayList<Cloth> clothesList = new ArrayList<Cloth>();
  				try {
@@ -89,16 +92,13 @@ public class ClothesDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 					// SQL文を準備する
-					String sql = "SELECT * FROM CLOTHES"
-							+ "LEFT OUTER JOIN SMALLCATEGORY"
-							+ "ON CLOTHES .SMALL_CATEGORYID = SMALLCATEGORY .ID"
-							+ "where SMALL_CATEGORYID = ?";
+					String sql = "SELECT * FROM CLOTHES LEFT OUTER JOIN SMALLCATEGORY ON CLOTHES .SMALL_CATEGORYID = SMALLCATEGORY .ID where SMALL_CATEGORYID = ?";
 
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 					// SQL文を完成させる
 
-					if (small_category.getSMALL_CATEGORYID() != 0) {//？の個数分やる、入れたいデータをsetする
-						pStmt.setString(1, "%" + small_category.getSMALL_CATEGORYID() + "%");
+					if (small_category != 0) {//？の個数分やる、入れたいデータをsetする
+						pStmt.setInt(1, small_category);
 					}
 
 
@@ -108,13 +108,14 @@ public class ClothesDao {
 
 					// 結果表をコレクションにコピーする
 					while (rs.next()) {
-					     Cloth clotheslist = new Cloth(
+					     Cloth clothes = new Cloth(
 					    		rs.getInt("ID"),
 								rs.getString("USER_ID"),
 								rs.getInt("SMALL_CATEGORYID"),
-								rs.getString("CLO_IMAGES"));
+								rs.getString("CLO_IMAGES")
+								);
 
-								clothesList.add(clotheslist);
+								clothesList.add(clothes);
 					}
 				}
 				catch (SQLException e) {

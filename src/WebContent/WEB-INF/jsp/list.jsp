@@ -28,15 +28,40 @@
 
 	<p>服一覧画面</p>
 	<form method="GET" action="/hello/ClothesListdeleteupdateServlet" >
-		<input type="submit" name="btn" value="上に羽織るもの（薄手)">
-		<input type="submit" name="btn" value="上に羽織るもの">
-		<input type="submit" name="btn" value="防寒着">
-		<input type="submit" name="btn" value="半袖">
-		<input type="submit" name="btn" value="長袖（薄手)">
-		<input type="submit" name="btn" value="長袖">
-		<input type="submit" name="btn" value="ボトムス（薄手）">
-		<input type="submit" name="btn" value="ボトムス">
-		<input type="submit" name="btn" value="スカート">
+
+	<button value="1" name="btn">
+		半袖
+	</button>
+	<button  value="2" name="btn">
+		長袖（薄手）
+	</button>
+
+	<button  value="3" name="btn">
+		長袖
+	</button>
+
+	<button value="4" name="btn" >
+		防寒着
+	</button>
+	<button value="5" name="btn" >
+		上に羽織るもの（薄手）
+	</button >
+
+	<button value="6" name="btn">
+		上に羽織るもの
+	</button>
+
+	<button value="7" name="btn">
+		長ズボン（薄手）
+	</button>
+
+	<button value="8" name="btn">
+		長ズボン
+	</button>
+
+	<button value="9" name="btn">
+		スカート
+	</button>
 
 	</form>
 

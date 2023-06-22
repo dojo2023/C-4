@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@page import="model.User" %>
+    <%@page import="model.Ptemperture" %>
 <!DOCTYPE html>
 
 <%User login_user = (User)session.getAttribute("login_user");%>
+<%Ptemperture p = (Ptemperture)request.getAttribute("p");%>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -17,7 +20,9 @@
         <div class="headermenu">
          <p>ログイン中のユーザーのIDは<%=login_user.getID() %>
          <span id="long"><%=login_user.getLONGITUDE() %></span>
-		 <span id = lati><%=login_user.getLATITUDE() %></span>
+		 <span id ="lati"><%=login_user.getLATITUDE() %></span>
+		 <span id = "index"><%=login_user.getUSER_PTEMPERTUREID() %></span>
+		 <span id = "indexp"><%=p.getUSER_PTEMPERTURE() %></span>
             <ul class="nav">
 
                 <li><a href="/hello/MainServlet">ロゴ</a></li>
@@ -54,8 +59,9 @@
         <a href="#"><div id="bottoms"></div></a>
     </div>
 
+
     <div class="coordregister">
-        <p><a href="#">コーディネート登録</a></p>
+        <p><a href="#" id ="href">コーディネート登録</a></p>
     </div>
 
 
@@ -67,6 +73,6 @@
         </div>
     </footer>
 
-    <script src = "/hello/JS/main.js"></script>
+    <script src = "/hello/JS/main2.js"></script>
 </body>
 </html>

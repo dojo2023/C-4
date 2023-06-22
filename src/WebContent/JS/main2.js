@@ -1,3 +1,6 @@
+/**
+ *
+ */
 const date = new Date();
 const month = date.getMonth() + 1;
 const day = date.getDate();
@@ -31,12 +34,15 @@ async function fetchData(url) {
 const long = document.getElementById('long').innerHTML;
 const lati = document.getElementById('lati').innerHTML;
 const index = document.getElementById('index').innerHTML;
-
+const indexp = document.getElementById('indexp').innerHTML;
+const indext = parseInt(indexp);
 
 
 console.log(long);
 console.log(lati);
-console.log(index);
+console.log("index"+ index);
+console.log("indexp"+ indexp);
+
 const url='https://api.open-meteo.com/v1/forecast?latitude='+lati+'&longitude='+long+'&hourly=temperature_2m,weathercode&daily=temperature_2m_max,temperature_2m_min&forecast_days=1&timezone=Asia%2FTokyo';
 
 
@@ -55,6 +61,8 @@ const url='https://api.open-meteo.com/v1/forecast?latitude='+lati+'&longitude='+
       //outputElement.innerHTML = JSON.stringify(parsedData);
       const temphigh = parsedData.daily.temperature_2m_max[0];
       const templow = parsedData.daily.temperature_2m_min[0];
+	  console.log("max:"+temphigh);
+	  console.log("min:"+templow);
       const hourweathercode = parsedData.hourly.weathercode[hour];
       outputTempH.innerHTML = JSON.stringify(temphigh);
       outputTempL.innerHTML = JSON.stringify(templow);
@@ -117,32 +125,43 @@ const url='https://api.open-meteo.com/v1/forecast?latitude='+lati+'&longitude='+
         const bottoms = document.getElementById('bottoms');
 
         //tops判断
-        if (temphigh >= 25) {
+        if (temphigh >= (25-indext)) {
         tops.textContent = '半袖';
-        }else if (temphigh >= 20 && temphigh < 25) {
+		console.log("半袖"+1);
+        }else if (temphigh >= (20-indext) && temphigh < (25-indext)) {
         tops.textContent = '長袖（薄手）';
-        }else {
+		console.log("長袖（薄手）"+2);
+        }else if(temphigh < (20-indext)){
         tops.textContent = '長袖';
+		console.log("長袖"+3);
         };
+		console.log("afmax:"+temphigh);
+	 	console.log("afmin:"+templow);
 
         //outer判断
-        if (templow >= 21) {
+        if (templow >= 21+indext) {
         outer.textContent = '';
-        }else if (templow < 21 && templow > 14) {
+        }else if (templow < 21+indext && templow > (14+indext)) {
         outer.textContent = '上に羽織るもの（薄手）';
-        }else if (templow <= 14 && templow > 9) {
+		console.log("上に羽織るもの(薄手)"+5);
+        }else if (templow <= 14+indext && templow > (9+indext)) {
         outer.textContent = '上に羽織るもの';
-        }else if(templow <= 9 && templow > 5){
+		console.log("上に羽織るもの"+6);
+        }else if(templow <= 9+indext && templow > (5+indext)){
         outer.textContent = '防寒着';
-        }else if(templow <=5){
+		console.log("防寒着"+4);
+        }else if(templow <= (5+indext)){
         outer.textContent = '防寒着+上に羽織るもの';
+		console.log("防寒着"+4+"上に羽織るもの"+6);
         };
 
         //bottomsの判断
-        if(temphigh >= 26) {
+        if(temphigh >= (26-indext)) {
         bottoms.textContent = '長ズボン（薄手）';
-        }else {
+		console.log("長ズボン（薄手）"+7);
+        }else if(temphigh < (26-indext)){
         bottoms.textContent = '長ズボン';
+		console.log("長ズボン"+8);
         };
     } catch (error) {
       // エラーハンドリング
@@ -151,4 +170,10 @@ const url='https://api.open-meteo.com/v1/forecast?latitude='+lati+'&longitude='+
   }
 
   // データを表示する関数を呼び出す
-  displayData();
+displayData();
+//const tops =
+//const ahref = 'http://localhost:8080/hello/CoordinateRegisterServlet?tops='+1+'&outer1='+2+'&outer2='+3+'&bottoms='+10+';
+
+
+
+

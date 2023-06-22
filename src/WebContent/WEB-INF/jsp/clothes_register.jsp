@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/hello/css/clothes_register.css">
+<!--  <link rel="stylesheet" href="/hello/css/clothes_register.css"> -->
+<link rel="stylesheet" href="/hello/css/common.css"><!-- 共通CSS使用 -->
 <title>服登録</title>
 </head>
 <body>
@@ -14,7 +15,7 @@
 		<div class="headwrapper">
         <div class="headermenu">
             <ul class="nav">
-                <li><a href="/hello/MainServlet">ロゴ</a></li>
+                <a href="/hello/MainServlet"><img src="/hello/images/logo_images/clo_logo6.png" id="logoimg"></a>
                 <li><a href="/hello/ClothesRegisterServlet">服登録</a></li>
                 <li><a href="/hello/ClothesListServlet">一覧</a></li>
                 <li><a href="/hello/RecordSearchServlet">コーディネート履歴</a></li>

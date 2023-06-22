@@ -28,7 +28,7 @@ public class DailyDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 					// SQL文を準備する
-					String sql = "select ID,DAY_DAY,USER_ID,DAY_HTEMPERATURE,DAY_LTEMPERATURE,DAY_WEATHERCODE,DAY_TOPSNO,DAY_OUTERNO, DAY_BOTTOMNO from DAILY WHERE DAY_DAY=? AND USER_ID=? ORDER BY ID";
+					String sql = "select ID,DAY_DAY,USER_ID,DAY_HTEMPERATURE,DAY_LTEMPERATURE,DAY_WEATHERCODE,DAY_TOPSNO,DAY_OUTERNO1,DAY_OUTERNO2, DAY_BOTTOMNO from DAILY WHERE DAY_DAY=? AND USER_ID=? ORDER BY ID";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
@@ -65,10 +65,12 @@ public class DailyDao {
 						rs.getDouble("DAY_LTEMPERATURE"),
 						rs.getInt("DAY_WEATHERCODE"),
 						rs.getInt("DAY_TOPSNO"),
-						rs.getInt("DAY_OUTERNO"),
+						rs.getInt("DAY_OUTERNO1"),
+						rs.getInt("DAY_OUTERNO2"),
 						rs.getInt("DAY_BOTTOMNO")
 						);
 						cardList.add(card);
+
 					}
 				}
 				catch (SQLException e) {
@@ -111,7 +113,7 @@ public class DailyDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 					// SQL文を準備する
-					String sql = "update DAILY set DAY_TOPSNO=?,DAY_OUTERNO=?,DAY_BOTTOMNO=?  where ID=? ";
+					String sql = "update DAILY set DAY_TOPSNO=?,DAY_OUTERNO1=?,DAY_OUTERNO2=?,DAY_BOTTOMNO=?  where ID=? ";
 	//
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -122,22 +124,26 @@ public class DailyDao {
 					else {
 						pStmt.setString(1, null);
 					}
-					if (day.getDAY_OUTERNO() != 0) {
-						pStmt.setInt(2, day.getDAY_OUTERNO());
+					if (day.getDAY_OUTERNO1() != 0) {
+						pStmt.setInt(2, day.getDAY_OUTERNO1());
 					}
 					else {
 						pStmt.setString(2, null);
 					}
-					if (day.getDAY_BOTTOMNO() != 0 ) {
-						pStmt.setInt(3, day.getDAY_BOTTOMNO());
+					if (day.getDAY_OUTERNO2() != 0) {
+						pStmt.setInt(3, day.getDAY_OUTERNO2());
 					}
 					else {
 						pStmt.setString(3, null);
 					}
+					if (day.getDAY_BOTTOMNO() != 0 ) {
+						pStmt.setInt(4, day.getDAY_BOTTOMNO());
+					}
+					else {
+						pStmt.setString(4, null);
+					}
 
-
-
-					pStmt.setInt(4, day.getID());
+					pStmt.setInt(5, day.getID());
 
 					// SQL文を実行する
 					if (pStmt.executeUpdate() == 1) {

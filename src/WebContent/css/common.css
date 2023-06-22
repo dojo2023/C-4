@@ -48,7 +48,7 @@ main{
      font-size: 18px; /*メニューバー文字の大きさ*/
      padding-top:20px; /*メニューバーを下に降ろす*/
      border-bottom-width: 2.0px;	/* 破線の下線の大きさ */
-     border-bottom-style: dashed;   /*下線の種類を破線にする*/
+     border-bottom-style: dashed;   /*下線を破線にする*/
      border-bottom-color: #B2D1D6; /*下線の色*/
 
   }
@@ -89,61 +89,17 @@ main{
     width:350px; /*ロゴの長さ*/
 	height:50px; /*ロゴの高さ*/
 	margin:0 auto 0 auto;
-	margin-top:38px; /*ロゴ画像を下に降ろす*/
+	margin-top:38px; /*下に降ろす*/
 	text-align:center;
 }
 
 /*メニューバーの編集ここまで*/
 
 
-
-/*ボディー全体*/
 body {
   background-color: #F3F5F2; /*背景の色*/
   color:#32586D; /*文字の色*/
   text-align:center; /*文章を中心にする*/
-  margin:0 auto 0 auto; /*表を中央揃え*/
-  max-width: 215px; /*要素の最大値を指定*/
-}
-
-
-/*プロフィール画面のテーブル*/
-.profiletable{
-	border-collapse:collapse; /*テーブルの間隔を指定する*/
-	margin:0 auto 0 auto;
-
-}
-
-/*テーブルの行と列*/
-.profiletable th, .profiletable td{
-	padding: 8px;
-	border: 1px solid #BDBEBF;
-	text-align:center; /*表の中の文字を中央揃え*/
-
-}
-
-/*変更・メインへ戻る リンクの色*/
-
-.ProfileButton{ /* 通常時のカラー */
-  color: #2B295F;
-}
-
-.ProfileButton a:link {/* 訪れたことのない時のカラー */
-  color: #32586D;
-  text-decoration: none;
-}
-
-.ProfileButton a:visited {
-  color: #32586D; /* 訪れたことがある時のカラー*/
-  text-decoration: none;
-}
-
-.ProfileButton a:hover {
-  color: #CA3032; /* マウスポインタを置いた時のカラー*/
-  text-decoration: none;
-}
-
-.ProfileButton a:active {
-  color: #32586D; /* クリックした時のカラー*/
-  text-decoration: none;
+  margin: 0 auto 0 auto; /*表を中央に表示*/
+  max-width: 215px; /*要素がこれ以上大きくならない幅*/
 }

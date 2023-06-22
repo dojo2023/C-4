@@ -1,1 +1,85 @@
 @charset "UTF-8";
+
+body {
+  background-color: #F3F5F2; /*背景の色*/
+  color:#32586D; /*文字の色*/
+  text-align:center; /*文章を中心にする*/
+  margin: 0 auto 0 auto; /*表を中央に表示*/
+/*  max-width: 215px; /*要素がこれ以上大きくならない幅*/ /*これがあると中央がずれるゾ！！！！！*/
+}
+
+
+/*ロゴ画像の大きさ*/
+#logoimg{
+    width:350px; /*ロゴの長さ*/
+	height:50px; /*ロゴの高さ*/
+	margin:0 auto 0 auto;
+	border:0 auto 0 auto;
+	padding:0 auto 0 auto;
+	margin-top:38px; /*下に降ろす*/
+	text-align:center;
+}
+
+/**/
+head{
+	margin: 0 auto 0 auto;
+	text-align:center;
+}
+
+.logoimg{
+	margin: 0 auto 0 auto;
+	text-align:center;
+}
+
+/*新規登録 リンクの色*/
+
+.NewRegisterLink{ /* 通常時のカラー */
+  color: #2B295F;
+}
+
+.NewRegisterLink a:link {/* 訪れたことのない時のカラー */
+  color: #32586D;
+  text-decoration: none;
+}
+
+.NewRegisterLink a:visited {
+  color: #32586D; /* 訪れたことがある時のカラー*/
+  text-decoration: none;
+}
+
+.NewRegisterLink a:hover {
+  color: #CA3032; /* マウスポインタを置いた時のカラー*/
+  text-decoration: none;
+}
+
+.NewRegisterLink a:active {
+  color: #32586D; /* クリックした時のカラー*/
+  text-decoration: none;
+}
+
+
+/*ログインボタン関連*/
+#login_button{
+	display:inline-block;
+	background: #F4CFBE;
+  	border-bottom: 5px solid;
+  	box-shadow: 0 3px 5px rgba(0, 0, 0, .3); /*影つける*/
+  	border-radius: 100vh;
+}
+
+
+#login_button:active{
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  border-bottom: none;
+}
+
+#login_button:hover{
+  transform: translate3d(0, 5px, 0);
+  margin-top: 3px;
+  border-bottom: 2px solid;
+  background-color:#F4CFBE;
+  transition: .3s;
+  top: 9px;
+  box-shadow: 0 0;
+}

@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/hello/css/clothes_register_check.css">
+<script type="text/javascript" src="/hello/JS/user_register_check.js"></script>
 <title>服登録確認</title>
 </head>
 <body>
@@ -33,10 +34,41 @@
 			<img src="${clo_img_name.CLO_IMAGES}" id="gazo">
 <!--  		<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);">
 		<canvas id="preview" style="max-width:200px;"></canvas><br>-->
-
-
 		<p>服の種類</p>
 		<input type="text" name="clothes_kind" value="${clo_img_name.SMALL_NAME}" readonly style="background-color:white"><br>
+
+
+		<p>服の画像</p>
+			<img src="${clo_img_name2.CLO_IMAGES}" id="gazo2">
+		<!--  		<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);">
+				<canvas id="preview" style="max-width:200px;"></canvas><br>-->
+		<p>服の種類</p>
+		<input type="text" name="clothes_kind2" value="${clo_img_name2.SMALL_NAME}" readonly style="background-color:white"><br>
+
+
+		<p>服の画像</p>
+			<img src="${clo_img_name3.CLO_IMAGES}" id="gazo3">
+		<!--  		<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);">
+				<canvas id="preview" style="max-width:200px;"></canvas><br>-->
+		<p>服の種類</p>
+		<input type="text" name="clothes_kind3" value="${clo_img_name3.SMALL_NAME}" readonly style="background-color:white"><br>
+
+
+		<p>服の画像</p>
+			<img src="${clo_img_name4.CLO_IMAGES}" id="gazo4">
+		<!--  		<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);">
+				<canvas id="preview" style="max-width:200px;"></canvas><br>-->
+		<p>服の種類</p>
+		<input type="text" name="clothes_kind4" value="${clo_img_name4.SMALL_NAME}" readonly style="background-color:white"><br>
+
+
+		<p>服の画像</p>
+			<img src="${clo_img_name5.CLO_IMAGES}" id="gazo5">
+		<!--  		<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);">
+				<canvas id="preview" style="max-width:200px;"></canvas><br>-->
+		<p>服の種類</p>
+		<input type="text" name="clothes_kind5" value="${clo_img_name5.SMALL_NAME}" readonly style="background-color:white"><br>
+
 
 <!--
 		<p>服の画像</p>

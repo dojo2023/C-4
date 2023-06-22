@@ -1,40 +1,60 @@
 @charset "UTF-8";
-.headermenu{
-   /* background-color:brown; */
-    position: fixed;
 
-    z-index: index 999;
-    width: 100%;
-    height: 50px;
-    top: 0;
-    left: 0;
-    display:flex;
-    align-items: center;
 
-}
-
-.headermenu li{
-    float: left;
-}
-
-.headermenu ul{
-    list-style: none;
-}
-
-body{
-    padding-top: 90px;
-
-}
-
-main{
-    height: 100vw; /*スクロールしても固定*/
+/*ボタン関連*/
+.Coordinateinput{
+	display:inline-block;
+	background: #F4CFBE;
+  	border-bottom: 5px solid;
+  	box-shadow: 0 3px 5px rgba(0, 0, 0, .3); /*影つける*/
+  	border-radius: 100vh;
 }
 
 
-/* class="nav" */
-.nav li {
-    display: inline;		/* インラインで横に表示する */
-    list-style-type: none;	/* 先頭の記号をなくす */
-    padding-right: 30px;		/* 区切りを空ける */
-    line-height: 0.5;
-  }
+/*ボタン関連*/
+.Coordinateinput:active{
+	display:inline-block;
+	background: #F4CFBE;
+  	border-bottom: 5px solid;
+  	box-shadow: 0 3px 5px rgba(0, 0, 0, .3); /*影つける*/
+  	border-radius: 100vh;
+}
+
+
+
+.Coordinateinput:hover{
+  transform: translate3d(0, 5px, 0);
+  margin-top: 3px;
+  border-bottom: 2px solid;
+  background-color:#F4CFBE;
+  transition: .3s;
+  top: 9px;
+  box-shadow: 0 0;
+}
+
+
+/*変更・メインへ戻る リンクの色*/
+
+.CoordinateRegisterBack{ /* 通常時のカラー */
+  color: #2B295F;
+}
+
+.CoordinateRegisterBack a:link {/* 訪れたことのない時のカラー */
+  color: #32586D;
+  text-decoration: none;
+}
+
+.CoordinateRegisterBack a:visited {
+  color: #32586D; /* 訪れたことがある時のカラー*/
+  text-decoration: none;
+}
+
+.CoordinateRegisterBack a:hover {
+  color: #CA3032; /* マウスポインタを置いた時のカラー*/
+  text-decoration: none;
+}
+
+.CoordinateRegisterBack a:active {
+  color: #32586D; /* クリックした時のカラー*/
+  text-decoration: none;
+}

@@ -11,6 +11,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/hello/css/main4.css">
+<link rel="stylesheet" href="/hello/css/common.css"><!-- 共通CSS使用 -->
 <title>メイン画面</title>
 </head>
 <body>

@@ -2,7 +2,7 @@
 @charset "UTF-8";
 
 .headermenu{
-     background-color:brown;
+  /*   background-color:brown; */
      position: fixed;
      z-index: 999;
      width: 100%;
@@ -76,4 +76,9 @@ a {
 img {
 	width:100px;
 	height:100px;
+}
+
+main{
+    height: 100vw; /*スクロールしても固定*/
+    padding: 0 auto 0 auto; /*何かを中央に表示*/
 }

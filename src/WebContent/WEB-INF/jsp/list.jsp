@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/hello/css/list.css">
+<link rel="stylesheet" href="/hello/css/common.css"><!-- 共通CSS使用 -->
 <title>タグ一覧画面</title>
 </head>
 <body>

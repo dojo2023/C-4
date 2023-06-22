@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/hello/css/delete_check.css">
+<link rel="stylesheet" href="/hello/css/common.css"><!-- 共通CSS使用 -->
 <title>削除確認画面</title>
 </head>
 <body>

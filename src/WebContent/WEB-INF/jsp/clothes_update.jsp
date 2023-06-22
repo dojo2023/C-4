@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/hello/css/clothes_update.css">
+<link rel="stylesheet" href="/hello/css/common.css"><!-- 共通CSS使用 -->
 <title>編集画面</title>
 </head>
 <body>

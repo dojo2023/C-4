@@ -14,7 +14,8 @@
  <form method="POST" action="/hello/LoginServlet" id="login_form">
     ID<input type="text" name="ID"><br>
 	PW<input type="password" name="PW"><br>
-    <input type="submit" name="LOGIN" value="ログイン">
+	<br>
+    <input type="submit" name="LOGIN" value="ログイン" id="login_button">
  </form>
 <div class="NewRegisterLink">
  <p><a href="/hello/UserRegisterServlet">新規登録はこちら</a></p>

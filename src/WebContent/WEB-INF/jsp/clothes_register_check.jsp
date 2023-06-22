@@ -70,57 +70,13 @@
 		<input type="text" name="clothes_kind5" value="${clo_img_name5.SMALL_NAME}" readonly style="background-color:white"><br>
 
 
-<!--
 		<p>服の画像</p>
-		<%-- form actionタグは未実装 --%>
-		<%-- <form action="clothes_register_check.jsp" method="post" enctype="multipart/form-data" ></form> --%>
-      	<input type="file" name="clothes_img2">
-
+			<img src="${clo_img_name6.CLO_IMAGES}" id="gazo6">
+		<!--  		<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);">
+				<canvas id="preview" style="max-width:200px;"></canvas><br>-->
 		<p>服の種類</p>
-			<select name="clothes_kind">
-			  <option value="clothes_kind1"></option>
-			</select><br>
+		<input type="text" name="clothes_kind6" value="${clo_img_name6.SMALL_NAME}" readonly style="background-color:white"><br>
 
-		<p>服の画像</p>
-		<%-- form actionタグは未実装 --%>
-		<%-- <form action="clothes_register_check.jsp" method="post" enctype="multipart/form-data" ></form> --%>
-      	<input type="file" name="clothes_img3">
-
-		<p>服の種類</p>
-			<select name="clothes_kind">
-			  <option value="clothes_kind1"></option>
-			</select><br>
-
-		<p>服の画像</p>
-		<%-- form actionタグは未実装 --%>
-		<%-- <form action="clothes_register_check.jsp" method="post" enctype="multipart/form-data" ></form> --%>
-      	<input type="file" name="clothes_img4">
-
-		<p>服の種類</p>
-			<select name="clothes_kind">
-			  <option value="clothes_kind1"></option>
-			</select><br>
-
-		<p>服の画像</p>
-		<%-- form actionタグは未実装 --%>
-		<%-- <form action="clothes_register_check.jsp" method="post" enctype="multipart/form-data" ></form> --%>
-      	<input type="file" name="clothes_img5">
-
-		<p>服の種類</p>
-			<select name="clothes_kind">
-			  <option value="clothes_kind1"></option>
-			</select><br>
-
-		<p>服の画像</p>
-		<%-- form actionタグは未実装 --%>
-		<%-- <form action="clothes_register_check.jsp" method="post" enctype="multipart/form-data" ></form> --%>
-      	<input type="file" name="clothes_img6">
-
-		<p>服の種類</p>
-			<select name="clothes_kind">
-			  <option value="clothes_kind1"></option>
-			</select><br>
--->
 
 		<p><a href="/hello/ClothesRegisterServlet">登録画面に戻る</a></p>
 		<div class ="button">

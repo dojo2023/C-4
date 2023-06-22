@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/hello/css/record_display.css">
+    <link rel="stylesheet" href="/hello/css/common.css"><!-- 共通CSS使用 -->
     <title>コーディネート履歴検索結果</title>
 </head>
 <body>

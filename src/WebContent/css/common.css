@@ -32,7 +32,7 @@ body{
 main{
     height: 100vw; /*スクロールしても固定*/
     padding: 0 auto 0 auto; /*何かを中央に表示*/
-    width:215px;
+   /* width:215px; */
 }
 
 

@@ -154,7 +154,7 @@ const url='https://api.open-meteo.com/v1/forecast?latitude='+lati+'&longitude='+
 		newUrl2 = newUrl1 + '&outer1=6';
         }else if(templow <= (5+indext)){
         outer.textContent = '防寒着+上に羽織るもの';
-		newUrl2 = newUrl1 + '&outer2=9';
+		newUrl2 = newUrl1 + '&outer1=5&outer2=6';
         };
 
         //bottomsの判断

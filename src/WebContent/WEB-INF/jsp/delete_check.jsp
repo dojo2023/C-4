@@ -1,6 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="model.Cloth" %>
+<%@page import="model.Small_category" %>
 <!DOCTYPE html>
+<%Small_category smallTag = (Small_category)session.getAttribute("smallTag");%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -30,9 +33,22 @@
 	<p>削除確認画面</p>
 	<p>以下のデータを削除します</p>
 	<p>よろしければ削除ボタンを押してください</p>
+	<form method="POST" action="/hello/ClothesListDeleteDisplayServlet" id="ProfileChange_form" onsubmit = "return hoge();">
+		<p>服の画像</p>
+		<input type="hidden" name="clothes__id" value = "${smallTag1.ID}">
+		<img src="${smallTag1.CLO_IMAGES}" id="gazo">
+		<p>服の種類</p>
+		<p>${smallTag1.SMALL_TAG}</p><br>
+		<div class ="button">
+	    	<button type="submit" name="ProfileChange_" value="削除" id="profile_check"><!-- このボタンを押すと削除確認のダイアログ出る -->
+		    	削除
 
-	<p><a href="/hello/ClothesListdeleteupdateServlet">各タグ詳細一覧画面にもどる</a></p>
-	<p><a href="/hello/ClothesListDeleteDisplayServlet">削除ボタン</a></p><!-- このボタンを押すと削除確認のダイアログ出る -->
+	    	</button>
+
+		</div>
+	</form>
+	<p><a href="/hello/ClothesListdeleteupdateServlet">  各タグ詳細一覧画面にもどる</a></p>
+
 </main>
 
 

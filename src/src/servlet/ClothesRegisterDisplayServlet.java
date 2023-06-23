@@ -40,6 +40,7 @@ public class ClothesRegisterDisplayServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		//一つ目、セッションスコープからclo_img_nameとlogin_userをゲットしclothesにUSER_IDをセットする
 		HttpSession session = request.getSession();
 		Cloth clothes = (Cloth)session.getAttribute("clo_img_name");
 
@@ -48,7 +49,7 @@ public class ClothesRegisterDisplayServlet extends HttpServlet {
 
 		clothes.setUSER_ID(user.getUSER_ID());
 
-
+		//二つ目、セッションスコープからclo_img_name2とlogin_user2をゲットしclothes2にUSER_IDをセットする
 		HttpSession session2 = request.getSession();
 		Cloth clothes2 = (Cloth)session2.getAttribute("clo_img_name2");
 
@@ -57,7 +58,7 @@ public class ClothesRegisterDisplayServlet extends HttpServlet {
 
 		clothes2.setUSER_ID(user2.getUSER_ID());
 
-
+		//三つ目、セッションスコープからclo_img_name3とlogin_use3rをゲットしclothes3にUSER_IDをセットする
 		HttpSession session3 = request.getSession();
 		Cloth clothes3 = (Cloth)session3.getAttribute("clo_img_name3");
 
@@ -66,7 +67,7 @@ public class ClothesRegisterDisplayServlet extends HttpServlet {
 
 		clothes3.setUSER_ID(user3.getUSER_ID());
 
-
+		//四つ目、セッションスコープからclo_img_name4とlogin_user4をゲットしclothes4にUSER_IDをセットする
 		HttpSession session4 = request.getSession();
 		Cloth clothes4 = (Cloth)session4.getAttribute("clo_img_name4");
 
@@ -75,7 +76,7 @@ public class ClothesRegisterDisplayServlet extends HttpServlet {
 
 		clothes4.setUSER_ID(user4.getUSER_ID());
 
-
+		//五つ目、セッションスコープからclo_img_name5とlogin_user5をゲットしclothes5にUSER_IDをセットする
 		HttpSession session5 = request.getSession();
 		Cloth clothes5 = (Cloth)session5.getAttribute("clo_img_name5");
 
@@ -84,7 +85,7 @@ public class ClothesRegisterDisplayServlet extends HttpServlet {
 
 		clothes5.setUSER_ID(user5.getUSER_ID());
 
-
+		//六つ目、セッションスコープからclo_img_name6とlogin_user6をゲットしclothes6にUSER_IDをセットする
 		HttpSession session6 = request.getSession();
 		Cloth clothes6 = (Cloth)session6.getAttribute("clo_img_name6");
 

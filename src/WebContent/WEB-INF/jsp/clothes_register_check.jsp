@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/hello/css/clothes_register_check.css">
+<link rel="stylesheet" href="/hello/css/common.css"><!-- 共通CSS使用 -->
 <script type="text/javascript" src="/hello/JS/user_register_check.js"></script>
 <title>服登録確認</title>
 </head>
@@ -15,6 +16,7 @@
 	 	<div class="headwrapper">
         <div class="headermenu">
             <ul class="nav">
+            	<a href="/hello/MainServlet"><img src="/hello/images/logo_images/clo_logo6.png" id="logoimg"></a>
                 <li><a href="/hello/MainServlet">ロゴ</a></li>
                 <li><a href="/hello/ClothesRegisterServlet">服登録</a></li>
                 <li><a href="/hello/ClothesListServlet">一覧</a></li>
@@ -80,12 +82,13 @@
 		<p>服の種類</p>
 		<input type="text" name="clothes_kind6" value="${clo_img_name6.SMALL_NAME}" readonly style="background-color:white"><br>
 
-
-		<p><a href="/hello/ClothesRegisterServlet">登録画面に戻る</a></p>
-		<div class ="button">
-		    <button type="submit" name="ClothesRegisterCheck" value="登録" id="ClothesRegisterCheck">
-		    	登録
-		    </button>
+		<div class = link>
+			<p><a href="/hello/ClothesRegisterServlet">登録画面に戻る</a></p>
+			<div class ="button">
+			    <button type="submit" name="ClothesRegisterCheck" value="登録" id="ClothesRegisterCheck">
+			    	登録
+			    </button>
+			</div>
 		</div>
 	</form>
 

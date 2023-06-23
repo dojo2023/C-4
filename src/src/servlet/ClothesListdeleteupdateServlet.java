@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -77,23 +78,64 @@ public class ClothesListdeleteupdateServlet extends HttpServlet {
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("ID");
+		/*String id = request.getParameter("ID");
 		String tag = request.getParameter("SMALL_CATEGORYID");
 		String img = request.getParameter("CLO_IMAGES");
-		//int ID = Integer.parseInt(id);
-		//int TAG = Integer.parseInt(tag);
+		int ID = Integer.parseInt(id);
+		int TAG = Integer.parseInt(tag);*/
+
 
 		// 更新または削除を行う
-		ClothesDao cDao = new ClothesDao();
+		//ClothesDao cDao = new ClothesDao();
 
-		System.out.println(request.getParameter("SUBMIT"));
+		if (request.getParameter("SUBMIT").equals("更新")) {
+			//tagの一覧名前を出力する
+			SmallcategoryDao sdao;
+			sdao = new SmallcategoryDao();
+			List<Small_category> list = sdao.selectall(null);
+			request.setAttribute("smallcategory_tag", list);
+
+
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/clothes_update.jsp");
+			dispatcher.forward(request, response);
+
+		}else if (request.getParameter("SUBMIT").equals("削除")) {
+			String ctag = request.getParameter("clothes__id");
+			String cname = request.getParameter("clothes__name");
+			String cimages = request.getParameter("clothes__images");
+			int CTAG = Integer.parseInt(ctag);
+			Cloth clothestag = new Cloth();
+			clothestag.setID(CTAG);
+			clothestag.setSMALL_TAG(cname);
+			clothestag.setCLO_IMAGES(cimages);
+
+
+			HttpSession session = request.getSession();
+			//Cloth clothes = (Cloth)session.getAttribute("clo_img_name");
+			session.setAttribute("smallTag1", clothestag);
+
+			/*Cloth clDao = new Cloth(ID,TAG,img);
+			HttpSession session = request.getSession();
+			session.setAttribute("clothes_delete", clDao);*/
+
+
+
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/delete_check.jsp");
+			dispatcher.forward(request, response);
+		}
+
+
+
+		//System.out.println(request.getParameter("SUBMIT"));
 		//request.getParameter("SUBMIT")
 		//セッションスコープにIDを格納する
-		HttpSession session = request.getSession();
-		session.setAttribute("clothes_update", cDao);
+		//HttpSession session = request.getSession();
+		//session.setAttribute("clothes_update", cDao);
 		//プロフィール確認ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/clothes_update_check.jsp");
-		dispatcher.forward(request, response);
+
+
+		//RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/clothes_update_check.jsp");
+		//dispatcher.forward(request, response);
 
 
 

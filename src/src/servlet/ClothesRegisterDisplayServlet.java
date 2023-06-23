@@ -85,6 +85,15 @@ public class ClothesRegisterDisplayServlet extends HttpServlet {
 		clothes5.setUSER_ID(user5.getUSER_ID());
 
 
+		HttpSession session6 = request.getSession();
+		Cloth clothes6 = (Cloth)session6.getAttribute("clo_img_name6");
+
+		HttpSession sessionuser6 = request.getSession();
+		User user6 = (User)sessionuser6.getAttribute("login_user");
+
+		clothes6.setUSER_ID(user6.getUSER_ID());
+
+
 		// 登録処理を行う
 		ClothesDao cDao = new ClothesDao();
 		if (cDao.insert(clothes)) {
@@ -111,7 +120,6 @@ public class ClothesRegisterDisplayServlet extends HttpServlet {
 			}
 		}
 
-
 		if (cDao.insert(clothes4)) {
 			String cl4 = clothes5.getCLO_IMAGES();
 			if(cl4=="") {
@@ -120,14 +128,18 @@ public class ClothesRegisterDisplayServlet extends HttpServlet {
 			}
 		}
 
-
 		if (cDao.insert(clothes5)) {
-//			String cl5 = clothes6.getCLO_IMAGES();
-//			if(cl5=="") {
+			String cl5 = clothes6.getCLO_IMAGES();
+			if(cl5=="") {
 			// ログインページにリダイレクトする
 				response.sendRedirect("/hello/ClothesRegisterServlet");
 			}
-//		}
+		}
+
+		if (cDao.insert(clothes6)) {
+			// ログインページにリダイレクトする
+				response.sendRedirect("/hello/ClothesRegisterServlet");
+		}
 
 //		else {												// 登録失敗
 //			request.setAttribute("result",

@@ -45,7 +45,6 @@ public class RecordSearchServlet extends HttpServlet {
  			System.out.println(day_day);
 
  		// 検索処理を行う
-
  			if (day_day != "") {
  				DailyDao dDao = new DailyDao();
  	 			record_search = dDao.select(new Day(user_id,day_day));
@@ -53,11 +52,11 @@ public class RecordSearchServlet extends HttpServlet {
  			} else
  			if (day_htemperture != ""){
  				DailyDao dDao = new DailyDao();
- 	 			record_search = dDao.select(new Day(user_id,day_htemperture));
+ 	 			record_search = dDao.selecth(user_id,day_htemperture);
  			} else
  			if (day_ltemperture != "") {
  				DailyDao dDao = new DailyDao();
- 	 			record_search = dDao.select(new Day(user_id,day_ltemperture));
+ 	 			record_search = dDao.selectl(user_id,day_ltemperture);
  			}
 
  			// 検索結果をセッションスコープに格納する

@@ -19,8 +19,8 @@
 <header>
         <div class="headwrapper">
         <div class="headermenu">
-            <a href="/hello/MainServlet"><img src="/hello/images/logo_images/clo_logo6.png" id="logoimg"></a>
             <ul class="nav">
+            	<a href="/hello/MainServlet"><img src="/hello/images/logo_images/clo_logo6.png" id="logoimg"></a>
                 <li><a href="/hello/ClothesRegisterServlet">服登録</a></li>
                 <li><a href="/hello/ClothesListServlet">一覧</a></li>
                 <li><a href="/hello/RecordSearchServlet">コーディネート履歴</a></li>

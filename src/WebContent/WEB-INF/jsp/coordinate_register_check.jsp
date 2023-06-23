@@ -77,7 +77,6 @@
    <button type="submit" name="CoodinateRegister" value="登録" id="Coordinateinput">
    登録
    </button>
-<!--    <input type="submit" name="CoodinateRegister" value="登録"> -->
    </div>
  </form>
     <div class = "CoordinateRegisterBack">

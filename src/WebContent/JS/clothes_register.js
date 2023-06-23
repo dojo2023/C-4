@@ -28,7 +28,7 @@
 	}
 
 
-	function preview2Image(obj){
+function preview2Image(obj){
 
 		var fileReader2 = new FileReader();
 
@@ -54,7 +54,7 @@
 	}
 
 
-	function preview3Image(obj){
+function preview3Image(obj){
 
 		var fileReader3 = new FileReader();
 
@@ -80,7 +80,7 @@
 	}
 
 
-	function preview4Image(obj){
+function preview4Image(obj){
 
 		var fileReader4 = new FileReader();
 
@@ -106,7 +106,7 @@
 	}
 
 
-	function preview5Image(obj){
+function preview5Image(obj){
 
 		var fileReader5 = new FileReader();
 
@@ -132,7 +132,7 @@
 	}
 
 
-	function preview6Image(obj){
+function preview6Image(obj){
 
 		var fileReader6 = new FileReader();
 

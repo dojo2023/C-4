@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/hello/css/clothes_register.css">
-<link rel="stylesheet" href="/hello/css/common.css"><!-- 共通CSS使用 -->
+<!--  <link rel="stylesheet" href="/hello/css/common.css">  --> <!-- 共通CSS使用 -->
 <script type="text/javascript" src="/hello/JS/clothes_register.js"></script>
 <title>服登録</title>
 </head>
@@ -28,14 +28,14 @@
         </div>
 	</header>
 	<main>
-		<p>登録</p>
+		<p>服登録</p>
 
 		<form method="POST" action="/hello/ClothesRegisterServlet" id="ClothesRegister_form"  enctype="multipart/form-data"
 			 onsubmit = "return hoge();">
 
 			<!-- 一つ目 -->
 			<p>服の画像</p>
-    	  	<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);">
+    	  	<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);" required>
 			<canvas id="preview" style="max-width:200px;"></canvas><br>
 			<p>服の種類</p>
 			<select name="clothes_kind">
@@ -102,12 +102,13 @@
 				</c:forEach>
 			</select><br>
 
-		<p><a href="/hello/MainServlet">メイン画面に戻る</a></p>
-		<!--  <p><a href="/hello/ClothesRegisterDisplayServlet">確認</a></p> -->
-			<div class ="button">
-		    <button type="submit" name="ClothesRegister" value="登録" id="ClothesRegister">
-		    	確認
-		    </button>
+			<div class = link>
+				<p><a href="/hello/MainServlet">メイン画面に戻る</a></p>
+					<div class ="button">
+				    <button type="submit" name="ClothesRegister" value="登録" id="ClothesRegister">
+				    	確認
+				    </button>
+					</div>
 			</div>
 		</form>
 

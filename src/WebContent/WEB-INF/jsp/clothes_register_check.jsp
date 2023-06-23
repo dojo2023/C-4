@@ -30,6 +30,7 @@
 		<p>登録確認</p>
 
 		<form method="POST" action="/hello/ClothesRegisterDisplayServlet" id="ClothesRegisterCheck_form" onsubmit = "return hoge();">
+		<!-- 一つ目 -->
 		<p>服の画像</p>
 			<img src="${clo_img_name.CLO_IMAGES}" id="gazo">
 <!--  		<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);">
@@ -37,7 +38,7 @@
 		<p>服の種類</p>
 		<input type="text" name="clothes_kind" value="${clo_img_name.SMALL_NAME}" readonly style="background-color:white"><br>
 
-
+		<!-- 二つ目 -->
 		<p>服の画像</p>
 			<img src="${clo_img_name2.CLO_IMAGES}" id="gazo2">
 		<!--  		<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);">
@@ -46,6 +47,7 @@
 		<input type="text" name="clothes_kind2" value="${clo_img_name2.SMALL_NAME}" readonly style="background-color:white"><br>
 
 
+		<!-- 三つ目 -->
 		<p>服の画像</p>
 			<img src="${clo_img_name3.CLO_IMAGES}" id="gazo3">
 		<!--  		<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);">
@@ -54,6 +56,7 @@
 		<input type="text" name="clothes_kind3" value="${clo_img_name3.SMALL_NAME}" readonly style="background-color:white"><br>
 
 
+		<!-- 四つ目 -->
 		<p>服の画像</p>
 			<img src="${clo_img_name4.CLO_IMAGES}" id="gazo4">
 		<!--  		<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);">
@@ -61,7 +64,7 @@
 		<p>服の種類</p>
 		<input type="text" name="clothes_kind4" value="${clo_img_name4.SMALL_NAME}" readonly style="background-color:white"><br>
 
-
+		<!-- 五つ目 -->
 		<p>服の画像</p>
 			<img src="${clo_img_name5.CLO_IMAGES}" id="gazo5">
 		<!--  		<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);">
@@ -69,7 +72,7 @@
 		<p>服の種類</p>
 		<input type="text" name="clothes_kind5" value="${clo_img_name5.SMALL_NAME}" readonly style="background-color:white"><br>
 
-
+		<!-- 六つ目 -->
 		<p>服の画像</p>
 			<img src="${clo_img_name6.CLO_IMAGES}" id="gazo6">
 		<!--  		<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);">
@@ -86,21 +89,11 @@
 		</div>
 	</form>
 
-
-		<!--  <p><a href="/hello/ClothesRegisterServlet">登録</a></p> -->
-
-		<%--
-		<form onsubmit="return hoge();">
-		 <a href="/hello/ClothesRegisterServlet">
-		  <button type="submit">登録</button></a>
-		</form>
-		--%>
 	</main>
 	<footer>
 	    <div>
 	        <p>&copy;Copyright Atype.Co.Ltd.All rights reserved.</p>
 	    </div>
 	</footer>
-		<%-- <script src = "user_register_check.js"></script> --%>
 </body>
 </html>

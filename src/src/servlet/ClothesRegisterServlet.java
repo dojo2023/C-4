@@ -71,6 +71,7 @@ public class ClothesRegisterServlet extends HttpServlet {
 		Part part = request.getPart("IMAGE"); // getPartで取得
 
 		String image = this.getFileName(part);
+//		System.out.println("画像の名前＝"+image);
 		request.setAttribute("image", image);
 		// サーバの指定のファイルパスへファイルを保存
         //場所はクラス名↑の上に指定してある
@@ -82,7 +83,6 @@ public class ClothesRegisterServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String small_category= request.getParameter("clothes_kind");
 		int SMALL_CATEGORY=Integer.parseInt(small_category);
-		//String img = "'/hello/images/clothes_images/'+=image";
 		String img = "/hello/images/clothes_images/"+image;
 
 		//cloを定義し、上で取得したSMALL_CATEGORYをSMALL_CATEGORYID、imgをCLO_IMAGESとし、cloにセットする
@@ -90,7 +90,6 @@ public class ClothesRegisterServlet extends HttpServlet {
 		clo = new Cloth();
 		clo.setSMALL_CATEGORYID(SMALL_CATEGORY);
 		clo.setCLO_IMAGES(img);
-//		clo.setCLO_NAME(image);
 
 		//服の小カテゴリーのDaoと結び付け
 		SmallcategoryDao smallDao = new SmallcategoryDao();
@@ -109,10 +108,10 @@ public class ClothesRegisterServlet extends HttpServlet {
 		Part part2 = request.getPart("IMAGE2"); // getPartで取得
 
 		String image2 = this.getFileName(part2);
+		System.out.println("画像の名前＝"+image2);
 		request.setAttribute("image2", image2);
 		// サーバの指定のファイルパスへファイルを保存
         //場所はクラス名↑の上に指定してある
-		part2.write(image2);
 
 		//ここから上で画像の保存
 
@@ -120,15 +119,17 @@ public class ClothesRegisterServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String small_category2= request.getParameter("clothes_kind2");
 		int SMALL_CATEGORY2=Integer.parseInt(small_category2);
-		//String img = "'/hello/images/clothes_images/'+=image";
-		String img2 = "/hello/images/clothes_images/"+image2;
 
 		//cloを定義し、上で取得したSMALL_CATEGORYをSMALL_CATEGORYID、imgをCLO_IMAGESとし、cloにセットする
 		Cloth clo2;
 		clo2 = new Cloth();
 		clo2.setSMALL_CATEGORYID(SMALL_CATEGORY2);
-		clo2.setCLO_IMAGES(img2);
-//		clo.setCLO_NAME(image);
+
+		if(!(image2.equals(""))) {
+			part2.write(image2);
+			String img2 = "/hello/images/clothes_images/"+image2;
+			clo2.setCLO_IMAGES(img2);
+		}
 
 		//服の小カテゴリーのDaoと結び付け
 		SmallcategoryDao smallDao2 = new SmallcategoryDao();
@@ -150,7 +151,6 @@ public class ClothesRegisterServlet extends HttpServlet {
 		request.setAttribute("image3", image3);
 		// サーバの指定のファイルパスへファイルを保存
         //場所はクラス名↑の上に指定してある
-		part3.write(image3);
 
 		//ここから上で画像の保存
 
@@ -158,15 +158,18 @@ public class ClothesRegisterServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String small_category3= request.getParameter("clothes_kind3");
 		int SMALL_CATEGORY3=Integer.parseInt(small_category3);
-		//String img = "'/hello/images/clothes_images/'+=image";
-		String img3 = "/hello/images/clothes_images/"+image3;
 
 		//cloを定義し、上で取得したSMALL_CATEGORYをSMALL_CATEGORYID、imgをCLO_IMAGESとし、cloにセットする
 		Cloth clo3;
 		clo3 = new Cloth();
 		clo3.setSMALL_CATEGORYID(SMALL_CATEGORY3);
-		clo3.setCLO_IMAGES(img3);
-//		clo.setCLO_NAME(image);
+
+		if(!(image3.equals(""))) {
+			part3.write(image3);
+			String img3 = "/hello/images/clothes_images/"+image3;
+			clo3.setCLO_IMAGES(img3);
+		}
+
 
 		//服の小カテゴリーのDaoと結び付け
 		SmallcategoryDao smallDao3 = new SmallcategoryDao();
@@ -188,7 +191,6 @@ public class ClothesRegisterServlet extends HttpServlet {
 				request.setAttribute("image4", image4);
 				// サーバの指定のファイルパスへファイルを保存
 		        //場所はクラス名↑の上に指定してある
-				part4.write(image4);
 
 				//ここから上で画像の保存
 
@@ -196,15 +198,17 @@ public class ClothesRegisterServlet extends HttpServlet {
 				request.setCharacterEncoding("UTF-8");
 				String small_category4= request.getParameter("clothes_kind4");
 				int SMALL_CATEGORY4=Integer.parseInt(small_category4);
-				//String img = "'/hello/images/clothes_images/'+=image";
-				String img4 = "/hello/images/clothes_images/"+image4;
 
 				//cloを定義し、上で取得したSMALL_CATEGORYをSMALL_CATEGORYID、imgをCLO_IMAGESとし、cloにセットする
 				Cloth clo4;
 				clo4 = new Cloth();
 				clo4.setSMALL_CATEGORYID(SMALL_CATEGORY4);
-				clo4.setCLO_IMAGES(img4);
-//				clo.setCLO_NAME(image);
+
+				if(!(image4.equals(""))) {
+					part4.write(image4);
+					String img4 = "/hello/images/clothes_images/"+image4;
+					clo4.setCLO_IMAGES(img4);
+				}
 
 				//服の小カテゴリーのDaoと結び付け
 				SmallcategoryDao smallDao4 = new SmallcategoryDao();
@@ -226,23 +230,23 @@ public class ClothesRegisterServlet extends HttpServlet {
 				request.setAttribute("image5", image5);
 				// サーバの指定のファイルパスへファイルを保存
 		        //場所はクラス名↑の上に指定してある
-				part5.write(image5);
-
 				//ここから上で画像の保存
 
 				// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
 				String small_category5= request.getParameter("clothes_kind5");
 				int SMALL_CATEGORY5=Integer.parseInt(small_category5);
-				//String img = "'/hello/images/clothes_images/'+=image";
-				String img5 = "/hello/images/clothes_images/"+image5;
 
 				//cloを定義し、上で取得したSMALL_CATEGORYをSMALL_CATEGORYID、imgをCLO_IMAGESとし、cloにセットする
 				Cloth clo5;
 				clo5 = new Cloth();
 				clo5.setSMALL_CATEGORYID(SMALL_CATEGORY5);
-				clo5.setCLO_IMAGES(img5);
-//				clo.setCLO_NAME(image);
+
+				if(!(image5.equals(""))) {
+					part5.write(image5);
+					String img5 = "/hello/images/clothes_images/"+image5;
+					clo5.setCLO_IMAGES(img5);
+				}
 
 				//服の小カテゴリーのDaoと結び付け
 				SmallcategoryDao smallDao5 = new SmallcategoryDao();
@@ -264,7 +268,6 @@ public class ClothesRegisterServlet extends HttpServlet {
 				request.setAttribute("image6", image6);
 				// サーバの指定のファイルパスへファイルを保存
 		        //場所はクラス名↑の上に指定してある
-				part6.write(image6);
 
 				//ここから上で画像の保存
 
@@ -272,15 +275,17 @@ public class ClothesRegisterServlet extends HttpServlet {
 				request.setCharacterEncoding("UTF-8");
 				String small_category6= request.getParameter("clothes_kind6");
 				int SMALL_CATEGORY6=Integer.parseInt(small_category6);
-				//String img = "'/hello/images/clothes_images/'+=image";
-				String img6 = "/hello/images/clothes_images/"+image6;
 
 				//cloを定義し、上で取得したSMALL_CATEGORYをSMALL_CATEGORYID、imgをCLO_IMAGESとし、cloにセットする
 				Cloth clo6;
 				clo6 = new Cloth();
 				clo6.setSMALL_CATEGORYID(SMALL_CATEGORY6);
-				clo6.setCLO_IMAGES(img6);
-//				clo.setCLO_NAME(image);
+
+				if(!(image6.equals(""))) {
+					part6.write(image6);
+					String img6 = "/hello/images/clothes_images/"+image6;
+					clo6.setCLO_IMAGES(img6);
+				}
 
 				//服の小カテゴリーのDaoと結び付け
 				SmallcategoryDao smallDao6 = new SmallcategoryDao();

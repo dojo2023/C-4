@@ -35,6 +35,9 @@
 	<form method="POST" action="/hello/ClothesListdeleteupdateServlet">
 		<p>${smallTag.SMALL_CATEGORY}</p>
 		<img src="${e.CLO_IMAGES}" id="gazo"><br>
+		<input type="hidden" name="clothes__id" value = "${e.ID}">
+		<input type="hidden" name="clothes__name" value = "${smallTag.SMALL_CATEGORY}">
+		<input type="hidden" name="clothes__images" value = "${e.CLO_IMAGES}">
 		<button type="submit" name="SUBMIT" value="更新">
 			更新
 		</button>

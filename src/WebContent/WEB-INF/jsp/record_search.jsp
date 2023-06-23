@@ -37,21 +37,22 @@
 		    <input type="date" class="date" name="DAY_DAY" value="" />
 		</div>
 
-		<div class="box">
-		<label for="text">最低気温[℃]</label>
-		    <input  class="textbox" type="text" name="DAY_LTEMPERTURE" >
-		</div>
 
 		<div class="box">
 		    <label for="text">最高気温[℃]</label>
 		    <input class="textbox" type="text" name="DAY_HTEMPERTURE" >
 		    <input type="hidden" name="user_id"id='userid' value="<%=login_user.getUSER_ID() %>">
 		</div>
+
+		<div class="box">
+		<label for="text">最低気温[℃]</label>
+		    <input  class="textbox" type="text" name="DAY_LTEMPERTURE" >
+		</div>
 	</div>
     <div class=link>
       <p><a href="/hello/MainServlet">メイン画面に戻る</a></p>
 
-          <button type="submit" name="SEARCH" value="検索" id="Search">
+         <button type="submit" name="SEARCH" value="検索" id="Search">
           検索
           </button>
     </div>

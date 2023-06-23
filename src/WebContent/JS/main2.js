@@ -36,12 +36,13 @@ const lati = document.getElementById('lati').innerHTML;
 const index = document.getElementById('index').innerHTML;
 const indexp = document.getElementById('indexp').innerHTML;
 const indext = parseInt(indexp);
+const btn = document.getElementById('btn');
+let newUrl = btn.href;
+let newUrl1 = newUrl;
+let newUrl2 = newUrl1;
+let newUrl3 = newUrl2;
 
 
-console.log(long);
-console.log(lati);
-console.log("index"+ index);
-console.log("indexp"+ indexp);
 
 const url='https://api.open-meteo.com/v1/forecast?latitude='+lati+'&longitude='+long+'&hourly=temperature_2m,weathercode&daily=temperature_2m_max,temperature_2m_min&forecast_days=1&timezone=Asia%2FTokyo';
 
@@ -69,6 +70,8 @@ const url='https://api.open-meteo.com/v1/forecast?latitude='+lati+'&longitude='+
       console.log(hourweathercode);//一時間ごとの天気コード
       console.log(parsedData.hourly.weathercode);//24時間分の天気コード
       console.log(hour);//今の時間
+
+
 
       switch (hourweathercode) {
         case 0:
@@ -127,42 +130,47 @@ const url='https://api.open-meteo.com/v1/forecast?latitude='+lati+'&longitude='+
         //tops判断
         if (temphigh >= (25-indext)) {
         tops.textContent = '半袖';
-		console.log("半袖"+1);
+		newUrl1 = newUrl + '?tops=1';
         }else if (temphigh >= (20-indext) && temphigh < (25-indext)) {
         tops.textContent = '長袖（薄手）';
-		console.log("長袖（薄手）"+2);
+		 newUrl1 = newUrl + '?tops=2';
         }else if(temphigh < (20-indext)){
         tops.textContent = '長袖';
-		console.log("長袖"+3);
+		newUrl1 = newUrl + '?tops=3';
         };
-		console.log("afmax:"+temphigh);
-	 	console.log("afmin:"+templow);
+
 
         //outer判断
         if (templow >= 21+indext) {
         outer.textContent = '';
         }else if (templow < 21+indext && templow > (14+indext)) {
         outer.textContent = '上に羽織るもの（薄手）';
-		console.log("上に羽織るもの(薄手)"+5);
+		newUrl2 = newUrl1 + '&outer1=4';
         }else if (templow <= 14+indext && templow > (9+indext)) {
         outer.textContent = '上に羽織るもの';
-		console.log("上に羽織るもの"+6);
+		newUrl2 = newUrl1 + '&outer1=5';
         }else if(templow <= 9+indext && templow > (5+indext)){
         outer.textContent = '防寒着';
-		console.log("防寒着"+4);
+		newUrl2 = newUrl1 + '&outer1=6';
         }else if(templow <= (5+indext)){
         outer.textContent = '防寒着+上に羽織るもの';
-		console.log("防寒着"+4+"上に羽織るもの"+6);
+		newUrl2 = newUrl1 + '&outer2=9';
         };
 
         //bottomsの判断
         if(temphigh >= (26-indext)) {
         bottoms.textContent = '長ズボン（薄手）';
-		console.log("長ズボン（薄手）"+7);
+		newUrl3 = newUrl2 + '&bottoms=7';
         }else if(temphigh < (26-indext)){
         bottoms.textContent = '長ズボン';
-		console.log("長ズボン"+8);
+		newUrl3 = newUrl2 + '&bottoms=8';
         };
+
+		btn.addEventListener('click',function(event) {
+			    event.preventDefault();
+			    window.location.href = newUrl3
+			});
+
     } catch (error) {
       // エラーハンドリング
       console.log('エラー:', error);
@@ -171,9 +179,6 @@ const url='https://api.open-meteo.com/v1/forecast?latitude='+lati+'&longitude='+
 
   // データを表示する関数を呼び出す
 displayData();
-//const tops =
-//const ahref = 'http://localhost:8080/hello/CoordinateRegisterServlet?tops='+1+'&outer1='+2+'&outer2='+3+'&bottoms='+10+';
-
 
 
 

@@ -62,8 +62,9 @@
 
 
     <div class="coordregister">
-        <p><a href="#" id ="href">コーディネート登録</a></p>
+        <a id ="btn"  href="http://localhost:8080/hello/CoordinateRegisterServlet">コーディネート登録</a>
     </div>
+
 
 
  </main>

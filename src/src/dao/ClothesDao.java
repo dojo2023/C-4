@@ -27,12 +27,12 @@ public class ClothesDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 					// SQL文を準備する
-					String sql = "select ID, USER_ID, CLO_IMAGES ,SMALL_CATEGORYID from CLOTHES WHERE ID LIKE ? ORDER BY ID";
+					String sql = "select ID, USER_ID, CLO_IMAGES ,SMALL_CATEGORYID from CLOTHES WHERE ID=? ORDER BY ID";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
 					if (param.getID() != 0) {//？の個数分やる、入れたいデータをsetする
-						pStmt.setString(1, "%" + param.getID() + "%");
+						pStmt.setInt(1, param.getID() );
 					}
 
 
@@ -141,6 +141,79 @@ public class ClothesDao {
 				// 結果を返す
 				return clothesList;
 			}
+
+
+
+			public Cloth selectID(int ID) {
+				Connection conn = null;
+				Cloth card = new Cloth();
+
+				try {
+					// JDBCドライバを読み込む,
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
+
+					// SQL文を準備する
+					String sql = "select ID, USER_ID, CLO_IMAGES ,SMALL_CATEGORYID from CLOTHES WHERE ID=? ORDER BY ID";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+
+					// SQL文を完成させる
+					if (ID != 0) {//？の個数分やる、入れたいデータをsetする
+						pStmt.setInt(1, ID);
+					}
+
+
+
+					// SQL文を実行し、結果表を取得する
+					ResultSet rs = pStmt.executeQuery();
+
+					// 結果表をコレクションにコピーする
+					while (rs.next()) {//nextメソッドを使ってデータベースを受けから1行づつ見てくイメージ
+						 card = new Cloth(
+						//列へのアクセス方法として、getXXX("列名"or列番号（１から始まる）)
+						rs.getInt("ID"),
+						rs.getString("USER_ID"),
+						rs.getInt("SMALL_CATEGORYID"),
+						rs.getString("CLO_IMAGES")
+						);
+
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					card = null;
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+					card = null;
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+							card = null;
+						}
+					}
+				}
+
+				// 結果を返す
+				return card;
+			}
+
+
+
+
+
+
+
+
+
 
 
 

@@ -29,22 +29,50 @@
 
 <p>コーディネート登録確認画面</p>
 
-  <p>(仮)服タグ1</p>
 
+		<p>${smallTag1.SMALL_CATEGORY}</p>
+		 <img src="${check_tops.CLO_IMAGES}"   ><br>
+		<br>
 
-  <br>
-  <p>(仮)服タグ2</p>
-
-  <br>
-  <p>(仮)服タグ3</p>
+		<hr>
 
   <br>
-  <p>(仮)服タグ4</p>
+
+<p>${smallTag2.SMALL_CATEGORY}</p>
+
+		<p>${smallTag2.SMALL_CATEGORY}</p>
+		 <img src="${check_outer1.CLO_IMAGES}" ><br>
+		<br>
+
+		<hr>
+  <br>
+
+  <br>
+<p>${smallTag3.SMALL_CATEGORY}</p>
+
+		<p>${smallTag3.SMALL_CATEGORY}</p>
+		 <img src="${check_outer2.CLO_IMAGES}" ><br>
+		<br>
+
+		<hr>
+
+   <br>
+
+<p>${smallTag4.SMALL_CATEGORY}</p>
+		<p>${smallTag4.SMALL_CATEGORY}</p>
+		 <img src="${check_bottoms.CLO_IMAGES}" ><br>
+		<br>
+
+		<hr>
+   <br>
 
 
 
 
-<form method="POST" action="/hello/MainServlet" id="CoordinateRegister_form">
+
+
+
+<form method="POST" action="/hello/CoordinateRegisterDisplayServlet" id="CoordinateRegister_form">
    <div class = "Coordinateinput">
    <button type="submit" name="CoodinateRegister" value="登録" id="Coordinateinput">
    登録
@@ -53,7 +81,7 @@
    </div>
  </form>
     <div class = "CoordinateRegisterBack">
-    <p><a href="/hello/CoordinateRegisterServlet">コーディネート登録画面へ戻る </a></p>
+    <p><a href="/hello/MainServlet">メイン画面へ戻る </a></p>
     </div>
 
 

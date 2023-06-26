@@ -127,36 +127,40 @@ const url='https://api.open-meteo.com/v1/forecast?latitude='+lati+'&longitude='+
         const outer = document.getElementById('outer');
         const bottoms = document.getElementById('bottoms');
 
-        //tops判断
-        if (temphigh >= (25-indext)) {
-        tops.textContent = '半袖';
-		newUrl2 = newUrl1 + '?tops=1';
-        }else if (temphigh >= (20-indext) && temphigh < (25-indext)) {
-        tops.textContent = '長袖（薄手）';
-		 newUrl2 = newUrl1 + '?tops=2';
-        }else if(temphigh < (20-indext)){
-        tops.textContent = '長袖';
-		newUrl2 = newUrl1 + '?tops=3';
-        };
-		console.log(newUrl2);
 
 
-        //outer判断
+		 //outer判断
         if (templow >= 21+indext) {
         outer.textContent = '';
         }else if (templow < 21+indext && templow > (14+indext)) {
         outer.textContent = '上に羽織るもの（薄手）';
-		newUrl1 = newUrl + '&outer1=4';
+		newUrl1 = newUrl + '?outer1=4';
         }else if (templow <= 14+indext && templow > (9+indext)) {
         outer.textContent = '上に羽織るもの';
-		newUrl1 = newUrl + '&outer1=5';
+		newUrl1 = newUrl + '?outer1=5';
         }else if(templow <= 9+indext && templow > (5+indext)){
         outer.textContent = '防寒着';
-		newUrl1 = newUrl + '&outer1=6';
+		newUrl1 = newUrl + '?outer1=6';
         }else if(templow <= (5+indext)){
         outer.textContent = '防寒着+上に羽織るもの';
-		newUrl1 = newUrl + '&outer1=5&outer2=6';
+		newUrl1 = newUrl + '?outer1=5&outer2=6';
         };
+
+        //tops判断
+        if (temphigh >= (25-indext)) {
+        tops.textContent = '半袖';
+		newUrl2 = newUrl1 + '&tops=1';
+        }else if (temphigh >= (20-indext) && temphigh < (25-indext)) {
+        tops.textContent = '長袖（薄手）';
+		 newUrl2 = newUrl1 + '&tops=2';
+        }else if(temphigh < (20-indext)){
+        tops.textContent = '長袖';
+		newUrl2 = newUrl1 + '&tops=3';
+        };
+		console.log(newUrl2);
+
+
+
 
         //bottomsの判断
         if(temphigh >= (26-indext)) {

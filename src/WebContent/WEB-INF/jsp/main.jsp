@@ -19,11 +19,11 @@
     <header>
     <div class="headwrapper">
         <div class="headermenu">
-         <p>ログイン中のユーザーのIDは<%=login_user.getID() %>
+        <!--   <p>ログイン中のユーザーのIDは<%=login_user.getID() %>
          <span id="long"><%=login_user.getLONGITUDE() %></span>
 		 <span id ="lati"><%=login_user.getLATITUDE() %></span>
 		 <span id = "index"><%=login_user.getUSER_PTEMPERTUREID() %></span>
-		 <span id = "indexp"><%=p.getUSER_PTEMPERTURE() %></span>
+		 <span id = "indexp"><%=p.getUSER_PTEMPERTURE() %></span>-->
             <ul class="nav">
 
                 <li><a href="/hello/MainServlet">ロゴ</a></li>

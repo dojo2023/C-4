@@ -29,7 +29,17 @@ public class DailyDao {
 	conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 	// SQL文を準備する
-	String sql = "select ID,DAY_DAY,USER_ID,DAY_HTEMPERATURE,DAY_LTEMPERATURE,DAY_WEATHERCODE,DAY_TOPSNO,DAY_OUTERNO1,DAY_OUTERNO2, DAY_BOTTOMNO from DAILY WHERE DAY_DAY=? AND USER_ID=? ORDER BY ID";
+	String sql = "SELECT Daily.ID,DAY_DAY,Daily.USER_ID,DAY_HTEMPERATURE,DAY_LTEMPERATURE,c1.CLO_IMAGES as c1_clo_images,c2.CLO_IMAGES as c2_clo_images,c3.CLO_IMAGES as c3_clo_images,c4.CLO_IMAGES as c4_clo_images,c5.SMALL_CATEGORY as c5_small_category,c6.SMALL_CATEGORY as c6_small_category,c7.SMALL_CATEGORY as c7_small_category,c8.SMALL_CATEGORY as c8_small_category FROM DAILY "
+			+ "join clothes as c1 on daily.day_topsno = c1.id "
+			+ "left join clothes as c2 on daily.day_outerno1 = c2.id "
+			+ "left join clothes as c3 on daily.day_outerno2 = c3.id "
+			+ "join clothes as c4 on daily.day_bottomno = c4.id "
+			+ "join smallcategory as c5 on c1.small_categoryid = c5.id "
+			+ "left join smallcategory as c6 on c2.small_categoryid = c6.id "
+			+ "left join smallcategory as c7 on c3.small_categoryid =c7.id "
+			+ "join smallcategory  as c8 on c4.small_categoryid = c8.id "
+			+ "where daily.DAY_DAY=? AND daily.USER_ID=?"
+			+ "order by ID;";
 	PreparedStatement pStmt = conn.prepareStatement(sql);
 
 	// SQL文を完成させる
@@ -53,20 +63,21 @@ public class DailyDao {
 
 	// 結果表をコレクションにコピーする
 	while (rs.next()) {
-		Day card = new Day(
-		rs.getInt("ID"),
-		rs.getString("DAY_DAY"),
-		rs.getString("USER_ID"),
-		rs.getDouble("DAY_HTEMPERATURE"),
-		rs.getDouble("DAY_LTEMPERATURE"),
-		rs.getInt("DAY_WEATHERCODE"),
-		rs.getInt("DAY_TOPSNO"),
-		rs.getInt("DAY_OUTERNO1"),
-		rs.getInt("DAY_OUTERNO2"),
-		rs.getInt("DAY_BOTTOMNO")
-		);
+		Day card = new Day();
+		card.setID(rs.getInt("ID"));
+		card.setDAY_DAY(rs.getString("DAY_DAY"));
+		card.setUSER_ID(rs.getString("USER_ID"));
+		card.setDAY_HTEMPERTURE(rs.getDouble("DAY_HTEMPERATURE"));
+		card.setDAY_LTEMPERTURE(rs.getDouble("DAY_LTEMPERATURE"));
+		card.setDAY_TOPSTAG(rs.getString("c1_CLO_IMAGES"));
+		card.setDAY_OUTER1TAG(rs.getString("c2_CLO_IMAGES"));
+		card.setDAY_OUTER2TAG(rs.getString("c3_CLO_IMAGES"));
+		card.setDAY_BOTTOMTAG(rs.getString("c4_CLO_IMAGES"));
+		card.setDAY_TOPSNAME(rs.getString("c5_SMALL_CATEGORY"));
+		card.setDAY_OUTER1NAME(rs.getString("c6_SMALL_CATEGORY"));
+		card.setDAY_OUTER2NAME(rs.getString("c7_SMALL_CATEGORY"));
+		card.setDAY_BOTTOMNAME(rs.getString("c8_SMALL_CATEGORY"));
 		cardList.add(card);
-
 	}
 }
 	catch (SQLException e) {
@@ -185,23 +196,32 @@ public List<Day> selecth(String user_id,String DAY_HTEMPERATURE) {
 		conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 		// SQL文を準備する
-		String sql = "select ID,DAY_DAY,USER_ID,DAY_HTEMPERATURE,DAY_LTEMPERATURE,DAY_WEATHERCODE,DAY_TOPSNO,DAY_OUTERNO1, DAY_OUTERNO2,DAY_BOTTOMNO from DAILY WHERE USER_ID=? AND DAY_HTEMPERATURE=? ORDER BY ID";
+		String sql = "SELECT Daily.ID,DAY_DAY,Daily.USER_ID,DAY_HTEMPERATURE,DAY_LTEMPERATURE,c1.CLO_IMAGES as c1_clo_images,c2.CLO_IMAGES as c2_clo_images,c3.CLO_IMAGES as c3_clo_images,c4.CLO_IMAGES as c4_clo_images,c5.SMALL_CATEGORY as c5_small_category,c6.SMALL_CATEGORY as c6_small_category,c7.SMALL_CATEGORY as c7_small_category,c8.SMALL_CATEGORY as c8_small_category FROM DAILY "
+				+ "join clothes as c1 on daily.day_topsno = c1.id "
+				+ "left join clothes as c2 on daily.day_outerno1 = c2.id "
+				+ "left join clothes as c3 on daily.day_outerno2 = c3.id "
+				+ "join clothes as c4 on daily.day_bottomno = c4.id "
+				+ "join smallcategory as c5 on c1.small_categoryid = c5.id "
+				+ "left join smallcategory as c6 on c2.small_categoryid = c6.id "
+				+ "left join smallcategory as c7 on c3.small_categoryid =c7.id "
+				+ "join smallcategory  as c8 on c4.small_categoryid = c8.id "
+				+ "where daily.DAY_HTEMPERATURE=? AND daily.USER_ID=? ORDER BY ID";
 		PreparedStatement pStmt = conn.prepareStatement(sql);
 
 		// SQL文を完成させる
-		if (user_id != null && !user_id.equals("")) {
-			pStmt.setString(1, user_id);
+
+		if (DAY_HTEMPERATURE != null) {
+			pStmt.setString(1, DAY_HTEMPERATURE);
 		}
 		else {
 			pStmt.setString(1, null);
 		}
-		if (DAY_HTEMPERATURE != null) {
-			pStmt.setString(2, DAY_HTEMPERATURE);
+		if (user_id != null && !user_id.equals("")) {
+			pStmt.setString(2, user_id);
 		}
 		else {
 			pStmt.setString(2, null);
 		}
-
 
 
 
@@ -210,18 +230,20 @@ public List<Day> selecth(String user_id,String DAY_HTEMPERATURE) {
 
 		// 結果表をコレクションにコピーする
 		while (rs.next()) {
-			Day card = new Day(
-			rs.getInt("ID"),
-			rs.getString("DAY_DAY"),
-			rs.getString("USER_ID"),
-			rs.getDouble("DAY_HTEMPERATURE"),
-			rs.getDouble("DAY_LTEMPERATURE"),
-			rs.getInt("DAY_WEATHERCODE"),
-			rs.getInt("DAY_TOPSNO"),
-			rs.getInt("DAY_OUTERNO1"),
-			rs.getInt("DAY_OUTERNO2"),
-			rs.getInt("DAY_BOTTOMNO")
-			);
+			Day card = new Day();
+			card.setID(rs.getInt("ID"));
+			card.setDAY_DAY(rs.getString("DAY_DAY"));
+			card.setUSER_ID(rs.getString("USER_ID"));
+			card.setDAY_HTEMPERTURE(rs.getDouble("DAY_HTEMPERATURE"));
+			card.setDAY_LTEMPERTURE(rs.getDouble("DAY_LTEMPERATURE"));
+			card.setDAY_TOPSTAG(rs.getString("c1_CLO_IMAGES"));
+			card.setDAY_OUTER1TAG(rs.getString("c2_CLO_IMAGES"));
+			card.setDAY_OUTER2TAG(rs.getString("c3_CLO_IMAGES"));
+			card.setDAY_BOTTOMTAG(rs.getString("c4_CLO_IMAGES"));
+			card.setDAY_TOPSNAME(rs.getString("c5_SMALL_CATEGORY"));
+			card.setDAY_OUTER1NAME(rs.getString("c6_SMALL_CATEGORY"));
+			card.setDAY_OUTER2NAME(rs.getString("c7_SMALL_CATEGORY"));
+			card.setDAY_BOTTOMNAME(rs.getString("c8_SMALL_CATEGORY"));
 			cardList.add(card);
 		}
 	}
@@ -265,23 +287,32 @@ public List<Day> selectl(String user_id,String DAY_LTEMPERATURE) {
 		conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 		// SQL文を準備する
-		String sql = "select ID,DAY_DAY,USER_ID,DAY_HTEMPERATURE,DAY_LTEMPERATURE,DAY_WEATHERCODE,DAY_TOPSNO,DAY_OUTERNO1, DAY_OUTERNO2,DAY_BOTTOMNO from DAILY WHERE USER_ID=? AND DAY_LTEMPERATURE=? ORDER BY ID";
+		String sql = "SELECT Daily.ID,DAY_DAY,Daily.USER_ID,DAY_HTEMPERATURE,DAY_LTEMPERATURE,c1.CLO_IMAGES as c1_clo_images,c2.CLO_IMAGES as c2_clo_images,c3.CLO_IMAGES as c3_clo_images,c4.CLO_IMAGES as c4_clo_images,c5.SMALL_CATEGORY as c5_small_category,c6.SMALL_CATEGORY as c6_small_category,c7.SMALL_CATEGORY as c7_small_category,c8.SMALL_CATEGORY as c8_small_category FROM DAILY "
+				+ "join clothes as c1 on daily.day_topsno = c1.id "
+				+ "left join clothes as c2 on daily.day_outerno1 = c2.id "
+				+ "left join clothes as c3 on daily.day_outerno2 = c3.id "
+				+ "join clothes as c4 on daily.day_bottomno = c4.id "
+				+ "join smallcategory as c5 on c1.small_categoryid = c5.id "
+				+ "left join smallcategory as c6 on c2.small_categoryid = c6.id "
+				+ "left join smallcategory as c7 on c3.small_categoryid =c7.id "
+				+ "join smallcategory  as c8 on c4.small_categoryid = c8.id "
+				+ "where daily.DAY_LTEMPERATURE=? AND daily.USER_ID=? ORDER BY ID";;
 		PreparedStatement pStmt = conn.prepareStatement(sql);
 
 		// SQL文を完成させる
-		if (user_id != null && !user_id.equals("")) {
-			pStmt.setString(1, user_id);
+
+		if (DAY_LTEMPERATURE != null) {
+			pStmt.setString(1, DAY_LTEMPERATURE);
 		}
 		else {
 			pStmt.setString(1, null);
 		}
-		if (DAY_LTEMPERATURE != null) {
-			pStmt.setString(2, DAY_LTEMPERATURE);
+		if (user_id != null && !user_id.equals("")) {
+			pStmt.setString(2, user_id);
 		}
 		else {
 			pStmt.setString(2, null);
 		}
-
 
 
 
@@ -290,18 +321,20 @@ public List<Day> selectl(String user_id,String DAY_LTEMPERATURE) {
 
 		// 結果表をコレクションにコピーする
 		while (rs.next()) {
-			Day card = new Day(
-			rs.getInt("ID"),
-			rs.getString("DAY_DAY"),
-			rs.getString("USER_ID"),
-			rs.getDouble("DAY_HTEMPERATURE"),
-			rs.getDouble("DAY_LTEMPERATURE"),
-			rs.getInt("DAY_WEATHERCODE"),
-			rs.getInt("DAY_TOPSNO"),
-			rs.getInt("DAY_OUTERNO1"),
-			rs.getInt("DAY_OUTERNO2"),
-			rs.getInt("DAY_BOTTOMNO")
-			);
+			Day card = new Day();
+			card.setID(rs.getInt("ID"));
+			card.setDAY_DAY(rs.getString("DAY_DAY"));
+			card.setUSER_ID(rs.getString("USER_ID"));
+			card.setDAY_HTEMPERTURE(rs.getDouble("DAY_HTEMPERATURE"));
+			card.setDAY_LTEMPERTURE(rs.getDouble("DAY_LTEMPERATURE"));
+			card.setDAY_TOPSTAG(rs.getString("c1_CLO_IMAGES"));
+			card.setDAY_OUTER1TAG(rs.getString("c2_CLO_IMAGES"));
+			card.setDAY_OUTER2TAG(rs.getString("c3_CLO_IMAGES"));
+			card.setDAY_BOTTOMTAG(rs.getString("c4_CLO_IMAGES"));
+			card.setDAY_TOPSNAME(rs.getString("c5_SMALL_CATEGORY"));
+			card.setDAY_OUTER1NAME(rs.getString("c6_SMALL_CATEGORY"));
+			card.setDAY_OUTER2NAME(rs.getString("c7_SMALL_CATEGORY"));
+			card.setDAY_BOTTOMNAME(rs.getString("c8_SMALL_CATEGORY"));
 			cardList.add(card);
 		}
 	}

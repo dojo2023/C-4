@@ -53,19 +53,20 @@
             <input type="text" name="DAY_LTEMPERTURE" value="${e.DAY_LTEMPERTURE}" readonly style="background-color:white">
         </td>
         <td>
-
-
-		<p>${e.SMALL_CATEGORY}</p>
-		 <img src="${e.CLO_IMAGES}"   ><br>
+			<img src="${e.DAY_TOPSTAG}"   >
+			<p>${e.DAY_TOPSNAME}</p>
         </td>
         <td>
-            <input type="text" name="DAY_OUTERNO1" value="${e.DAY_OUTERNO1}" readonly style="background-color:white">
+           <img src="${e.DAY_OUTER1TAG}"   >
+			<p>${e.DAY_OUTER1NAME}</p>
         </td>
         <td>
-            <input type="text" name="DAY_OUTERNO2" value="${e.DAY_OUTERNO2}" readonly style="background-color:white">
+            <img src="${e.DAY_OUTER2TAG}"   >
+			<p>${e.DAY_OUTER2NAME}</p>
         </td>
         <td>
-            <input type="text" name="DAY_BOTTOMNO" value="${e.DAY_BOTTOMNO}" readonly style="background-color:white">
+            <img src="${e.DAY_BOTTOMTAG}"   >
+			<p>${e.DAY_BOTTOMNAME}</p>
         </td>
     </tr>
   </c:forEach>

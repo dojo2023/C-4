@@ -169,7 +169,7 @@ public class CoordinateRegisterServlet extends HttpServlet {
 		System.out.println(request.getParameter("cood_bottoms"));
 		int  cood_bottoms = Integer.parseInt(request.getParameter("cood_bottoms"));
 
-
+		HttpSession session = request.getSession();
 		//Cloth型のインスタンス4つ生成
 		ClothesDao ccdao;
 		ccdao = new ClothesDao();
@@ -195,8 +195,13 @@ public class CoordinateRegisterServlet extends HttpServlet {
 		//check_outer1.setCLO_IMAGES(cood_outer1IM);
 
 		//request.setAttribute("check_outer1", check_outer1);
-		HttpSession session7 = request.getSession();
-		session7.setAttribute("check_outer1", check_outer1);
+
+		session.setAttribute("check_outer1", check_outer1);
+		}else {
+
+				session.removeAttribute("checkouter1");
+
+
 		}
 
 		if(cood_outer2 != 0) {

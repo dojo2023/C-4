@@ -43,7 +43,7 @@
 
 
 		<p>${smallTag2.SMALL_CATEGORY}</p>
-		 <img src="${check_outer2.CLO_IMAGES}" ><br>
+		 <img src="${check_outer1.CLO_IMAGES}" ><br>
 		<br>
 
 		<hr>

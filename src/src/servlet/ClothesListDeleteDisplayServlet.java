@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.ClothesDao;
+
 /**
  * Servlet implementation class ClothesListDeleteDisplayServlet
  */
@@ -30,43 +32,21 @@ public class ClothesListDeleteDisplayServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String cid = request.getParameter("clothes__id");
+		int CID = Integer.parseInt(cid);
+		//System.out.println(CID);
+		ClothesDao delclothesDao = new ClothesDao();
+		delclothesDao.delete(CID);
 
-		/*if (cDao.delete(ID)) {	// 削除成功
-				request.setAttribute("result",
-				new Result("削除成功！", "レコードを削除しました。", "/hello/MainServlet"));
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/delete_check.jsp");
-				dispatcher.forward(request, response);
-			}
-			else {						// 削除失敗
-				request.setAttribute("result",
-				new Result("削除失敗！", "レコードを削除できませんでした。", "/hello/MainServlet"));
-			}
-		}
 
-		*
-		*
-		*
-		*
-		*
-		*	UsersDao uDao = new UsersDao();
-				if (request.getParameter("ProfileChange_").equals("確定")) {
-					if (uDao.update(NEWUSER)) {	// 更新成功
-//						request.setAttribute("result",
-//						new Result("更新成功！", "レコードを更新しました。", "/hello/MainServlet"));
-//					}
-//					else {												// 更新失敗
-//						request.setAttribute("result",
-//						new Result("更新失敗！", "レコードを更新できませんでした。", "/hello/MainServlet"));
-					}
-				}
 
-//				User pu = new User(USER_ID, USER_PW,USER_GENDERID,USER_HOMEID,USER_PTEMPERTUREID);
-				UsersDao puDao = new UsersDao();
-				User abc = puDao.selectUSER_ID(NEWUSER.getUSER_ID());
-				//セッションスコープにIDを格納する
-				HttpSession session2 = request.getSession();
-				session2.setAttribute("login_user", abc);
-*/
+
+
+
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/list.jsp");
+		dispatcher.forward(request, response);
+
 	}
 
 }

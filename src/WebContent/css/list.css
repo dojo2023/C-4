@@ -39,3 +39,38 @@ body {
   margin: 0 auto 0 auto; /*表を中央に表示*/
  /* max-width: 215px; */
 }
+
+
+/*メイン*/
+main {
+  margin: 20px;
+}
+
+
+main form {
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+}
+
+main form {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main form button {
+  display: inline-block;
+  padding: 10px 20px;
+  width: 150px;
+  border: none;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #32586D;
+}
+
+main form button:hover {
+  background-color: #B2D1D6;
+}

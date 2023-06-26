@@ -11,7 +11,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/hello/css/main4.css">
-<link rel="stylesheet" href="/hello/css/common.css"><!-- 共通CSS使用 -->
+<!-- <link rel="stylesheet" href="/hello/css/common.css"><!-- 共通CSS使用 -->
 <title>メイン画面</title>
 </head>
 <body>
@@ -19,14 +19,10 @@
     <header>
     <div class="headwrapper">
         <div class="headermenu">
-         <p>ログイン中のユーザーのIDは<%=login_user.getID() %>
-         <span id="long"><%=login_user.getLONGITUDE() %></span>
-		 <span id ="lati"><%=login_user.getLATITUDE() %></span>
-		 <span id = "index"><%=login_user.getUSER_PTEMPERTUREID() %></span>
-		 <span id = "indexp"><%=p.getUSER_PTEMPERTURE() %></span>
+
             <ul class="nav">
 
-                <li><a href="/hello/MainServlet">ロゴ</a></li>
+                <a href="/hello/MainServlet"><img src="/hello/images/logo_images/0625_1.png" id="logoimg"></a>
                 <li><a href="/hello/ClothesRegisterServlet">服登録</a></li>
                 <li><a href="/hello/ClothesListServlet">一覧</a></li>
                 <li><a href="/hello/RecordSearchServlet">コーディネート履歴</a></li>
@@ -39,6 +35,15 @@
     </header>
 
  <main>
+ 	<div class="loginuserid">
+
+ 		<p>ログイン中のユーザーのIDは<%=login_user.getID() %>
+         <span id="long"><%=login_user.getLONGITUDE() %></span>
+		 <span id ="lati"><%=login_user.getLATITUDE() %></span>
+		 <span id = "index"><%=login_user.getUSER_PTEMPERTUREID() %></span>
+		 <span id = "indexp"><%=p.getUSER_PTEMPERTURE() %></span>
+	</div>
+
     <div class="date">
         <p class="datedate">今日<span id="today"></span></p>
     </div>
@@ -61,6 +66,7 @@
     </div>
 
 
+	<br>
     <div class="coordregister">
         <a id ="btn"  href="http://localhost:8080/hello/CoordinateRegisterServlet">コーディネート登録</a>
     </div>

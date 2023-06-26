@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,23 +40,24 @@
   <br>
 
 <p>${smallTag2.SMALL_CATEGORY}</p>
-
+	<c:forEach var="f" items="${checkouter1}">
 		<p>${smallTag2.SMALL_CATEGORY}</p>
-		 <img src="${check_outer1.CLO_IMAGES}" ><br>
+		 <img src="${f.CLO_IMAGES}" ><br>
 		<br>
 
 		<hr>
+	</c:forEach>
   <br>
 
   <br>
 <p>${smallTag3.SMALL_CATEGORY}</p>
-
+	<c:forEach var="g" items="${checkouter2}">
 		<p>${smallTag3.SMALL_CATEGORY}</p>
-		 <img src="${check_outer2.CLO_IMAGES}" ><br>
+		 <img src="${g.CLO_IMAGES}" ><br>
 		<br>
 
 		<hr>
-
+	</c:forEach>
    <br>
 
 <p>${smallTag4.SMALL_CATEGORY}</p>

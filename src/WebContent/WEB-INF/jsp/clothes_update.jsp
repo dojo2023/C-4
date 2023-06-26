@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,14 +38,15 @@
 				  <option value="${e.ID}">${e.SMALL_CATEGORY}</option>
 				</c:forEach>
 			</select><br>
-
-
-
-	<p><a href="/hello/ClothesListdeleteupdateServlet">各タグ詳細一覧画面にもどる</a></p>
+			<input type="hidden" name="upclothes__id" value = "${e.ID}">
+			<input type="hidden" name="upclothes__name" value = "${smallTag.SMALL_CATEGORY}">
+			<input type="hidden" name="upclothes__images" value = "${e.CLO_IMAGES}">
+			<p><a href="/hello/ClothesListdeleteupdateServlet">各タグ詳細一覧画面にもどる</a></p>
 		<div class ="button">
 		    <button type="submit" name="ClothesRegister" value="登録" id="ClothesRegister">
 		    	変更
 		    </button>
+		 </div>
 	</form>
 </main>
 
@@ -55,6 +56,6 @@
 		<p>&copy;Copyright Atype.Co.Ltd.All rights reserved.</p>
 	</div>
 </footer>
-
+<script type="text/javascript" src="/hello/JS/clothes_update.js"></script>
 </body>
 </html>

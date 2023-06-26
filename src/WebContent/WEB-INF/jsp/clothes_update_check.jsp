@@ -31,9 +31,9 @@
 
 	 <form method="POST" action="/hello/ClothesListUpdateServlet" id="ClothesRegisterCheck_form" onsubmit = "return hoge();">
 		<p>服の画像</p>
-			<img src="${clo_img_name.CLO_IMAGES}" id="gazo">
+			<img src="${update_clo_img_name.CLO_IMAGES}" id="gazo">
 		 <p>服の種類</p>
-		<input type="text" name="clothes_kind" value="${clo_img_name.SMALL_NAME}" readonly style="background-color:white"><br>
+		<input type="text" name="clothes_kind" value="${update_clo_img_name.SMALL_NAME}" readonly style="background-color:white"><br>
 
 		<div class ="button">
 		    <button type="submit" name="ClothesRegisterCheck" value="登録" id="ClothesRegisterCheck">

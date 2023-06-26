@@ -50,7 +50,6 @@ public class ClothesListUpdateDisplayServlet extends HttpServlet {
 				String SMALL_CATEGORY = request.getParameter("SMALL_CATEGORY");
 				String CLO_IMAGES = request.getParameter("CLO_IMAGES");
 				int SMALL_CATEGORYID = Integer.parseInt("SMALL_CATEGORYID");
-
 				Cloth cDao = new Cloth(ID,SMALL_CATEGORYID,SMALL_CATEGORY,CLO_IMAGES);
 
 				//セッションスコープにIDを格納する

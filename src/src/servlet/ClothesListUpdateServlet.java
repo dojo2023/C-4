@@ -54,24 +54,33 @@ public class ClothesListUpdateServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			// リクエストパラメータを取得する
-				request.setCharacterEncoding("UTF-8");
-				String ID = request.getParameter("ID");
-				String SMALL_CATEGORY = request.getParameter("SMALL_CATEGORY");
-				String CLO_IMAGES = request.getParameter("CLO_IMAGES");
-				int SMALL_CATEGORYID = Integer.parseInt("SMALL_CATEGORYID");
+		request.setCharacterEncoding("UTF-8");
 
 
-				Cloth cDao = new Cloth(ID,SMALL_CATEGORYID,SMALL_CATEGORY,CLO_IMAGES);
 
 
-	        //セッションスコープにIDを格納する
-			HttpSession session = request.getSession();
-			session.setAttribute("clothes_update", cDao);
-
-			//編集確認ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/clothes_update_check.jsp");
-			dispatcher.forward(request, response);
+		//編集確認ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/clothes_update_check.jsp");
+		dispatcher.forward(request, response);
 	}
 
  }
+/*
+//int CTAG = Integer.parseInt(ctag);
+
+//String ctag = request.getParameter("upclothes__id");
+String cname = request.getParameter("upclothes__name");
+String cimages = request.getParameter("upclothes__images");
+Cloth upclothestag = new Cloth();
+//upclothestag.setID(ctag);
+upclothestag.setSMALL_TAG(cname);
+upclothestag.setCLO_IMAGES(cimages);
+
+
+HttpSession session = request.getSession();
+session.setAttribute("upsmallTag", upclothestag);*/
+
+//Cloth clothestag = new Cloth();
+		/*clothestag.setID(CTAG);
+		clothestag.setSMALL_TAG(cname);
+		clothestag.setCLO_IMAGES(cimages);*/

@@ -35,6 +35,12 @@ main{
    /* width:215px; */
 }
 
+#img{
+    border-top-width: 2.0px;	/* 破線の下線の大きさ */
+    border-top-style: dashed;   /*下線を破線にする*/
+    border-top-color: #B2D1D6; /*下線の色*/
+}
+
 
 /* class="nav" */
 .nav li {
@@ -86,7 +92,8 @@ main{
 
 .link{
 	display:flex;
-	justify-content: center; /*中央揃え*/
+	align-items: center;/*中央揃え*/
+	margin-top: 5em;
 }
 
 .link p{

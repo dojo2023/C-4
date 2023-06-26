@@ -16,7 +16,7 @@
 		<div class="headwrapper">
         <div class="headermenu">
             <ul class="nav">
-                <a href="/hello/MainServlet"><img src="/hello/images/logo_images/clo_logo6.png" id="logoimg"></a>
+                <a href="/hello/MainServlet"><img src="/hello/images/logo_images/0625_1.png" id="logoimg"></a>
                 <li><a href="/hello/ClothesRegisterServlet">服登録</a></li>
                 <li><a href="/hello/ClothesListServlet">一覧</a></li>
                 <li><a href="/hello/RecordSearchServlet">コーディネート履歴</a></li>
@@ -28,13 +28,13 @@
         </div>
 	</header>
 	<main>
-		<p>服登録</p>
+		<h3>服登録</h3>
 
 		<form method="POST" action="/hello/ClothesRegisterServlet" id="ClothesRegister_form"  enctype="multipart/form-data"
 			 onsubmit = "return hoge();">
 
 			<!-- 一つ目 -->
-			<p>服の画像</p>
+			<p id = img>服の画像</p>
     	  	<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);" required>
 			<canvas id="preview" style="max-width:200px;"></canvas><br>
 			<p>服の種類</p>
@@ -45,7 +45,7 @@
 			</select><br>
 
 			<!-- 二つ目 -->
-			<p>服の画像</p>
+			<p id = img>服の画像</p>
     	  	<input type="file" name="IMAGE2" accept="image/*" onchange="preview2Image(this);">
 			<canvas id="preview2" style="max-width:200px;"></canvas><br>
 			<p>服の種類</p>
@@ -57,7 +57,7 @@
 
 
 			<!-- 三つ目 -->
-			<p>服の画像</p>
+			<p id = img>服の画像</p>
     	  	<input type="file" name="IMAGE3" accept="image/*" onchange="preview3Image(this);">
 			<canvas id="preview3" style="max-width:200px;"></canvas><br>
 			<p>服の種類</p>
@@ -69,7 +69,7 @@
 
 
 			<!-- 四つ目 -->
-			<p>服の画像</p>
+			<p id = img>服の画像</p>
     	  	<input type="file" name="IMAGE4" accept="image/*" onchange="preview4Image(this);">
 			<canvas id="preview4" style="max-width:200px;"></canvas><br>
 			<p>服の種類</p>
@@ -81,7 +81,7 @@
 
 
 			<!-- 五つ目 -->
-			<p>服の画像</p>
+			<p id = img>服の画像</p>
     	  	<input type="file" name="IMAGE5" accept="image/*" onchange="preview5Image(this);">
 			<canvas id="preview5" style="max-width:200px;"></canvas><br>
 			<p>服の種類</p>
@@ -92,7 +92,7 @@
 			</select><br>
 
 			<!-- 六つ目 -->
-			<p>服の画像</p>
+			<p id = img>服の画像</p>
     	  	<input type="file" name="IMAGE6" accept="image/*" onchange="preview6Image(this);">
 			<canvas id="preview6" style="max-width:200px;"></canvas><br>
 			<p>服の種類</p>

@@ -8,21 +8,24 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/hello/css/user_register.css">
 <title>ユーザー登録</title>
-<img src="/hello/images/logo_images/clo_logo6.png" id="logoimg">
+<div class = "headermenu">
+	<a href="/hello/MainServlet"><img src="/hello/images/logo_images/0625_1.png" id="logoimg"></a>
+</div>
 </head>
 <body>
 	<header>
 	</header>
 	<main>
-	<h2>ユーザー登録</h2>
+	<div class = narrow>
+	<h3>ユーザー登録</h3>
 
 <form method="POST" action="/hello/UserRegisterServlet" id="UserRegister_form" onsubmit = "return hoge();">
-	<p>ID</p><input type="text" name="user_id" required><br>
-	<p>PW</p><input type="password" name="user_pw" required><br>
-	<p>性別</p><input type="radio" name="user_genderid" value="1" checked>男
+	<div class = side><h4>ID</h4><input type="text" name="user_id" required><br></div>
+	<div class = side><h4>PW</h4><input type="password" name="user_pw" required><br></div>
+	<h4>性別</h4><input type="radio" name="user_genderid" value="1" checked>男
 	<input type="radio" name="user_genderid" value="2">女
 	<input type="radio" name="user_genderid" value="3">その他<br>
-	<p>居住地</p>
+	<h4>居住地</h4>
 		<select name="user_homeid">
 		<c:forEach var="e" items="${list}" >
 		  <option value="${e.ID}">${e.HOME}</option>
@@ -30,22 +33,28 @@
 		</select>
 
 	<br>
-	<p>暑がり寒がり</p>
+	<h4>暑がり寒がり</h4>
 		<select name="user_ptempertureid">
 		<c:forEach var="f" items="${list2}" >
 		  <option value="${f.ID}">${f.USER_PTEMPERTURE}</option>
 		 </c:forEach>
 		</select><br>
+	</div>
 
-	<p>暑がりの方は＋、寒がりの方は‐</p>
-	<div class="MainBackLink">
-			<p><a href="/hello/LoginServlet">ログイン画面に戻る</a></p>
+	<div class = wide>
+		<p class = memo>暑がりの方は＋、寒がりの方は‐</p>
 	</div>
-	<div class ="button">
-		    <button type="submit" name="UserRegister" value="登録" id="UserRegister">
-		    	確認
-		    </button>
-	</div>
+		<div class = link>
+			<div class="MainBackLink">
+					<p><a href="/hello/LoginServlet">ログイン画面に戻る</a></p>
+			</div>
+			<div class ="button">
+				    <button type="submit" name="UserRegister" value="登録" id="UserRegister">
+				    	確認
+				    </button>
+			</div>
+		</div>
+
 	</form>
 
 	</main>

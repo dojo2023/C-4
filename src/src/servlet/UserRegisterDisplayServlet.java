@@ -53,16 +53,8 @@ public class UserRegisterDisplayServlet extends HttpServlet {
 
 		// 登録処理を行う
 		UsersDao uDao = new UsersDao();
-		if (uDao.insert(loginuser)) {	// 登録成功
-//			request.setAttribute("result",
-//			new Result("登録成功！", "レコードを登録しました。", "/hello/LoginServlet"));
+		uDao.insert(loginuser);
 			// ログインページにリダイレクトする
 			response.sendRedirect("/hello/LoginServlet");
-		}
-//		else {												// 登録失敗
-//			request.setAttribute("result",
-//			new Result("登録失敗！", "レコードを登録できませんでした。", "/hello/LoginServlet"));
-//		}
 	}
-
 }

@@ -1,13 +1,38 @@
 @charset "UTF-8";
 
+.headermenu{
+   /* background-color:brown; */
+    position: fixed;
+
+    z-index: index 999;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    display:flex;
+    align-items: center;
+    margin-bottom:0;
+	max-width: 215px; /*要素がこれ以上大きくならない幅*/
+}
+
+
 body {
+  padding-top: 90px;
   background-color: #F3F5F2; /*背景の色*/
   color:#32586D; /*文字の色*/
   text-align:center; /*文章を中心にする*/
   margin: 0 auto 0 auto; /*表を中央に表示*/
-/*  max-width: 215px; /*要素がこれ以上大きくならない幅*/ /*これがあると中央がずれるゾ！！！！！*/
+ /* max-width: 215px; */ /*要素がこれ以上大きくならない幅*/ /*これがあると中央がずれるゾ！！！！！*/
 }
 
+h3{
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+h4{
+	margin-bottom: 0.5em;
+}
 
 /*ロゴ画像の大きさ*/
 #logoimg{
@@ -35,6 +60,9 @@ head{
 
 .MainBackLink{ /* 通常時のカラー */
   color: #2B295F;
+  /*
+  float: left;
+  */
 }
 
 .MainBackLink a:link {/* 訪れたことのない時のカラー */
@@ -57,6 +85,33 @@ head{
   text-decoration: none;
 }
 
+/*
+.side{
+	display:flex;
+	align-items: center;
+	margin-left: 500px
+}
+
+.side p{
+	margin: 20px; */ /*スペース開ける*/
+/*}*/
+
+.link{
+	display: flex;
+	align-items: center;/*中央揃え*/
+	margin: 0 auto 0 auto;
+	/* text-align:center; */
+	max-width: 250px;
+}
+
+.link p{
+	margin: 20px; /*スペース開ける*/
+}
+
+.memo{
+	font-size: 15px;
+	margin-bottom: 3em;
+}
 
 /*ボタン装飾*/
 #UserRegister{
@@ -83,3 +138,9 @@ head{
   top: 9px;
   box-shadow: 0 0;
 }
+/*
+#border{
+    border-top-width: 2.0px;	/* 破線の下線の大きさ */
+   /* border-top-style: dashed;  */ /*下線を破線にする*/
+   /* border-top-color: #B2D1D6; */ /*下線の色*/
+/* } */

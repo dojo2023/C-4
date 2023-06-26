@@ -40,24 +40,28 @@
   <br>
 
 <p>${smallTag2.SMALL_CATEGORY}</p>
-	<c:forEach var="f" items="${checkouter1}">
+
+
 		<p>${smallTag2.SMALL_CATEGORY}</p>
-		 <img src="${f.CLO_IMAGES}" ><br>
+		 <img src="${check_outer2.CLO_IMAGES}" ><br>
 		<br>
 
 		<hr>
-	</c:forEach>
+
   <br>
 
   <br>
 <p>${smallTag3.SMALL_CATEGORY}</p>
-	<c:forEach var="g" items="${checkouter2}">
+
+<c:if test="${not empty check_outer2 }">
+
 		<p>${smallTag3.SMALL_CATEGORY}</p>
-		 <img src="${g.CLO_IMAGES}" ><br>
+		 <img src="${check_outer2.CLO_IMAGES}" ><br>
 		<br>
 
 		<hr>
-	</c:forEach>
+
+</c:if>
    <br>
 
 <p>${smallTag4.SMALL_CATEGORY}</p>

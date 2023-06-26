@@ -68,4 +68,21 @@ img{
 }
 
 
+/*ボタンを横並べにするよ*/
+.CoLink {
+   display: flex; /* Flexboxレイアウトを使用 */
+   align-items: center; /* 要素を垂直方向に中央揃え */
+ }
+
+.ProfileButton p,
+.CoLink input {
+  margin: 0 auto 0 auto; /* 2つのボタンを中央揃え */
+  display: flex; /* Flexboxレイアウトを使用 */
+  align-items: center; /* 要素を垂直方向に中央揃え */
+}
+
+.CoLink p {
+  margin-right: 10px; /* パラグラフ要素とボタンの間に余白を設定 */
+}
+
 

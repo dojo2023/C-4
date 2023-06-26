@@ -94,12 +94,14 @@ main{
 
 /*メニューバーの編集ここまで*/
 
-
+.main{
+	display:flex;
+}
 
 
 /*ボタン関連*/
 #profile_check{
-	display:inline-block;
+	display:flex;
 	background: #F4CFBE;
   	border-bottom: 5px solid;
   	box-shadow: 0 3px 5px rgba(0, 0, 0, .3); /*影つける*/
@@ -131,7 +133,8 @@ body {
   color:#32586D; /*文字の色*/
   text-align:center; /*文章を中心にする*/
   margin: 0 auto 0 auto; /*表を中央に表示*/
-  max-width: 215px;
+ /* max-width: 400px; */
+  max-width: 800px;
 }
 
 /*プロフィール画面へ戻る リンクの色*/
@@ -159,3 +162,27 @@ body {
   color: #32586D; /* クリックした時のカラー*/
   text-decoration: none;
 }
+
+
+/*ボタンを横並べにするよ*/
+
+.ProfileLink p {
+  margin-right: 10px; /* パラグラフ要素とボタンの間に余白を設定 */
+}
+
+.ProfileLink {
+    display: flex; /* Flexboxレイアウトを使用 */
+    align-items: center; /* 要素を垂直方向に中央揃え */
+  }
+
+.ProfileLink p,
+.link input {
+  margin: 0 auto 0 auto; /* パラグラフ要素とボタンの余白をリセット */
+  display: flex; /* Flexboxレイアウトを使用 */
+  align-items: center; /* 要素を垂直方向に中央揃え */
+}
+
+.ProfileLink p {
+  margin-right: 10px; /* パラグラフ要素とボタンの間に余白を設定 */
+}
+

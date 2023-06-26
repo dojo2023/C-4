@@ -72,7 +72,9 @@ public class CoordinateRegisterDisplayServlet extends HttpServlet {
 
 		coodinate.setDAY_BOTTOMNO(cood4.getID());
 
-		coodinate.setID(loginusers.getID());
+
+		coodinate.setUSER_ID(loginusers.getUSER_ID());
+
 
 
 

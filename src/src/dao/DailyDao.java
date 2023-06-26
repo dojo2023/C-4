@@ -353,7 +353,7 @@ public List<Day> selectl(String user_id,String DAY_LTEMPERATURE) {
 	conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 	// SQL文を準備する
-	String sql = "update DAILY set DAY_TOPSNO=?,DAY_OUTERNO1=?,DAY_OUTERNO2=?,DAY_BOTTOMNO=?  where ID=? ";
+	String sql = "update DAILY set DAY_TOPSNO=?,DAY_OUTERNO1=?,DAY_OUTERNO2=?,DAY_BOTTOMNO=?  where USER_ID=? AND DAY_DAY=CURDATE()";
 
 	PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -384,6 +384,7 @@ public List<Day> selectl(String user_id,String DAY_LTEMPERATURE) {
 	}
 
 	pStmt.setInt(5, day.getID());
+
 
 	// SQL文を実行する
 	if (pStmt.executeUpdate() == 1) {

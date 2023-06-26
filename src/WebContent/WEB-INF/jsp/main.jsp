@@ -44,18 +44,23 @@
 		 <span id = "indexp"><%=p.getUSER_PTEMPERTURE() %></span>
 	</div>
 
+	<div class="wmenu">
     <div class="date">
         <p class="datedate">今日<span id="today"></span></p>
     </div>
     <div class="weatherbox">
         <div class="tempbox">
-            最高気温:<span id="temphigh"></span>°C<br/>
-            最低気温:<span id="templow"></span>°C
+        <br>
+            <img src="/hello/images/logo_images/kion.png" id="kion">最高気温:<span id="temphigh"></span>°C<br/>
+            <img src="/hello/images/logo_images/kion.png" id="kion">最低気温:<span id="templow"></span>°C
         </div>
         <div>
             <img id="weatherimg" src="" alt="weatherImage">
         </div>
     </div>
+
+    </div>
+    <div class="recoClo">
     <div class="title">
         <h1 class="rec">おすすめの組み合わせ</h1>
     </div>
@@ -64,11 +69,12 @@
         <a href="#"><div id="outer"></div></a>
         <a href="#"><div id="bottoms"></div></a>
     </div>
+    </div>
 
 
 	<br>
     <div class="coordregister">
-        <a id ="btn"  href="http://localhost:8080/hello/CoordinateRegisterServlet">コーディネート登録</a>
+        <a id ="btn"  href="http://localhost:8080/hello/CoordinateRegisterServlet"><img src="/hello/images/logo_images/16220_color.png" id="Registimg">コーディネート登録</a>
     </div>
 
 

@@ -35,7 +35,10 @@ public class CoordinateRegisterServlet extends HttpServlet {
 		//リクエストパラメータを取得する。一気にint型にする。
 		request.setCharacterEncoding("UTF-8");
 		int  tops = Integer.parseInt(request.getParameter("tops"));
-		int  outer1 = Integer.parseInt(request.getParameter("outer1"));
+		int  outer1 = 0;
+		if(request.getParameter("outer1") != null) {
+		    outer1 = Integer.parseInt(request.getParameter("outer1"));
+		}
 		int  outer2 = 0;
 		if(request.getParameter("outer2") != null) {
 		    outer2 = Integer.parseInt(request.getParameter("outer2"));
@@ -77,6 +80,7 @@ public class CoordinateRegisterServlet extends HttpServlet {
 
 
 		//ClothesDaoのメソッドを使う outer1
+		if(outer1 != 0) {
 	    ClothList = cdao.selectSMALL_CATEGORY(outer1);
 
 		//セッションスコープにIDを格納する
@@ -91,7 +95,10 @@ public class CoordinateRegisterServlet extends HttpServlet {
 
 		//セッションスコープに格納する
 		session.setAttribute("smallTag2", smallTag);
-
+		}else {
+			session.removeAttribute("smallTag2");
+			session.removeAttribute("Coodenate2");
+		}
 
 
 
@@ -146,8 +153,11 @@ public class CoordinateRegisterServlet extends HttpServlet {
 
 		//String cood_outer1IM = request.getParameter("cood_outer1IM");
 		System.out.println(request.getParameter("cood_outer1"));
-		int  cood_outer1 = Integer.parseInt(request.getParameter("cood_outer1"));
+		int  cood_outer1 = 0;
+		if(request.getParameter("cood_outer1") != null) {
+			  cood_outer1 =Integer.parseInt(request.getParameter("cood_outer1"));
 
+			}
 
 		//String cood_outer2IM = request.getParameter("cood_outer2IM");
 		int cood_outer2 =0 ;
@@ -176,7 +186,7 @@ public class CoordinateRegisterServlet extends HttpServlet {
 		HttpSession session6 = request.getSession();
 		session6.setAttribute("check_tops", check_tops);
 
-
+		if(cood_outer1 != 0) {
 		Cloth check_outer1;
 		check_outer1 = new Cloth();
 		check_outer1 = ccdao.selectID(cood_outer1);
@@ -187,7 +197,7 @@ public class CoordinateRegisterServlet extends HttpServlet {
 		//request.setAttribute("check_outer1", check_outer1);
 		HttpSession session7 = request.getSession();
 		session7.setAttribute("check_outer1", check_outer1);
-
+		}
 
 		if(cood_outer2 != 0) {
 		Cloth check_outer2;

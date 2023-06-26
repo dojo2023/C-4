@@ -44,21 +44,34 @@ public class CoordinateRegisterDisplayServlet extends HttpServlet {
 
 		User loginusers = (User)session.getAttribute("login_user");
 		Cloth cood1 = (Cloth)session.getAttribute("check_tops");
-		Cloth cood2 = (Cloth)session.getAttribute("check_outer1");
+
+
+		Cloth cood2 = new Cloth();
+			if((Cloth)session.getAttribute("check_outer1")!=null) {
+				cood2 = (Cloth)session.getAttribute("check_outer1");
+			}
+
+
+
 		Cloth cood3 = new Cloth();
-		if((Cloth)session.getAttribute("check_outer2")!= null);{
-			cood3 = (Cloth)session.getAttribute("check_outer2");
-		}
+			if((Cloth)session.getAttribute("check_outer2")!= null){
+				cood3 = (Cloth)session.getAttribute("check_outer2");
+			}
 
 		Cloth cood4 = (Cloth)session.getAttribute("check_bottoms");
 
 		Day coodinate = new Day();
 		coodinate.setDAY_TOPSNO(cood1.getID());
-		coodinate.setDAY_OUTERNO1(cood2.getID());
+
+		if(cood2 != null) {
+			coodinate.setDAY_OUTERNO1(cood2.getID());
+		}
 		if(cood3 != null) {
 			coodinate.setDAY_OUTERNO2(cood3.getID());
 		}
+
 		coodinate.setDAY_BOTTOMNO(cood4.getID());
+
 		coodinate.setID(loginusers.getID());
 
 

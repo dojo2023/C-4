@@ -1,34 +1,4 @@
 @charset "UTF-8";
-.headermenu{
-   /* background-color:brown; */
-    position: fixed;
-
-    z-index: index 999;
-    width: 100%;
-    height: 50px;
-    top: 0;
-    left: 0;
-    display:flex;
-    align-items: center;
-
-}
-
-.headermenu li{
-    float: left;
-}
-
-.headermenu ul{
-    list-style: none;
-}
-
-body{
-    padding-top: 90px;
-}
-
-main{
-    height: 100vw; /*スクロールしても固定*/
-    text-align: center;
-}
 
 .pbox{
   display: flex;
@@ -43,23 +13,43 @@ main{
     width: 180px
 }
 
-.link{
-	display:flex;
-	justify-content: center; /*中央揃え*/
+.link {
+   display: flex; /* Flexboxレイアウトを使用 */
+   align-items: center; /* 要素を垂直方向に中央揃え */
+ }
+
+.link p,
+.link input {
+  margin: 0; /* パラグラフ要素とボタンの余白をリセット */
+  display: flex; /* Flexboxレイアウトを使用 */
+  align-items: center; /* 要素を垂直方向に中央揃え */
 }
 
-.link p{
-	margin: 20px; /*スペース開ける*/
+.link p {
+  margin-right: 10px; /* パラグラフ要素とボタンの間に余白を設定 */
 }
 
-button {
-
+#Search{
+	display:inline-block;
+	background: #F4CFBE;
+  	border-bottom: 5px solid;
+  	box-shadow: 0 3px 5px rgba(0, 0, 0, .3); /*影つける*/
+  	border-radius: 100vh;
 }
 
-/* class="nav" */
-.nav li {
-    display: inline;		/* インラインで横に表示する */
-    list-style-type: none;	/* 先頭の記号をなくす */
-    padding-right: 30px;		/* 区切りを空ける */
-    line-height: 0.5;
+
+#Search:active{
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  border-bottom: none;
+}
+
+#Search:hover{
+  transform: translate3d(0, 5px, 0);
+  margin-top: 3px;
+  border-bottom: 2px solid;
+  background-color:#F4CFBE;
+  transition: .3s;
+  top: 9px;
+  box-shadow: 0 0;
 }

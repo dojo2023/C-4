@@ -1,8 +1,15 @@
 @charset "UTF-8";
 
 
+/*表示される画像の大きさを統一する*/
+img{
+  border-style: none; /* 枠なし */
+  width: 13em;
+  height: 13em;
+}
+
 /*ボタン関連*/
-.Coordinateinput{
+#Coordinateinput{
 	display:inline-block;
 	background: #F4CFBE;
   	border-bottom: 5px solid;
@@ -11,7 +18,7 @@
 }
 
 
-.Coordinateinput:active{
+#Coordinateinput:active{
 	display:inline-block;
 	background: #F4CFBE;
   	border-bottom: 5px solid;
@@ -21,7 +28,7 @@
 
 
 
-.Coordinateinput:hover{
+#Coordinateinput:hover{
   transform: translate3d(0, 5px, 0);
   margin-top: 3px;
   border-bottom: 2px solid;

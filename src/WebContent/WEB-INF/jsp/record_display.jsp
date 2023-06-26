@@ -13,7 +13,7 @@
     <div class="headwrapper">
         <div class="headermenu">
             <ul class="nav">
-                <li><a href="/hello/MainServlet">ロゴ</a></li>
+                <a href="/hello/MainServlet"><img src="/hello/images/logo_images/clo_logo6.png" id="logoimg"></a>
                 <li><a href="/hello/ClothesRegisterServlet">服登録</a></li>
                 <li><a href="/hello/ClothesListServlet">一覧</a></li>
                 <li><a href="/hello/RecordSearchServlet">コーディネート履歴</a></li>
@@ -32,19 +32,35 @@
 </c:if>
 
 <c:forEach var="e" items="${record_search}">
-   <!-- <input type="hidden" name="currentIndex" value="${loop.index}"> -->
-    日付<input type="date" name="DAY_DAY" value="${e.DAY_DAY}" readonly style="background-color:white"><br>
-    最高気温<input type="text" name="DAY_HTEMPERTURE" value="${e.DAY_HTEMPERTURE}" readonly style="background-color:white"><br>
-    最低気温<input type="text" name="DAY_LTEMPERTURE" value="${e.DAY_LTEMPERTURE}" readonly style="background-color:white"><br>
-    トップス<input type="text" name="DAY_TOPSNO" value="${e.DAY_TOPSNO}" readonly style="background-color:white"><br>
-    アウター①<input type="text" name="DAY_OUTERNO1" value="${e.DAY_OUTERNO1}" readonly style="background-color:white"><br>
-    アウター②<input type="text" name="DAY_OUTERNO2" value="${e.DAY_OUTERNO2}" readonly style="background-color:white"><br>
-    ボトムス<input type="text" name="DAY_BOTTOMNO" value="${e.DAY_BOTTOMNO}" readonly style="background-color:white"><br>
+    <div>
+        <label for="DAY_DAY">日付</label>
+        <input type="date" name="DAY_DAY" value="${e.DAY_DAY}"><br>
 
-  <hr>
+        <label for="DAY_HTEMPERTURE">最高気温</label>
+        <input type="text" name="DAY_HTEMPERTURE" value="${e.DAY_HTEMPERTURE}"><br>
+
+        <label for="DAY_LTEMPERTURE">最低気温</label>
+        <input type="text" name="DAY_LTEMPERTURE" value="${e.DAY_LTEMPERTURE}"><br>
+
+        <label for="DAY_TOPSNO">トップス</label>
+        <input type="text" name="DAY_TOPSNO" value="${e.DAY_TOPSNO}"><br>
+
+        <label for="DAY_OUTERNO1">アウター①</label>
+        <input type="text" name="DAY_OUTERNO1" value="${e.DAY_OUTERNO1}"><br>
+
+        <label for="DAY_OUTERNO2">アウター②</label>
+        <input type="text" name="DAY_OUTERNO2" value="${e.DAY_OUTERNO2}"><br>
+
+        <label for="DAY_BOTTOMNO">ボトムス</label>
+        <input type="text" name="DAY_BOTTOMNO" value="${e.DAY_BOTTOMNO}"><br>
+
+        <hr>
+    </div>
 </c:forEach>
+<div class=link>
 <p><a href="/hello/MainServlet">メイン画面に戻る</a></p>
 <p><a href="/hello/RecordSearchServlet">検索画面に戻る</a></p>
+</div>
 </main>
 </body>
 </html>

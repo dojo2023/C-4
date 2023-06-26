@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.ClothesDao;
 import dao.DailyDao;
+import model.Cloth;
 import model.Day;
 
 /**
@@ -41,6 +43,7 @@ public class RecordSearchServlet extends HttpServlet {
  			String day_htemperture = request.getParameter("DAY_HTEMPERTURE");
  			String day_ltemperture = request.getParameter("DAY_LTEMPERTURE");
  			List<Day> record_search = new ArrayList<Day>();
+ 			int i = 0;
 
  			System.out.println(day_day);
 
@@ -58,6 +61,17 @@ public class RecordSearchServlet extends HttpServlet {
  				DailyDao dDao = new DailyDao();
  	 			record_search = dDao.selectl(user_id,day_ltemperture);
  			}
+
+ 			ClothesDao cDao = new ClothesDao();
+ 			List<Cloth> c = new ArrayList<Cloth>();
+//
+// 			while(i < record_search.length) {
+// 				c.setCLO_IMAGES(record_search.getDAY_TOPSNO());
+// 			}
+
+
+
+
 
  			// 検索結果をセッションスコープに格納する
  			HttpSession session = request.getSession();

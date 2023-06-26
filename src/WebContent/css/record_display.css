@@ -15,3 +15,8 @@ align-items: center; /* 要素を垂直方向に中央揃え */
 .link p {
   margin-right: 10px; /* パラグラフ要素とボタンの間に余白を設定 */
 }
+
+/*テーブル*/
+table {
+    margin: 0 auto;
+}

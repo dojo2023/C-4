@@ -383,7 +383,7 @@ public List<Day> selectl(String user_id,String DAY_LTEMPERATURE) {
 		pStmt.setString(4, null);
 	}
 
-	pStmt.setInt(5, day.getID());
+	pStmt.setString(5, day.getUSER_ID());
 
 
 	// SQL文を実行する

@@ -132,6 +132,7 @@ const url='https://api.open-meteo.com/v1/forecast?latitude='+lati+'&longitude='+
 		 //outer判断
         if (templow >= 21+indext) {
         outer.textContent = '';
+        newUrl1 = newUrl + '?';
         }else if (templow < 21+indext && templow > (14+indext)) {
         outer.textContent = '上に羽織るもの（薄手）';
 		newUrl1 = newUrl + '?outer1=4';

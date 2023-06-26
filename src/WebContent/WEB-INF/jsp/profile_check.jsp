@@ -57,18 +57,24 @@
 	</select>
 	<br>
 	<br>
-	<div class ="button">
+	<div class ="ProfileLink">
+
+	<div class="ProfileCheckLink">
+	<p><a href="/hello/ProfileServlet" >プロフィール画面<br>へ戻る</a></p>
+	</div>
+
+
+	 <div class ="button">
     	<button type="submit" name="ProfileChange_" value="確定" id="profile_check">
 	    確定
     	</button>
-	</div>
+	 </div>
 </form>
+	<br>
+    </div>
 
-
- <div class = "ProfileCheckLink">
-    <p><a href="/hello/ProfileServlet">プロフィール画面へ戻る</a></p>
- </div>
  </main>
+
 
  <footer>
         <div>

@@ -17,8 +17,8 @@
 	<h2>ユーザー登録</h2>
 
 <form method="POST" action="/hello/UserRegisterServlet" id="UserRegister_form" onsubmit = "return hoge();">
-	<p>ID</p><input type="text" name="user_id"><br>
-	<p>PW</p><input type="password" name="user_pw"><br>
+	<p>ID</p><input type="text" name="user_id" required><br>
+	<p>PW</p><input type="password" name="user_pw" required><br>
 	<p>性別</p><input type="radio" name="user_genderid" value="1" checked>男
 	<input type="radio" name="user_genderid" value="2">女
 	<input type="radio" name="user_genderid" value="3">その他<br>

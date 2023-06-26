@@ -73,15 +73,18 @@
 
 
 <form method="POST" action="/hello/CoordinateRegisterDisplayServlet" id="CoordinateRegister_form">
+  <div class ="link">
+   <div class = "CoordinateRegisterBack">
+    <p><a href="/hello/MainServlet">メイン画面へ戻る </a></p>
+    </div>
    <div class = "Coordinateinput">
    <button type="submit" name="CoodinateRegister" value="登録" id="Coordinateinput">
    登録
    </button>
    </div>
  </form>
-    <div class = "CoordinateRegisterBack">
-    <p><a href="/hello/MainServlet">メイン画面へ戻る </a></p>
-    </div>
+
+   </div>
 
 
 

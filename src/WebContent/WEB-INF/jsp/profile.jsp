@@ -54,8 +54,8 @@
 	  </table>
 	  <br>
 	  <div class="ProfileButton">
+	     <p><a href="/hello/MainServlet">メイン画面へ戻る</a></p>
 		 <p><a href="/hello/ProfileUpdateServlet">変更</a></p>
-		 <p><a href="/hello/MainServlet">メイン画面へ戻る</a></p>
 	  </div>
 
 </div>

@@ -99,13 +99,18 @@
 		<hr>
 	</c:forEach>
    <br>
+   <div class="CoLink">
+
+   <div class = "clo_register">
+ 	<p><a href="/hello/MainServlet">メイン画面へ戻る</a></p>
+	</div>
+
+	<br>
 		<button type="submit" name="CoordinateRegister" value="登録" id="CoordinateRegister">登録</button>
 
 </form>
-<div class = "clo_register">
 
- <p><a href="/hello/MainServlet">メイン画面へ戻る</a></p>
-</div>
+	</div>
 
 </main>
  <footer>

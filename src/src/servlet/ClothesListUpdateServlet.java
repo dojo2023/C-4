@@ -87,9 +87,14 @@ public class ClothesListUpdateServlet extends HttpServlet {
 			part.write(image);//ファイルの書き込み
 
 			//ここから上で画像の保存
+
+			HttpSession session = request.getSession();
+			Small_category sc = (Small_category)session.getAttribute("up_smallTag");
+
+			clothesuptag.setSMALL_CATEGORYID(sc.getID());
 			String img = "/hello/images/clothes_images/"+image;
 			clothesuptag.setCLO_IMAGES(img);
-			HttpSession session = request.getSession();
+
 			session.setAttribute("clothesuptag", clothesuptag);
 
 		}else if(request.getParameter("clothes__images") != null) {

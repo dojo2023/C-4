@@ -29,7 +29,7 @@
 
 	  <p>編集確認</p>
 
-	 <form method="POST" action="/hello/ClothesListUpdateServlet" id="ClothesRegisterCheck_form" onsubmit = "return hoge();">
+	 <form method="POST" action="/hello/ClothesListUpdateDisplayServlet" id="ClothesRegisterCheck_form" onsubmit = "return hoge();">
 		<p>服の画像</p>
 			<img src="${clothesuptag.CLO_IMAGES}" id="gazo">
 		 <p>服の種類</p>

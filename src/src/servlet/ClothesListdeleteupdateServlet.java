@@ -59,10 +59,11 @@ public class ClothesListdeleteupdateServlet extends HttpServlet {
 		System.out.println(tagintName);
 		smallTag = smallDao.selectID(tagintName);
 		System.out.println(smallTag.getSMALL_CATEGORY());
+		smallTag.setID(tagintName);
 		//tag.setSMALL_TAG(smallTag.getSMALL_CATEGORY());
 
 		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("smallTag", smallTag);
+		session.setAttribute("up_smallTag", smallTag);
 
 
 

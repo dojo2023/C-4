@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
-.headermenu{
+/*
+.headermenu{ */
    /* background-color:brown; */
+   /*
     position: fixed;
 
     z-index: index 999;
@@ -12,12 +14,12 @@
     display:flex;
     align-items: center;
     margin-bottom:0;
-	max-width: 215px; /*要素がこれ以上大きくならない幅*/
-}
+	max-width: 215px; */ /*要素がこれ以上大きくならない幅*/
+/* } */
 
 
 body {
-  padding-top: 90px;
+ /* padding-top: 90px; */
   background-color: #F3F5F2; /*背景の色*/
   color:#32586D; /*文字の色*/
   text-align:center; /*文章を中心にする*/

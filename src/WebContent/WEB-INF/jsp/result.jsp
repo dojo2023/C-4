@@ -8,9 +8,9 @@
 </head>
 <body>
 
-	新規登録をしようとされた方→そのIDは既に利用されています。
+	そのIDは既に利用されています。
+    IDを変えてもう一度登録作業をお願いします。
 
-	服の登録をしようとされた方→服の登録は上から順にお願いします。
 
 	<form method="GET" action="/hello/LoginServlet"  >
 		<button type="submit" name="ProfileChange_" value="確定" id="profile_check">

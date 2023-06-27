@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/hello/css/user_register.css">
 <title>ユーザー登録</title>
 <div class = "headermenu">
-	<a href="/hello/MainServlet"><img src="/hello/images/logo_images/0625_1.png" id="logoimg"></a>
+	<img src="/hello/images/logo_images/0625_1.png" id="logoimg"></a>
 </div>
 </head>
 <body>

@@ -40,6 +40,7 @@
  		<p>ログイン中のユーザーのIDは<%=login_user.getID() %>
          <span id="long"><%=login_user.getLONGITUDE() %></span>
 		 <span id ="lati"><%=login_user.getLATITUDE() %></span>
+		 <span id = "gender"><%=login_user.getUSER_GENDERID() %></span>
 		 <span id = "index"><%=login_user.getUSER_PTEMPERTUREID() %></span>
 		 <span id = "indexp"><%=p.getUSER_PTEMPERTURE() %></span>
 	</div>

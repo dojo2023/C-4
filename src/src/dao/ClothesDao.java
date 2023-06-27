@@ -101,7 +101,7 @@ public class ClothesDao {
 						pStmt.setInt(1, small_category);
 					}
 					if (user_id != null) {
-						pStmt.setString(1, user_id);
+						pStmt.setString(2, user_id);
 					}
 
 

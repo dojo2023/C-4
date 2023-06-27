@@ -33,6 +33,7 @@ async function fetchData(url) {
 
 const long = document.getElementById('long').innerHTML;
 const lati = document.getElementById('lati').innerHTML;
+const gender = document.getElementById('gender').innerHTML;
 const index = document.getElementById('index').innerHTML;
 const indexp = document.getElementById('indexp').innerHTML;
 const indext = parseInt(indexp);
@@ -126,6 +127,7 @@ const url='https://api.open-meteo.com/v1/forecast?latitude='+lati+'&longitude='+
         const tops = document.getElementById('tops');
         const outer = document.getElementById('outer');
         const bottoms = document.getElementById('bottoms');
+
 
 
 

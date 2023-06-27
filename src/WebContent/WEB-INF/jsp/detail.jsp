@@ -10,6 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/hello/css/detail.css">
+<link rel="stylesheet" href="/hello/css/common.css"><!-- 共通CSS使用 -->
 <title>各タグ詳細一覧画面</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
    <div class="headwrapper">
         <div class="headermenu">
             <ul class="nav">
-                <li><a href="/hello/MainServlet">ロゴ</a></li>
+                <a href="/hello/MainServlet"><img src="/hello/images/logo_images/0625_1.png" id="logoimg"></a>
                 <li><a href="/hello/ClothesRegisterServlet">服登録</a></li>
                 <li><a href="/hello/ClothesListServlet">一覧</a></li>
                 <li><a href="/hello/RecordSearchServlet">コーディネート履歴</a></li>

@@ -53,12 +53,13 @@ public class UserRegisterDisplayServlet extends HttpServlet {
 
 		// 登録処理を行う
 		UsersDao uDao = new UsersDao();
-		uDao.insert(loginuser);
-//		if(!uDao.insert(loginuser)) {
-//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/rezult.jsp");
-//			dispatcher.forward(request, response);
-//		};
+//		uDao.insert(loginuser);
+	    if(!uDao.insert(loginuser)) {
+	    	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+	    	dispatcher.forward(request, response);
+	    }else {
 			// ログインページにリダイレクトする
 			response.sendRedirect("/hello/LoginServlet");
+	    }
 	}
 }

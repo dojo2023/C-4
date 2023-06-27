@@ -56,11 +56,31 @@
             <img src="/hello/images/logo_images/kion.png" id="kion">最低気温:<span id="templow"></span>°C
         </div>
         <div>
-            <img id="weatherimg" src="" alt="weatherImage">
+            <img id="weatherimg6" src="" alt="weatherImage" class="wimg6">
+            <p>6時</p>
+        </div>
+        <div>
+            <img id="weatherimg9" src="" alt="weatherImage" class="wimg9">
+            <p>9時</p>
+        </div>
+        <div>
+            <img id="weatherimg12" src="" alt="weatherImage" class="wimg12">
+            <p>12時</p>
+        </div>
+          <div>
+            <img id="weatherimg15" src="" alt="weatherImage" class="wimg15">
+            <p>15時</p>
+        </div>
+        <div>
+            <img id="weatherimg18" src="" alt="weatherImage" class="wimg18">
+            <p>18時</p>
+        </div>
+        <div>
+            <img id="weatherimg21" src="" alt="weatherImage" class="wimg21">
+            <p>21時</p>
         </div>
     </div>
-
-    </div>
+    </div><br><br>
     <div class="recoClo">
     <div class="title">
         <h1 class="rec">おすすめの組み合わせ</h1>

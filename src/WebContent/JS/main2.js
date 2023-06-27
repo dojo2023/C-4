@@ -137,16 +137,16 @@ const url='https://api.open-meteo.com/v1/forecast?latitude='+lati+'&longitude='+
         newUrl1 = newUrl + '?';
         }else if (templow < 21+indext && templow > (14+indext)) {
         outer.textContent = '上に羽織るもの（薄手）';
-		newUrl1 = newUrl + '?outer1=4';
+		newUrl1 = newUrl + '?outer1=5';
         }else if (templow <= 14+indext && templow > (9+indext)) {
         outer.textContent = '上に羽織るもの';
-		newUrl1 = newUrl + '?outer1=5';
+		newUrl1 = newUrl + '?outer1=6';
         }else if(templow <= 9+indext && templow > (5+indext)){
         outer.textContent = '防寒着';
-		newUrl1 = newUrl + '?outer1=6';
+		newUrl1 = newUrl + '?outer1=4';
         }else if(templow <= (5+indext)){
         outer.textContent = '防寒着+上に羽織るもの';
-		newUrl1 = newUrl + '?outer1=5&outer2=6';
+		newUrl1 = newUrl + '?outer1=6&outer2=4';
         };
 
         //tops判断

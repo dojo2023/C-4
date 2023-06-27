@@ -75,7 +75,7 @@ public class ClothesRegisterServlet extends HttpServlet {
 			request.setAttribute("image", image);
 			// サーバの指定のファイルパスへファイルを保存
 	        //場所はクラス名↑の上に指定してある
-			part.write(image);
+			part.write(image);//ファイルの書き込み
 
 			//ここから上で画像の保存
 

@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Cloth;
 import model.Small_category;
 
 public class SmallcategoryDao {
@@ -232,6 +233,55 @@ public class SmallcategoryDao {
 			public boolean update(SmallcategoryDao smallcategoryDao) {
 				// TODO 自動生成されたメソッド・スタブ
 				return false;
+			}
+
+
+
+			public boolean update(Cloth upimgtag) {   // updateメソッド
+				Connection conn = null;
+				boolean result = false;
+
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/bc", "sa", "");
+
+					// SQL文を準備する
+					String sql = "UPDATE CLOTHES SET SMALL_CATEGOYID = ? CLO_IMAGES = ? WHERE ID = ?";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+
+					// SQL文を完成させる
+					pStmt.setInt(1, upimgtag.getSMALL_CATEGORYID());
+					pStmt.setString(2, upimgtag.getCLO_IMAGES());
+					pStmt.setInt(3, upimgtag.getID());
+
+					// SQL文を実行する
+					if (pStmt.executeUpdate() == 1) {
+						result = true;
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+
+				// 結果を返す
+				return result;
 			}
 
 

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 import dao.ClothesDao;
 import dao.SmallcategoryDao;
@@ -78,26 +79,73 @@ public class ClothesListdeleteupdateServlet extends HttpServlet {
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		/*String id = request.getParameter("ID");
-		String tag = request.getParameter("SMALL_CATEGORYID");
-		String img = request.getParameter("CLO_IMAGES");
-		int ID = Integer.parseInt(id);
-		int TAG = Integer.parseInt(tag);*/
-
-
-		// 更新または削除を行う
-		//ClothesDao cDao = new ClothesDao();
 
 		if (request.getParameter("SUBMIT").equals("更新")) {
 			//tagの一覧名前を出力する
 			SmallcategoryDao sdao;
 			sdao = new SmallcategoryDao();
 			List<Small_category> list = sdao.selectall(null);
+			//服の種類タグを全て表示する
 			request.setAttribute("smallcategory_tag", list);
 
 
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/clothes_update.jsp");
-			dispatcher.forward(request, response);
+			//編集したい画像のID取得
+			String ctag = request.getParameter("clothes__id");
+			int CTAG = Integer.parseInt(ctag);
+			String upctag = request.getParameter("upclothes__id");
+			//int UPCTAG = Integer.parseInt(upctag);
+			System.out.println("n"+CTAG);
+			System.out.println("up"+upctag);
+
+			/*
+			request.setCharacterEncoding("UTF-8");
+
+
+			//画像一枚目、服の種類プルダウン一つ目
+			Part part = request.getPart("IMAGE"); // getPartで取得
+
+			String image = this.getFileName(part);
+	//		System.out.println("画像の名前＝"+image);
+			request.setAttribute("image", image);
+			// サーバの指定のファイルパスへファイルを保存
+	        //場所はクラス名↑の上に指定してある
+			part.write(image);
+			String img = "/hello/images/clothes_images/"+image;
+
+
+
+			Cloth clo;
+			clo = new Cloth();
+			clo.setSMALL_CATEGORYID(CTAG);
+			clo.setCLO_IMAGES(img);
+
+
+			//服の小カテゴリーのDaoと結び付け
+			SmallcategoryDao smallDao = new SmallcategoryDao();
+			//selectIDを使ってIDで検索できるようにする
+	        Small_category SC=smallDao.selectID(clo.getSMALL_CATEGORYID());
+
+	        //cloに上の検索結果（SMALL_CATEGORY）をSMALL_NAMEとしてセットする
+	        clo.setSMALL_NAME(SC.getSMALL_CATEGORY());
+
+	        // セッションスコープにcloをclo_img_nameという名前を付けて格納する
+			HttpSession session = request.getSession();
+			session.setAttribute("update_clo_img_name", clo);*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+			RequestDispatcher dispatcher1 = request.getRequestDispatcher("/WEB-INF/jsp/clothes_update.jsp");
+			dispatcher1.forward(request, response);
 
 		}else if (request.getParameter("SUBMIT").equals("削除")) {
 			String ctag = request.getParameter("clothes__id");
@@ -111,67 +159,25 @@ public class ClothesListdeleteupdateServlet extends HttpServlet {
 
 
 			HttpSession session = request.getSession();
-			//Cloth clothes = (Cloth)session.getAttribute("clo_img_name");
 			session.setAttribute("smallTag1", clothestag);
 
-			/*Cloth clDao = new Cloth(ID,TAG,img);
-			HttpSession session = request.getSession();
-			session.setAttribute("clothes_delete", clDao);*/
+
 
 
 
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/delete_check.jsp");
 			dispatcher.forward(request, response);
 		}
-
-
-
-		//System.out.println(request.getParameter("SUBMIT"));
-		//request.getParameter("SUBMIT")
-		//セッションスコープにIDを格納する
-		//HttpSession session = request.getSession();
-		//session.setAttribute("clothes_update", cDao);
-		//プロフィール確認ページにフォワードする
-
-
-		//RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/clothes_update_check.jsp");
-		//dispatcher.forward(request, response);
-
-
-
-
-
-
-
-
-
-		/*if (request.getParameter("SUBMIT").equals("更新")) {
-			if (cDao.update(new Cloth(ID,TAG,img))) {	// 更新成功
-				request.setAttribute("result",
-				new Result("更新成功！", "レコードを更新しました。", "/hello/MainServlet"));
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/clothes_register.jsp");
-				dispatcher.forward(request, response);
-			}
-			else {												// 更新失敗
-				request.setAttribute("result",
-				new Result("更新失敗！", "レコードを更新できませんでした。", "/hello/MainServlet"));
-			}
-		}
-		else {
-			if (cDao.delete(ID)) {	// 削除成功
-				request.setAttribute("result",
-				new Result("削除成功！", "レコードを削除しました。", "/hello/MainServlet"));
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/delete_check.jsp");
-				dispatcher.forward(request, response);
-			}
-			else {						// 削除失敗
-				request.setAttribute("result",
-				new Result("削除失敗！", "レコードを削除できませんでした。", "/hello/MainServlet"));
-			}
-		}*/
-
-		// 結果ページにフォワードする
-
 	}
-
+	private String getFileName(Part part) {
+		String name = null;
+        for (String dispotion : part.getHeader("Content-Disposition").split(";")) {
+            if (dispotion.trim().startsWith("filename")) {
+                name = dispotion.substring(dispotion.indexOf("=") + 1).replace("\"", "").trim();
+                name = name.substring(name.lastIndexOf("\\") + 1);
+                break;
+            }
+        }
+		return name;
+	}
 }

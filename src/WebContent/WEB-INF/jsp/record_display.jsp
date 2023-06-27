@@ -42,8 +42,10 @@
   </tr>
 
   <c:forEach var="e" items="${record_search}">
+
     <tr>
-        <td>
+
+       <td>
             <input type="date" name="DAY_DAY" value="${e.DAY_DAY}" readonly style="background-color:white">
         </td>
         <td>
@@ -68,7 +70,9 @@
             <img src="${e.DAY_BOTTOMTAG}"   >
 			<p>${e.DAY_BOTTOMNAME}</p>
         </td>
+
     </tr>
+
   </c:forEach>
 </table>
 

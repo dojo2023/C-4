@@ -103,7 +103,7 @@ body {
   max-width: 215px; /*要素がこれ以上大きくならない幅*/
 }
 
-img {
+#gazo {
     max-width: 100px; /* 画像の最大幅を設定 */
     max-height: 100px; /* 画像の最大高さを設定 */
 }

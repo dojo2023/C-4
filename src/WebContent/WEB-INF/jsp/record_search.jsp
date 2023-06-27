@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/hello/css/record_search.css">
-<link rel="stylesheet" href="/hello/css/common.css"><!-- 共通CSS使用 -->
+<!--<link rel="stylesheet" href="/hello/css/common.css"> 共通CSS使用 -->
 <title>コーディネート履歴検索画面</title>
 </head>
 <body>
@@ -29,6 +29,7 @@
 <main>
     <h2>コーディネート履歴検索画面</h2>
     <p>日付,最高気温,最低気温のいずれかを選択し入力して下さい</p>
+    <p>(何も選択せず検索した場合は全件検索になります)</p>
 
     <form method="POST" action="/hello/RecordSearchServlet" id="Record_Search_form">
     <div class="pbox">

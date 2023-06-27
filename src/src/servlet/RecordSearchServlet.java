@@ -59,6 +59,10 @@ public class RecordSearchServlet extends HttpServlet {
  				DailyDao dDao = new DailyDao();
  	 			record_search = dDao.selectl(user_id,day_ltemperture);
  			}
+ 			else {
+ 				DailyDao dDao = new DailyDao();
+ 	 			record_search = dDao.selectall(null);
+ 			}
 
 
 

@@ -183,6 +183,85 @@ public List<Day> selectsearch(Day param) {
 	return cardList;
 }
 
+//引数param(日付)で検索項目を指定し、検索結果のリストを返す
+public List<Day> selectall(Day param) {
+	Connection conn = null;
+	List<Day> cardList = new ArrayList<Day>();
+
+	try {
+		// JDBCドライバを読み込む
+		Class.forName("org.h2.Driver");
+
+		// データベースに接続する
+		conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
+
+		// SQL文を準備する
+		String sql = "SELECT Daily.ID,DAY_DAY,Daily.USER_ID,DAY_HTEMPERATURE,DAY_LTEMPERATURE,c1.CLO_IMAGES as c1_clo_images,c2.CLO_IMAGES as c2_clo_images,c3.CLO_IMAGES as c3_clo_images,c4.CLO_IMAGES as c4_clo_images,c5.SMALL_CATEGORY as c5_small_category,c6.SMALL_CATEGORY as c6_small_category,c7.SMALL_CATEGORY as c7_small_category,c8.SMALL_CATEGORY as c8_small_category FROM DAILY "
+								+ " join clothes as c1 on daily.day_topsno = c1.id "
+				 				+ "left join clothes as c2 on daily.day_outerno1 = c2.id "
+								+ "left join clothes as c3 on daily.day_outerno2 = c3.id "
+								+ " join clothes as c4 on daily.day_bottomno = c4.id "
+								+ " join smallcategory as c5 on c1.small_categoryid = c5.id "
+								+ "left join smallcategory as c6 on c2.small_categoryid = c6.id "
+								+ "left join smallcategory as c7 on c3.small_categoryid =c7.id "
+								+ " join smallcategory  as c8 on c4.small_categoryid = c8.id "
+								+ " ORDER BY ID DESC";
+		PreparedStatement pStmt = conn.prepareStatement(sql);
+
+		// SQL文を完成させる
+
+
+
+
+		// SQL文を実行し、結果表を取得する
+		ResultSet rs = pStmt.executeQuery();
+
+		// 結果表をコレクションにコピーする
+		while (rs.next()) {
+				Day card = new Day();
+				card.setID(rs.getInt("ID"));
+				card.setDAY_DAY(rs.getString("DAY_DAY"));
+				card.setUSER_ID(rs.getString("USER_ID"));
+				card.setDAY_HTEMPERTURE(rs.getDouble("DAY_HTEMPERATURE"));
+				card.setDAY_LTEMPERTURE(rs.getDouble("DAY_LTEMPERATURE"));
+				card.setDAY_TOPSTAG(rs.getString("c1_CLO_IMAGES"));
+				card.setDAY_OUTER1TAG(rs.getString("c2_CLO_IMAGES"));
+				card.setDAY_OUTER2TAG(rs.getString("c3_CLO_IMAGES"));
+				card.setDAY_BOTTOMTAG(rs.getString("c4_CLO_IMAGES"));
+				card.setDAY_TOPSNAME(rs.getString("c5_SMALL_CATEGORY"));
+				card.setDAY_OUTER1NAME(rs.getString("c6_SMALL_CATEGORY"));
+				card.setDAY_OUTER2NAME(rs.getString("c7_SMALL_CATEGORY"));
+				card.setDAY_BOTTOMNAME(rs.getString("c8_SMALL_CATEGORY"));
+				cardList.add(card);
+		}
+	}
+	catch (SQLException e) {
+		e.printStackTrace();
+		cardList = null;
+	}
+	catch (ClassNotFoundException e) {
+		e.printStackTrace();
+		cardList = null;
+	}
+	finally {
+		// データベースを切断
+		if (conn != null) {
+			try {
+				conn.close();
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+				cardList = null;
+			}
+		}
+	}
+
+	// 結果を返す
+	return cardList;
+}
+
+
+
 // DAY_HTEMPERATUREで検索項目を指定し、検索結果のリストを返す
 public List<Day> selecth(String user_id,String DAY_HTEMPERATURE) {
 	Connection conn = null;

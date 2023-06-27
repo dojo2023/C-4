@@ -114,6 +114,9 @@
 
 	</main>
 	<footer>
+	<br>
+	<br>
+	<br>
 	    <div>
 	        <p>&copy;Copyright Atype.Co.Ltd.All rights reserved.</p>
 	    </div>

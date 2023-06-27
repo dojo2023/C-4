@@ -27,26 +27,42 @@
 
 <main>
 	<p>編集画面</p>
+	<p>服の種類</p>
 
- 	  <form method="POST" action="/hello/ClothesListUpdateServlet" id="clothesChange_form"   enctype="multipart/form-data">
-  	  	<p>服の画像</p>
-    	  	<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);">
+		<p id = img>服の画像</p>
+		<img src="${cclothes.CLO_IMAGES}" id="gazo2"><br>
+		<input type="text" name="clothes_kind" value="${cclothes.SMALL_NAME}" readonly style="background-color:white">
+
+
+		<!-- 服の画像を変更するとき -->
+		<form method="POST" action="/hello/ClothesListUpdateServlet" id="clothesimg_form"   enctype="multipart/form-data">
+  	  		<p>服の画像</p>
+   	  		<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);">
 			<canvas id="preview" style="max-width:200px;"></canvas><br>
+			<input type="hidden" name="clothes__id" value = "${cclothes.ID}">
+			<input type="hidden" name="clothes__name" value = "${cclothes.SMALL_NAME}">
+		 	<button type="submit" name="ClothesRegister" value="登録" id="ClothesRegister">
+	    		変更
+	    	</button>
+   		</form>
+
+   		<!-- 服のタグを変更するとき -->
+   		<form method="POST" action="/hello/ClothesListUpdateServlet" id="clothestag_form">
 			<p>服の種類</p>
 			<select name="clothes_kind">
 				<c:forEach var="e" items="${smallcategory_tag}" >
 				  <option value="${e.ID}">${e.SMALL_CATEGORY}</option>
 				</c:forEach>
 			</select><br>
-			<input type="hidden" name="upclothes__id" value = "${e.ID}">
-			<input type="hidden" name="upclothes__name" value = "${smallTag.SMALL_CATEGORY}">
-			<input type="hidden" name="upclothes__images" value = "${e.CLO_IMAGES}">
-			<p><a href="/hello/ClothesListdeleteupdateServlet">各タグ詳細一覧画面にもどる</a></p>
-		<div class ="button">
-		    <button type="submit" name="ClothesRegister" value="登録" id="ClothesRegister">
-		    	変更
-		    </button>
-		 </div>
+			<input type="hidden" name="clothes__id" value = "${cclothes.ID}">
+			<input type="hidden" name="clothes__images" value = "${cclothes.CLO_IMAGES}">
+
+			<div class ="button"><br>
+			    <button type="submit" name="ClothesRegister" value="登録" id="ClothesRegister">
+			    	変更
+			    </button>
+			 </div><br>
+		 <p><a href="/hello/ClothesListdeleteupdateServlet">各タグ詳細一覧画面にもどる</a></p>
 	</form>
 </main>
 

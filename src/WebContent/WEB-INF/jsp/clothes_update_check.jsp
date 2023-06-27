@@ -31,9 +31,9 @@
 
 	 <form method="POST" action="/hello/ClothesListUpdateServlet" id="ClothesRegisterCheck_form" onsubmit = "return hoge();">
 		<p>服の画像</p>
-			<img src="${update_clo_img_name.CLO_IMAGES}" id="gazo">
+			<img src="${clothesuptag.CLO_IMAGES}" id="gazo">
 		 <p>服の種類</p>
-		<input type="text" name="clothes_kind" value="${update_clo_img_name.SMALL_NAME}" readonly style="background-color:white"><br>
+		<input type="text" name="clothes_kind" value="${clothesuptag.SMALL_NAME}" readonly style="background-color:white"><br>
 
 		<div class ="button">
 		    <button type="submit" name="ClothesRegisterCheck" value="登録" id="ClothesRegisterCheck">
@@ -45,14 +45,6 @@
 
 
 
-
-      <form action="/hello/ClothesListServlet" method="POST">
-
-	  <p><a href="/hello/ClothesListdeleteupdateServlet">編集画面にもどる</a></p>
-	  <input type="hidden" name="clothId" value="<%= request.getParameter("clothId") %>">
-      <input type="hidden" name="selectedValue" value="<%= request.getAttribute("selectedValue") %>">
-	  <input type="submit" value="更新"><!-- このボタンを押すと更新確認のダイアログ出る -->
-	  </form>
 
 </main>
 

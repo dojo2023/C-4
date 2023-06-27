@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.Part;
 
 import dao.ClothesDao;
 import dao.SmallcategoryDao;
@@ -89,59 +88,22 @@ public class ClothesListdeleteupdateServlet extends HttpServlet {
 			request.setAttribute("smallcategory_tag", list);
 
 
+
 			//編集したい画像のID取得
 			String ctag = request.getParameter("clothes__id");
+			String cname = request.getParameter("clothes__name");
+			String cimg = request.getParameter("clothes__images");
 			int CTAG = Integer.parseInt(ctag);
-			String upctag = request.getParameter("upclothes__id");
-			//int UPCTAG = Integer.parseInt(upctag);
-			System.out.println("n"+CTAG);
-			System.out.println("up"+upctag);
+			System.out.println(CTAG);
+			System.out.println(cname);
+			System.out.println(cimg);
 
-			/*
-			request.setCharacterEncoding("UTF-8");
-
-
-			//画像一枚目、服の種類プルダウン一つ目
-			Part part = request.getPart("IMAGE"); // getPartで取得
-
-			String image = this.getFileName(part);
-	//		System.out.println("画像の名前＝"+image);
-			request.setAttribute("image", image);
-			// サーバの指定のファイルパスへファイルを保存
-	        //場所はクラス名↑の上に指定してある
-			part.write(image);
-			String img = "/hello/images/clothes_images/"+image;
-
-
-
-			Cloth clo;
-			clo = new Cloth();
-			clo.setSMALL_CATEGORYID(CTAG);
-			clo.setCLO_IMAGES(img);
-
-
-			//服の小カテゴリーのDaoと結び付け
-			SmallcategoryDao smallDao = new SmallcategoryDao();
-			//selectIDを使ってIDで検索できるようにする
-	        Small_category SC=smallDao.selectID(clo.getSMALL_CATEGORYID());
-
-	        //cloに上の検索結果（SMALL_CATEGORY）をSMALL_NAMEとしてセットする
-	        clo.setSMALL_NAME(SC.getSMALL_CATEGORY());
-
-	        // セッションスコープにcloをclo_img_nameという名前を付けて格納する
+			Cloth cclothes = new Cloth();
+			cclothes.setID(CTAG);
+			cclothes.setSMALL_NAME(cname);
+			cclothes.setCLO_IMAGES(cimg);
 			HttpSession session = request.getSession();
-			session.setAttribute("update_clo_img_name", clo);*/
-
-
-
-
-
-
-
-
-
-
-
+			session.setAttribute("cclothes", cclothes);
 
 
 			RequestDispatcher dispatcher1 = request.getRequestDispatcher("/WEB-INF/jsp/clothes_update.jsp");
@@ -169,15 +131,5 @@ public class ClothesListdeleteupdateServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 		}
 	}
-	private String getFileName(Part part) {
-		String name = null;
-        for (String dispotion : part.getHeader("Content-Disposition").split(";")) {
-            if (dispotion.trim().startsWith("filename")) {
-                name = dispotion.substring(dispotion.indexOf("=") + 1).replace("\"", "").trim();
-                name = name.substring(name.lastIndexOf("\\") + 1);
-                break;
-            }
-        }
-		return name;
+
 	}
-}

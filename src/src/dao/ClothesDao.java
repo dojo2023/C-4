@@ -230,31 +230,25 @@ public class ClothesDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 					// SQL文を準備する
-					String sql = "update CLOTHES set USER_ID=?,SMALL_CATEGORYID=?,CLO_IMAGES=? where ID=? ";
-	//
+					String sql = "update CLOTHES set SMALL_CATEGORYID=?,CLO_IMAGES=? where ID=? ";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
-					if (profile.getUSER_ID() != null && !profile.getUSER_ID().equals("")) {
-						pStmt.setString(1, profile.getUSER_ID());
-					}
-					else {
-						pStmt.setString(1, null);
-					}
+
 					if (profile.getSMALL_CATEGORYID() != 0 ) {
-						pStmt.setInt(2, profile.getSMALL_CATEGORYID());
+						pStmt.setInt(1, profile.getSMALL_CATEGORYID());
 					}
 					else {
-						pStmt.setInt(2, 0);
+						pStmt.setInt(1, 0);
 					}
 					if (profile.getCLO_IMAGES() != null && !profile.getCLO_IMAGES().equals("")) {
-						pStmt.setString(3, profile.getCLO_IMAGES());
+						pStmt.setString(2, profile.getCLO_IMAGES());
 					}
 					else {
-						pStmt.setString(3, null);
+						pStmt.setString(2, null);
 					}
 
-					pStmt.setInt(4, profile.getID());
+					pStmt.setInt(3, profile.getID());
 
 					// SQL文を実行する
 					if (pStmt.executeUpdate() == 1) {

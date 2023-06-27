@@ -4,7 +4,7 @@
     <%@page import="model.Cloth" %>
     <%@page import="model.Small_category" %>
 <!DOCTYPE html>
-<%Small_category smallTag = (Small_category)session.getAttribute("smallTag");%>
+<%Small_category smallTag = (Small_category)session.getAttribute("up_smallTag");%>
 
 <html>
 <head>
@@ -30,14 +30,14 @@
 </header>
 <main>
 	<p>各タグ詳細一覧画面</p>
-	<p>${smallTag.SMALL_CATEGORY}</p>
+	<p>${up_smallTag.SMALL_CATEGORY}</p>
 
 	<c:forEach var="e" items="${clothesTagList}">
 	<form method="POST" action="/hello/ClothesListdeleteupdateServlet">
-		<p>${smallTag.SMALL_CATEGORY}</p>
+		<p>${up_smallTag.SMALL_CATEGORY}</p>
 		<img src="${e.CLO_IMAGES}" id="gazo"><br>
 		<input type="hidden" name="clothes__id" value = "${e.ID}">
-		<input type="hidden" name="clothes__name" value = "${smallTag.SMALL_CATEGORY}">
+		<input type="hidden" name="clothes__name" value = "${up_smallTag.SMALL_CATEGORY}">
 		<input type="hidden" name="clothes__images" value = "${e.CLO_IMAGES}">
 		<button type="submit" name="SUBMIT" value="更新">
 			更新

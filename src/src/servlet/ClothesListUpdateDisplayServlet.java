@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.ClothesDao;
 import model.Cloth;
 
 /**
@@ -44,17 +45,16 @@ public class ClothesListUpdateDisplayServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// リクエストパラメータを取得する
-				request.setCharacterEncoding("UTF-8");
-				String ID = request.getParameter("ID");
-				String SMALL_CATEGORY = request.getParameter("SMALL_CATEGORY");
-				String CLO_IMAGES = request.getParameter("CLO_IMAGES");
-				int SMALL_CATEGORYID = Integer.parseInt("SMALL_CATEGORYID");
-				Cloth cDao = new Cloth(ID,SMALL_CATEGORYID,SMALL_CATEGORY,CLO_IMAGES);
+		HttpSession session = request.getSession();
+		//①セッションスコープからインスタンスを取得する
+		Cloth clotheuptag = (Cloth)session.getAttribute("clothesuptag");
+		ClothesDao clothesupdate = new ClothesDao();
+		clothesupdate.update(clotheuptag);
 
-				//セッションスコープにIDを格納する
-				HttpSession session = request.getSession();
-				session.setAttribute("clothes_update", cDao);
+
+		response.sendRedirect("/hello/MainServlet");
+
+
 
 
 	}

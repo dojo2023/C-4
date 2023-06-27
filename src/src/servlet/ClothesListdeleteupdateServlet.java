@@ -16,6 +16,7 @@ import dao.ClothesDao;
 import dao.SmallcategoryDao;
 import model.Cloth;
 import model.Small_category;
+import model.User;
 
 /**
  * Servlet implementation class ClothesListdeleteupdateServlet
@@ -43,12 +44,13 @@ public class ClothesListdeleteupdateServlet extends HttpServlet {
 		//System.out.println(request.getParameter("btn"));
 		String tagName = request.getParameter("btn");
 		int tagintName = Integer.parseInt(tagName);
+		HttpSession session = request.getSession();
+		User loginusers = (User)session.getAttribute("login_user");
 
 		ClothesDao listDao = new ClothesDao();
 		ArrayList<Cloth> clothesTagList = new ArrayList<Cloth>();
-		clothesTagList = listDao.selectSMALL_CATEGORY(tagintName);
-		//セッションの取得または作成
-		HttpSession session = request.getSession();
+		clothesTagList = listDao.selectSMALL_CATEGORY(tagintName,loginusers.getUSER_ID());
+
 		//データの格納
 		session.setAttribute("clothesTagList", clothesTagList);
 

@@ -15,6 +15,7 @@ import dao.ClothesDao;
 import dao.SmallcategoryDao;
 import model.Cloth;
 import model.Small_category;
+import model.User;
 
 /**
  * Servlet implementation class CoordinateRegisterServlet
@@ -56,12 +57,17 @@ public class CoordinateRegisterServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("outer", outer2);
 
+
+
+		//①セッションスコープからインスタンスを取得する
+		User loginusers = (User)session.getAttribute("login_user");
+
 		//ClothesDaoをつくる(インスタンス化)
 		ClothesDao cdao;
 		cdao = new ClothesDao();
 
 		//ClothesDaoのselectメソッドを使う tops
-		ArrayList<Cloth> ClothList = cdao.selectSMALL_CATEGORY(tops);
+		ArrayList<Cloth> ClothList = cdao.selectSMALL_CATEGORY(tops,loginusers.getUSER_ID());
 
 		//セッションスコープにIDを格納する
 		session.setAttribute("Coordinate1", ClothList);
@@ -81,7 +87,7 @@ public class CoordinateRegisterServlet extends HttpServlet {
 
 		//ClothesDaoのメソッドを使う outer1
 		if(outer1 != 0) {
-	    ClothList = cdao.selectSMALL_CATEGORY(outer1);
+	    ClothList = cdao.selectSMALL_CATEGORY(outer1,loginusers.getUSER_ID());
 
 		//セッションスコープにIDを格納する
 		session.setAttribute("Coordinate2", ClothList);
@@ -104,7 +110,7 @@ public class CoordinateRegisterServlet extends HttpServlet {
 
 		//ClothesDaoのメソッドを使う outer2(アウター+防寒着など)
 		if(outer2 != 0) { //outer2が0でない時以下が動く
-		    ClothList = cdao.selectSMALL_CATEGORY(outer2);
+		    ClothList = cdao.selectSMALL_CATEGORY(outer2,loginusers.getUSER_ID());
 
 			//セッションスコープにIDを格納する
 			session.setAttribute("Coordinate3", ClothList);
@@ -121,7 +127,7 @@ public class CoordinateRegisterServlet extends HttpServlet {
 
 
 		//ClothesDaoのメソッドを使う bottoms
-	    ClothList = cdao.selectSMALL_CATEGORY(bottoms);
+	    ClothList = cdao.selectSMALL_CATEGORY(bottoms,loginusers.getUSER_ID());
 
 		//セッションスコープにIDを格納する
 		session.setAttribute("Coordinate4", ClothList);

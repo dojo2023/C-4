@@ -81,7 +81,7 @@ public class ClothesDao {
 
 
 			//IDで検索項目を指定し、検索結果のリストを返す
-			public ArrayList<Cloth> selectSMALL_CATEGORY(int small_category){
+			public ArrayList<Cloth> selectSMALL_CATEGORY(int small_category, String user_id){
 				Connection conn = null;
 				ArrayList<Cloth> clothesList = new ArrayList<Cloth>();
  				try {
@@ -92,7 +92,7 @@ public class ClothesDao {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C4","sa","");
 
 					// SQL文を準備する
-					String sql = "SELECT * FROM CLOTHES LEFT OUTER JOIN SMALLCATEGORY ON CLOTHES .SMALL_CATEGORYID = SMALLCATEGORY .ID where SMALL_CATEGORYID = ?";
+					String sql = "SELECT * FROM CLOTHES LEFT OUTER JOIN SMALLCATEGORY ON CLOTHES .SMALL_CATEGORYID = SMALLCATEGORY .ID where SMALL_CATEGORYID = ? AND USER_ID=?";
 
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 					// SQL文を完成させる
@@ -100,7 +100,9 @@ public class ClothesDao {
 					if (small_category != 0) {//？の個数分やる、入れたいデータをsetする
 						pStmt.setInt(1, small_category);
 					}
-
+					if (user_id != null) {
+						pStmt.setString(1, user_id);
+					}
 
 
 					// SQL文を実行し、結果表を取得する

@@ -8,7 +8,16 @@
 </head>
 <body>
 
-	<img src="${'/Nyample/images/'+=image}" id="gazo">
+	そのIDは既に利用されています。
+    IDを変えてもう一度登録作業をお願いします。
+
+
+	<form method="GET" action="/hello/LoginServlet"  >
+		<button type="submit" name="ProfileChange_" value="確定" id="profile_check">
+	    	確認
+    	</button>
+	</form>
+
 
 </body>
 <script>

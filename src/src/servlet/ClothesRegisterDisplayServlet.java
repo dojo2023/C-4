@@ -97,50 +97,59 @@ public class ClothesRegisterDisplayServlet extends HttpServlet {
 
 		// 登録処理を行う
 		ClothesDao cDao = new ClothesDao();
-		if (cDao.insert(clothes)) {
+		if (clothes.getCLO_IMAGES() != "") {
+			cDao.insert(clothes);
 			String cl = clothes2.getCLO_IMAGES();
 			if(cl=="") {
 				// ログインページにリダイレクトする
-				response.sendRedirect("/hello/ClothesRegisterServlet");
+//				response.sendRedirect("/hello/ClothesRegisterServlet");
 			}
 		}
 
-		if (cDao.insert(clothes2)) {
+		if (clothes2.getCLO_IMAGES() != "") {
+			cDao.insert(clothes2);
 			String cl2 = clothes3.getCLO_IMAGES();
 			if(cl2=="") {
 			// ログインページにリダイレクトする
-				response.sendRedirect("/hello/ClothesRegisterServlet");
+//				response.sendRedirect("/hello/ClothesRegisterServlet");
 			}
 		}
 
-		if (cDao.insert(clothes3)) {
+		if (clothes3.getCLO_IMAGES() != "") {
+			cDao.insert(clothes3);
 			String cl3 = clothes4.getCLO_IMAGES();
 			if(cl3=="") {
 			// ログインページにリダイレクトする
-				response.sendRedirect("/hello/ClothesRegisterServlet");
+//				response.sendRedirect("/hello/ClothesRegisterServlet");
 			}
 		}
 
-		if (cDao.insert(clothes4)) {
+		if (clothes4.getCLO_IMAGES() != "") {
+			cDao.insert(clothes4);
 			String cl4 = clothes5.getCLO_IMAGES();
 			if(cl4=="") {
 			// ログインページにリダイレクトする
-				response.sendRedirect("/hello/ClothesRegisterServlet");
+//				response.sendRedirect("/hello/ClothesRegisterServlet");
 			}
 		}
 
-		if (cDao.insert(clothes5)) {
+		if (clothes5.getCLO_IMAGES() != "") {
+			cDao.insert(clothes5);
 			String cl5 = clothes6.getCLO_IMAGES();
 			if(cl5=="") {
 			// ログインページにリダイレクトする
-				response.sendRedirect("/hello/ClothesRegisterServlet");
+//				response.sendRedirect("/hello/ClothesRegisterServlet");
 			}
 		}
 
-		if (cDao.insert(clothes6)) {
+		if (clothes6.getCLO_IMAGES() != "") {
+			cDao.insert(clothes6);
 			// ログインページにリダイレクトする
-				response.sendRedirect("/hello/ClothesRegisterServlet");
+//				response.sendRedirect("/hello/ClothesRegisterServlet");
 		}
+
+		// ログインページにリダイレクトする
+		response.sendRedirect("/hello/ClothesRegisterServlet");
 
 //		else {												// 登録失敗
 //			request.setAttribute("result",

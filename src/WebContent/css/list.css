@@ -135,3 +135,30 @@ main form button {
 main form button:hover {
   background-color: #B2D1D6;
 }
+
+/*変更・メインへ戻る リンクの色*/
+
+p{ /* 通常時のカラー */
+  color: #2B295F;
+}
+
+p a:link {/* 訪れたことのない時のカラー */
+  color: #32586D;
+  text-decoration: none;
+}
+
+p a:visited {
+  color: #32586D; /* 訪れたことがある時のカラー*/
+  text-decoration: none;
+}
+
+p a:hover {
+  color: #CA3032; /* マウスポインタを置いた時のカラー*/
+  text-decoration: none;
+}
+
+p a:active {
+  color: #32586D; /* クリックした時のカラー*/
+  text-decoration: none;
+}
+

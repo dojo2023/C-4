@@ -127,3 +127,29 @@ img {
     max-width: 100px; /* 画像の最大幅を設定 */
     max-height: 100px; /* 画像の最大高さを設定 */
 }
+
+/*変更・メインへ戻る リンクの色*/
+
+.link p{ /* 通常時のカラー */
+  color: #2B295F;
+}
+
+.link p a:link {/* 訪れたことのない時のカラー */
+  color: #32586D;
+  text-decoration: none;
+}
+
+.link p a:visited {
+  color: #32586D; /* 訪れたことがある時のカラー*/
+  text-decoration: none;
+}
+
+.link p a:hover {
+  color: #CA3032; /* マウスポインタを置いた時のカラー*/
+  text-decoration: none;
+}
+
+.link p a:active {
+  color: #32586D; /* クリックした時のカラー*/
+  text-decoration: none;
+}

@@ -3,7 +3,7 @@
 
 /*メニューバーの編集ここから*/
 .headermenu{
-   /* background-color:brown; */
+    background-color: #F3F5F2;
     position: fixed;
     z-index: index 999;
     width: 100%;
@@ -38,6 +38,7 @@ main{
 
 /* class="nav" */
 .nav li {
+	background-color: #F3F5F2;
     display: inline;		/* インラインで横に表示する */
     list-style-type: none;	/* 先頭の記号をなくす */
     padding-right: 30px;		/* 区切りを空ける */

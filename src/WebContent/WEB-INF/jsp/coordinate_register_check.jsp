@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/hello/css/coordinate_register_check.css">
 <link rel="stylesheet" href="/hello/css/common.css"><!-- 共通CSS使用 -->
+<script type="text/javascript" src="/hello/JS/coordinate_register_check.js"></script>
 <title>コーディネート登録確認</title>
 </head>
 <body>
@@ -78,7 +79,7 @@
 
 
 
-<form method="POST" action="/hello/CoordinateRegisterDisplayServlet" id="CoordinateRegister_form">
+<form method="POST" action="/hello/CoordinateRegisterDisplayServlet" id="CoordinateRegister_form" onsubmit = "return hoge();">
   <div class ="link">
    <div class = "CoordinateRegisterBack">
     <p><a href="/hello/MainServlet">メイン画面へ戻る </a></p>

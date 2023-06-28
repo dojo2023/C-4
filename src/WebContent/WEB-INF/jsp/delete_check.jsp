@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/hello/css/delete_check.css">
 <link rel="stylesheet" href="/hello/css/common.css"><!-- 共通CSS使用 -->
+<script type="text/javascript" src="/hello/JS/delete_check.js"></script>
 <title>削除確認画面</title>
 </head>
 <body>

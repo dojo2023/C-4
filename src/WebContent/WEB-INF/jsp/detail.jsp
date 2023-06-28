@@ -60,8 +60,6 @@
 
 
 	<p><a href="/hello/ClothesListServlet">タグ一覧画面にもどる</a></p>
-	<p><a href="/hello/ClothesListDeleteDisplayServlet">削除ボタン</a></p>
-	<p><a href="/hello/ClothesListUpdateServlet">編集ボタン</a></p>
 </main>
 <footer>
 	<div>

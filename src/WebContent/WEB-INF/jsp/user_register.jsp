@@ -17,7 +17,7 @@
 	</header>
 	<main>
 	<div class = narrow>
-	<h3>ユーザー登録</h3>
+	<h2>ユーザー登録</h2>
 
 <form method="POST" action="/hello/UserRegisterServlet" id="UserRegister_form" onsubmit = "return hoge();">
 	<div class = side><h4>ID</h4><input type="text" name="user_id" required><br></div>

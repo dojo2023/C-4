@@ -28,7 +28,7 @@
 
 <main>
 
-	  <p>編集確認</p>
+	  <h2>編集確認</h2>
 
 	 <form method="POST" action="/hello/ClothesListUpdateDisplayServlet" id="ClothesRegisterCheck_form" onsubmit = "return hoge();">
 		<p>服の画像</p>

@@ -28,7 +28,7 @@
 
 <main>
 
-<p>コーディネート登録確認画面</p>
+<h2>コーディネート登録確認画面</h2>
 
 
 		<p>${smallTag1.SMALL_CATEGORY}</p>

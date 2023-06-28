@@ -28,7 +28,7 @@
         </div>
 	</header>
 	<main>
-		<h3>服登録</h3>
+		<h2>服登録</h2>
 
 		<form method="POST" action="/hello/ClothesRegisterServlet" id="ClothesRegister_form"  enctype="multipart/form-data"
 			 onsubmit = "return hoge();">

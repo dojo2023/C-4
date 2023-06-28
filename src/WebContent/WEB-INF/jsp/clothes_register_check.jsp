@@ -28,7 +28,7 @@
         </div>
 	</header>
 	<main>
-		<h3>登録確認</h3>
+		<h2>登録確認</h2>
 
 		<form method="POST" action="/hello/ClothesRegisterDisplayServlet" id="ClothesRegisterCheck_form" onsubmit = "return hoge();">
 		<!-- 一つ目 -->

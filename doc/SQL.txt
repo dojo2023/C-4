@@ -35,6 +35,11 @@ day_OUTERNO2 int ,
 day_BOTTOMNO int 
 )
 
+
+
+c1.clo_images as c1_clo_images , c2.clo_images
+
+
 サンプルデータ
 insert into daily(day_DAY,user_ID,day_HTEMPERATURE,day_LTEMPERATURE,day_WEATHERCODE,day_TOPSNO,day_OUTERNO,day_BOTTOMNO)
 values(CURDATE(),'sasahara',28.7,23.4,0,1,3,4);
@@ -89,9 +94,10 @@ bigcategory_ID int NOT NULL
 insert into smallcategory(small_CATEGORY, bigcategory_ID)values('半袖', 1);
 insert into smallcategory(small_CATEGORY, bigcategory_ID)values('長袖(薄手)', 1);
 insert into smallcategory(small_CATEGORY, bigcategory_ID)values('長袖', 1);
+insert into smallcategory(small_CATEGORY, bigcategory_ID)values('防寒着', 2);
 insert into smallcategory(small_CATEGORY, bigcategory_ID)values('上に羽織るもの(薄手)', 2);
 insert into smallcategory(small_CATEGORY, bigcategory_ID)values('上に羽織るもの', 2);
-insert into smallcategory(small_CATEGORY, bigcategory_ID)values('防寒着', 2);
+
 
 insert into smallcategory(small_CATEGORY, bigcategory_ID)values('長ズボン(薄手)', 3);
 insert into smallcategory(small_CATEGORY, bigcategory_ID)values('長ズボン', 3);

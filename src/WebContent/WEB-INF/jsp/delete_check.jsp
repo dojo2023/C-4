@@ -47,7 +47,7 @@
 
 		</div>
 	</form>
-	<p><a href="/hello/ClothesListdeleteupdateServlet">  各タグ詳細一覧画面にもどる</a></p>
+	<p><a href="/hello/MainServlet">メイン画面に戻る</a></p>
 
 </main>
 
@@ -58,6 +58,7 @@
 		<p>&copy;Copyright Atype.Co.Ltd.All rights reserved.</p>
 	</div>
 </footer>
+<script src = "/hello/JS/delete_check.js"></script>
 
 </body>
 </html>

@@ -55,5 +55,6 @@
 		<p>&copy;Copyright Atype.Co.Ltd.All rights reserved.</p>
 	</div>
 </footer>
+<script src = "/hello/JS/clothes_register_check.js"></script>
 </body>
 </html>

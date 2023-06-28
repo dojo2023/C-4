@@ -27,16 +27,14 @@
 
 <main>
 	<h2>編集画面</h2>
-	<p>服の種類</p>
-
-		<p id = img>服の画像</p>
+		<p id = img>現在登録されている服</p>
 		<img src="${cclothes.CLO_IMAGES}" id="gazo2"><br>
 		<input type="text" name="clothes_kind" value="${cclothes.SMALL_NAME}" readonly style="background-color:white">
 
 
 		<!-- 服の画像を変更するとき -->
 		<form method="POST" action="/hello/ClothesListUpdateServlet" id="clothesimg_form"   enctype="multipart/form-data">
-  	  		<p>服の画像</p>
+  	  		<p>服の画像を変更する場合はこちら</p>
    	  		<input type="file" name="IMAGE" accept="image/*" onchange="previewImage(this);">
 			<canvas id="preview" style="max-width:200px;"></canvas><br>
 			<input type="hidden" name="clothes__id" value = "${cclothes.ID}">
@@ -48,7 +46,7 @@
 
    		<!-- 服のタグを変更するとき -->
    		<form method="POST" action="/hello/ClothesListUpdateServlet" id="clothestag_form">
-			<p>服の種類</p>
+			<p>服の種類を変更する場合はこちら</p>
 			<select name="clothes_kind">
 				<c:forEach var="e" items="${smallcategory_tag}" >
 				  <option value="${e.ID}">${e.SMALL_CATEGORY}</option>

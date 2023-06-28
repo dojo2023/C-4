@@ -32,10 +32,10 @@
 <h2>プロフィール変更画面</h2>
 <form method="POST" action="/hello/ProfileUpdateServlet" id="ProfileChange_form" onsubmit = "return hoge();">
 	<p>ID</p>
-	<input type="text" name="ID" value="${login_user.USER_ID}">
+	<input type="text" name="ID" value="${login_user.USER_ID}"required>
 
 	<p>PW</p>
-	<input type="password" name="PW" value="${login_user.USER_PW}">
+	<input type="password" name="PW" value="${login_user.USER_PW}"required>
 
 	<p>性別</p>
 	<input type="radio" name="gender" value="1" <c:if test="${login_user.USER_GENDERID == 1}">checked</c:if>>男

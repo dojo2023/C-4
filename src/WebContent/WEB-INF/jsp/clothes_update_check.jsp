@@ -42,7 +42,7 @@
 		    </button>
 		</div>
 	</form>
-
+<p><a href="/hello/ClothesListServlet">  タグ一覧画面にもどる</a></p>
 
 
 
@@ -55,5 +55,6 @@
 		<p>&copy;Copyright Atype.Co.Ltd.All rights reserved.</p>
 	</div>
 </footer>
+<script src = "/hello/JS/clothes_register_check.js"></script>
 </body>
 </html>

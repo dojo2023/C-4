@@ -50,7 +50,7 @@
 		 <img src="${e.CLO_IMAGES}"   ><br>
 
 
-	     <input type="radio" name="cood_tops" value="${e.ID}" >
+	     <input type="radio" name="cood_tops" value="${e.ID}" required>
 		<br>
 
 		<hr>
@@ -93,7 +93,7 @@
 		 <img src="${h.CLO_IMAGES}" ><br>
 
 
-	     <input type="radio" name="cood_bottoms" value="${h.ID}" >
+	     <input type="radio" name="cood_bottoms" value="${h.ID}" required>
 		<br>
 
 		<hr>

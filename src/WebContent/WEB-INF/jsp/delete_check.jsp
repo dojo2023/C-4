@@ -47,7 +47,7 @@
 
 		</div>
 	</form>
-	<p><a href="/hello/ClothesListdeleteupdateServlet">  各タグ詳細一覧画面にもどる</a></p>
+	<p><a href="/hello/ClothesListServlet">  タグ一覧画面にもどる</a></p>
 
 </main>
 

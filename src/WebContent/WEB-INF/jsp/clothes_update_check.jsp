@@ -42,7 +42,7 @@
 		    </button>
 		</div>
 	</form>
-
+<p><a href="/hello/ClothesListServlet">  タグ一覧画面にもどる</a></p>
 
 
 

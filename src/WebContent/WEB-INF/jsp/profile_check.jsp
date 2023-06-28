@@ -29,7 +29,7 @@
     </header>
 
 <main>
-<p>プロフィール変更画面</p>
+<h2>プロフィール変更画面</h2>
 <form method="POST" action="/hello/ProfileUpdateServlet" id="ProfileChange_form" onsubmit = "return hoge();">
 	<p>ID</p>
 	<input type="text" name="ID" value="${login_user.USER_ID}">

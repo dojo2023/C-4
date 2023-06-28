@@ -27,7 +27,7 @@
  <main>
 
 
-	<p>服一覧画面</p>
+	<h2>服一覧画面</h2>
 	<form method="GET" action="/hello/ClothesListdeleteupdateServlet" >
 
 	<button value="1" name="btn">

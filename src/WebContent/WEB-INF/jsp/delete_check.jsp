@@ -30,7 +30,7 @@
 
 
 <main>
-	<p>削除確認画面</p>
+	<h2>削除確認画面</h2>
 	<p>以下のデータを削除します</p>
 	<p>よろしければ削除ボタンを押してください</p>
 	<form method="POST" action="/hello/ClothesListDeleteDisplayServlet" id="ProfileChange_form" onsubmit = "return hoge();">

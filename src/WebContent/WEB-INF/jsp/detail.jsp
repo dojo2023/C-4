@@ -29,7 +29,7 @@
     </div>
 </header>
 <main>
-	<p>各タグ詳細一覧画面</p>
+	<h2>各タグ詳細一覧画面</h2>
 	<p>${up_smallTag.SMALL_CATEGORY}</p>
 
 	<c:forEach var="e" items="${clothesTagList}">

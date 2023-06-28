@@ -26,7 +26,7 @@
 
 <main>
 <div>
-	<p>プロフィール画面</p>
+	<h2>プロフィール画面</h2>
 	<br>
 	  <table class= "profiletable">
 

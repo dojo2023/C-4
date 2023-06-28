@@ -24,7 +24,7 @@
     </div>
 </header>
 <main>
-<h1>コーディネート履歴検索結果</h1>
+<h2>コーディネート履歴検索結果</h2>
 
 <c:if test="${empty record_search}">
     <p>一致するデータがありません。</p>

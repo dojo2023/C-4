@@ -403,19 +403,19 @@ const url='https://api.open-meteo.com/v1/forecast?latitude='+lati+'&longitude='+
 	    switch (gender) {
         case "1":
              //outer判断
-	        if (templow >= 21+indext) {
+	        if (templow >= 21-indext) {
 	        outer.textContent = '';
 	        newUrl1 = newUrl + '?';
-	        }else if (templow < 21+indext && templow > (14+indext)) {
+	        }else if (templow < 21-indext && templow > (14-indext)) {
 	        outer.textContent = '上に羽織るもの（薄手）';
 			newUrl1 = newUrl + '?outer1=5';
-	        }else if (templow <= 14+indext && templow > (9+indext)) {
+	        }else if (templow <= 14-indext && templow > (9-indext)) {
 	        outer.textContent = '上に羽織るもの';
 			newUrl1 = newUrl + '?outer1=6';
-	        }else if(templow <= 9+indext && templow > (5+indext)){
+	        }else if(templow <= 9-indext && templow > (5-indext)){
 	        outer.textContent = '防寒着';
 			newUrl1 = newUrl + '?outer1=4';
-	        }else if(templow <= (5+indext)){
+	        }else if(templow <= (5-indext)){
 	        outer.textContent = '防寒着+上に羽織るもの';
 			newUrl1 = newUrl + '?outer1=6&outer2=4';
 	        };
@@ -443,19 +443,19 @@ const url='https://api.open-meteo.com/v1/forecast?latitude='+lati+'&longitude='+
         case "2":
 		case "3":
             //outer判断
-	        if (templow >= 21+indext) {
+	        if (templow >= 21-indext) {
 	        outer.textContent = '';
 	        newUrl1 = newUrl + '?';
-	        }else if (templow < 21+indext && templow > (14+indext)) {
+	        }else if (templow < 21-indext && templow > (14-indext)) {
 	        outer.textContent = '上に羽織るもの（薄手）';
 			newUrl1 = newUrl + '?outer1=5';
-	        }else if (templow <= 14+indext && templow > (9+indext)) {
+	        }else if (templow <= 14-indext && templow > (9-indext)) {
 	        outer.textContent = '上に羽織るもの';
 			newUrl1 = newUrl + '?outer1=6';
-	        }else if(templow <= 9+indext && templow > (5+indext)){
+	        }else if(templow <= 9-indext && templow > (5-indext)){
 	        outer.textContent = '防寒着';
 			newUrl1 = newUrl + '?outer1=4';
-	        }else if(templow <= (5+indext)){
+	        }else if(templow <= (5-indext)){
 	        outer.textContent = '防寒着+上に羽織るもの';
 			newUrl1 = newUrl + '?outer1=6&outer2=4';
 	        };

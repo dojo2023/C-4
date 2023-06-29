@@ -52,9 +52,12 @@
     <div class="weatherbox">
         <div class="tempbox">
         <br>
-            <img src="/hello/images/logo_images/kion.png" id="kion">最高気温:<span id="temphigh"></span>°C<br/>
+            <img src="/hello/images/logo_images/kion.png" id="kion">最高気温:<span id="temphigh"></span>°C
+            <br>
+            <br>
             <img src="/hello/images/logo_images/kion.png" id="kion">最低気温:<span id="templow"></span>°C
         </div>
+
         <div>
             <img id="weatherimg6" src="" alt="weatherImage" class="wimg6">
             <p>6時</p>
